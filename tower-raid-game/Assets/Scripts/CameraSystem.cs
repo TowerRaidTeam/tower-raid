@@ -6,6 +6,8 @@ using Cinemachine;
 public class CameraSystem : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
+    [Header("Camer WASD movment options")]
+    [SerializeField] private float moveSpeed = 50; //Speed of camer movment
 
     [Header("Change camera movment type")]
     [SerializeField] private bool useEdgeScrolling = false;
@@ -54,7 +56,7 @@ public class CameraSystem : MonoBehaviour
 
         Vector3 moveDir = transform.forward * inputDir.z + transform.right * inputDir.x; //Makes the global forwar equal to the rotation
 
-        float moveSpeed = 50; //Speed of camer movment
+        
         transform.position += moveDir * moveSpeed * Time.deltaTime; //Move the camera
     }
 
