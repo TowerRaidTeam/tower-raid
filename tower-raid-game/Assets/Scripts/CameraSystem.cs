@@ -4,7 +4,7 @@ using UnityEngine;
 using Cinemachine;
 
 public class CameraSystem : MonoBehaviour
-{
+{ 
     [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
     [Header("Camer WASD movment options")]
     [SerializeField] private float moveSpeed = 50; //Speed of camer movment
@@ -164,4 +164,6 @@ public class CameraSystem : MonoBehaviour
         cinemachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset = Vector3.Lerp(cinemachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset, followOffset, Time.deltaTime * zoomSpeed);
          
     }
+
+   
 }

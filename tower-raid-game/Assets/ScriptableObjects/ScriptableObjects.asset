@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db10ce7f691ac644879f9f2b14ece7a, type: 3}
+  m_Name: ScriptableObjects
+  m_EditorClassIdentifier: 
+  projectileDmg: 20
+  projectileRange: 40
+  projectileAttackSpeed: 0.1
+  projectilePrefab: {fileID: 4339706547352471992, guid: 51ed46bc1b157004bb462fec18a18e07,
+    type: 3}
+  projectileParticles: {fileID: 7288186334074717853, guid: 7dc94a5164f7ca64b924afa5f1c0ef30,
+    type: 3}
