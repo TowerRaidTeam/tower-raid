@@ -124,6 +124,7 @@ public class Tower : MonoBehaviour
             {
                 Instantiate(crystal, crystalSpawnArea.transform.position, Quaternion.identity);
                 SpawnParticles();
+                particles.Stop();
                 Destroy(DragDrop.crystalInHand);
                 projectileShootFromPosition = crystalSpawnArea.transform.position;
                 hasCrystal = true;
