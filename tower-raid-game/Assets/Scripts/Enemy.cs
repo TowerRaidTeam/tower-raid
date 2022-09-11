@@ -101,6 +101,8 @@ public class Enemy : MonoBehaviour
                 float distanceBefore = Vector3.Distance(transform.position, targetPosition);
                 //Play animation here
                 transform.position = transform.position + moveDir * enemySpeed * Time.deltaTime;
+
+                transform.LookAt(targetPosition);
             }
             else
             {

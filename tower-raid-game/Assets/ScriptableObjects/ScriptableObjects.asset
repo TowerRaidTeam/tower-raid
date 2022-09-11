@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: ScriptableObjects
   m_EditorClassIdentifier: 
   projectileDmg: 20
-  projectileRange: 20
-  projectileAttackSpeed: 1
+  projectileRange: 40
+  projectileAttackSpeed: 0.1
   projectilePrefab: {fileID: 4339706547352471992, guid: 51ed46bc1b157004bb462fec18a18e07,
     type: 3}
-  projectileParticles: {fileID: 0}
+  projectileParticles: {fileID: 7288186334074717853, guid: 7dc94a5164f7ca64b924afa5f1c0ef30,
+    type: 3}
