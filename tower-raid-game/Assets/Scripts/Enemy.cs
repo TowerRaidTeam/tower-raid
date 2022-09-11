@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private float enemyHp = 100f;
     [SerializeField] private float enemySpeed = 30f;
-    private List<Vector3> pathVectorList;
+    [SerializeField] private List<Vector3> pathVectorList = new List<Vector3>();
     private GameObject[] movePoints;
     private int curretnPathIndex;
     
@@ -18,19 +18,17 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         enemyList.Add(this);
-        Debug.Log(enemyList);
+        //Debug.Log(enemyList);
     }
 
     private void Start()
     {
         movePoints = GameObject.FindGameObjectsWithTag("Point");
         Debug.Log(movePoints);
-        
-        Array.Sort(movePoints);
 
         foreach (GameObject point in movePoints)
         {
-            Debug.Log(point.name);
+            pathVectorList.Add(point.transform.position);
         }
     }
 

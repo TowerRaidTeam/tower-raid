@@ -8,12 +8,18 @@ public class Tower : MonoBehaviour
     [SerializeField] GameObject cubeLol;
 
     private Vector3 projectileShootFromPosition;
+    
     private float shootTimerMax;
     private float shootTimer;
+
+    private GameObject lookAtEnemyForParticles;
+    private ParticleSystem particles;
+    private bool isShooting;
 
     private void Awake()
     {
         projectileShootFromPosition = transform.Find("Crystal").position;
+        lookAtEnemyForParticles = transform.Find("LookAtEnemy").gameObject;
         shootTimerMax = projectileSO.projectileAttackSpeed;
         shootTimer = projectileSO.projectileAttackSpeed;
     }
@@ -21,7 +27,7 @@ public class Tower : MonoBehaviour
     private void Start()
     {
         Debug.Log(projectileShootFromPosition);
-        
+        SpawnParticles();
     }
 
     private void Update()
@@ -38,18 +44,29 @@ public class Tower : MonoBehaviour
             {
                 Debug.Log(enemy.transform.position);
                 Projectile.Create(projectileShootFromPosition, enemy, projectileSO.projectileDmg, projectileSO.projectilePrefab);
-          
+                lookAtEnemyForParticles.transform.LookAt(enemy.GetPosition());
+
+                particles.Play();
+                particles.transform.forward = lookAtEnemyForParticles.transform.forward;
             }
             else
             {
                 Debug.Log("Null bitch");
+                particles.Stop();
             }
+
+
         }
     }
 
     private Enemy GetClosestEnemy()
     {
-        return Enemy.GetClosestEnemy(transform.position, 30f);
+        return Enemy.GetClosestEnemy(transform.position, projectileSO.projectileRange);
+    }
+
+    private void SpawnParticles()
+    {
+       particles = Instantiate(projectileSO.projectileParticles, lookAtEnemyForParticles.transform.position, Quaternion.identity);
     }
 
     

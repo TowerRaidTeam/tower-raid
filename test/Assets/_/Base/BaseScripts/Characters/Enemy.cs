@@ -221,6 +221,10 @@ public class Enemy : MonoBehaviour {
         }
     }
 
+
+
+
+
     private void HandleMovement() {
         if (pathVectorList != null) {
             Vector3 targetPosition = pathVectorList[currentPathIndex];
@@ -259,8 +263,16 @@ public class Enemy : MonoBehaviour {
         this.pathVectorList = pathVectorList;
     }
 
-    public Vector3 GetPosition() {
+
+
+
+
+
+
+
+    public Vector3 GetPosition()
+    {
         return transform.position;
     }
-        
+
 }

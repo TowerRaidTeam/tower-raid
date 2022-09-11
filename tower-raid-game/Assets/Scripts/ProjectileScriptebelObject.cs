@@ -10,5 +10,7 @@ public class ProjectileScriptebelObject : ScriptableObject
     public float projectileAttackSpeed;
     public GameObject projectilePrefab;
     public ParticleSystem projectileParticles;
+
+   
     
 }
