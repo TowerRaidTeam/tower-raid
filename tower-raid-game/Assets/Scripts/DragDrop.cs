@@ -36,6 +36,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
         //Debug.Log("OnEndDrag");
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
+
+        crystalInHand = null;
     }
 
     public void OnPointerDown(PointerEventData eventData)
