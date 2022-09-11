@@ -4,7 +4,7 @@ using UnityEngine;
 using Cinemachine;
 
 public class CameraSystem : MonoBehaviour
-{
+{ 
     [SerializeField] private CinemachineVirtualCamera cinemachineVirtualCamera;
 
     [Header("Change camera movment type")]

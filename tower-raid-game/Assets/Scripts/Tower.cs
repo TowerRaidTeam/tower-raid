@@ -22,6 +22,7 @@ public class Tower : MonoBehaviour
         lookAtEnemyForParticles = transform.Find("LookAtEnemy").gameObject;
         shootTimerMax = projectileSO.projectileAttackSpeed;
         shootTimer = projectileSO.projectileAttackSpeed;
+        
     }
 
     private void Start()
@@ -42,7 +43,7 @@ public class Tower : MonoBehaviour
             //Debug.Log(enemy.transform.name);
             if (enemy != null)
             {
-                Debug.Log(enemy.transform.position);
+                //Debug.Log(enemy.transform.position);
                 Projectile.Create(projectileShootFromPosition, enemy, projectileSO.projectileDmg, projectileSO.projectilePrefab);
                 lookAtEnemyForParticles.transform.LookAt(enemy.GetPosition());
 
@@ -51,11 +52,11 @@ public class Tower : MonoBehaviour
             }
             else
             {
-                Debug.Log("Null bitch");
+                //Debug.Log("Null bitch");
                 particles.Stop();
             }
 
-
+            Debug.Log(DragDrop.crystalInHand.name);    
         }
     }
 
