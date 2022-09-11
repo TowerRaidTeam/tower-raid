@@ -6,6 +6,11 @@ TagManager:
   tags:
   - buildable
   - foliage
+  - WaterCrystal
+  - Tower
+  - FireCrystal
+  - Point
+  - Road
   layers:
   - Default
   - TransparentFX

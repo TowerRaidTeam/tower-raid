@@ -36,6 +36,7 @@ public class Tower : MonoBehaviour
         Debug.Log(projectileShootFromPosition);
         //SpawnParticles();
         //particles.Stop();
+        projectileShootFromPosition = crystalSpawnArea.transform.position;
     }
 
     private void Update()
@@ -68,10 +69,7 @@ public class Tower : MonoBehaviour
            
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            hasCrystal = true;
-        }
+        
 
         //This chech if there is a crystai in your hand and if youa a pointa at a tower, and if you are it spawns a crystal and start shooting
         if (!hasCrystal)
@@ -122,8 +120,8 @@ public class Tower : MonoBehaviour
         {
             if (DragDrop.crystalInHand.tag == crystal.tag)
             {
-                Instantiate(crystal, crystalSpawnArea.transform.position, Quaternion.identity);
                 SpawnParticles();
+                Instantiate(crystal, crystalSpawnArea.transform.position, Quaternion.identity);
                 particles.Stop();
                 Destroy(DragDrop.crystalInHand);
                 projectileShootFromPosition = crystalSpawnArea.transform.position;

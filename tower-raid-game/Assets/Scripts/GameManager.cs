@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject enemyWizard;
+    [SerializeField] private Transform enemySpawnPosition;
+
+
+    private void Start()
+    {
+        StartCoroutine(SpawnEnemy());
+    }
+
     public static bool  GetTurretHitInfo()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -44,5 +53,15 @@ public class GameManager : MonoBehaviour
         {
             return null;
         }
+    }
+
+    IEnumerator SpawnEnemy()
+    {
+        while (true)
+        {
+            Instantiate(enemyWizard, enemySpawnPosition.position, Quaternion.identity);
+            yield return new WaitForSeconds(1);
+        }
+        
     }
 }

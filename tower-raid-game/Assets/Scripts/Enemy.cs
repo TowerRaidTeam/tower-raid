@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         movePoints = GameObject.FindGameObjectsWithTag("Point");
-        Debug.Log(movePoints);
+        //Debug.Log(movePoints);
 
         foreach (GameObject point in movePoints)
         {
