@@ -1,13 +1,15 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    public ProjectileScriptebelObject projectileSO;
-    [SerializeField] GameObject cubeLol;
+    [SerializeField] GameObject[] crystalPrefabs;
+    [SerializeField] ProjectileScriptebelObject[] projectileSOs;
+    private int projectileIndex;
 
-    private Vector3 projectileShootFromPosition;
+    private Vector3 projectileShootFromPosition; //Projectile spawn area
     
     private float shootTimerMax;
     private float shootTimer;
@@ -20,17 +22,22 @@ public class Tower : MonoBehaviour
     [SerializeField] private bool hasCrystal = false;
    
 
-    [SerializeField] GameObject[] crystalPrefabs;
+    enum CrystalsEnum
+    {
+        FireCrystal = 0,
+        WaterCrystal = 1
+    }
 
     private void Awake()
     {
         //projectileShootFromPosition = transform.Find("Crystal").position;
         lookAtEnemyForParticles = transform.Find("LookAtEnemy").gameObject;
         crystalSpawnArea = transform.Find("CrystalSpawnArea").gameObject;
-        shootTimerMax = projectileSO.projectileAttackSpeed;
-        shootTimer = projectileSO.projectileAttackSpeed;
-    }
 
+        //Prepear the timer and timer reset amounts
+        //shootTimerMax = projectileSO.projectileAttackSpeed;
+        //shootTimer = shootTimerMax;
+    }
     private void Start()
     {
         Debug.Log(projectileShootFromPosition);
@@ -41,6 +48,7 @@ public class Tower : MonoBehaviour
 
     private void Update()
     {
+        //??Change this ti IEnumerator later
         if (hasCrystal)
         {
             shootTimer -= Time.deltaTime;
@@ -50,11 +58,9 @@ public class Tower : MonoBehaviour
                 shootTimer = shootTimerMax;
 
                 Enemy enemy = GetClosestEnemy();
-                //Debug.Log(enemy.transform.name);
                 if (enemy != null)
                 {
-                    //Debug.Log(enemy.transform.position);
-                    Projectile.Create(projectileShootFromPosition, enemy, projectileSO.projectileDmg, projectileSO.projectilePrefab);
+                    Projectile.Create(projectileShootFromPosition, enemy, projectileSOs[projectileIndex].projectileDmg, projectileSOs[projectileIndex].projectilePrefab);
                     lookAtEnemyForParticles.transform.LookAt(enemy.GetPosition());
 
                     particles.Play();
@@ -62,20 +68,17 @@ public class Tower : MonoBehaviour
                 }
                 else
                 {
-                    //Debug.Log("Null bitch");
                     particles.Stop();
                 }
             }
            
         }
 
-        
-
-        //This chech if there is a crystai in your hand and if youa a pointa at a tower, and if you are it spawns a crystal and start shooting
+        //This checks if there is a crystai in your hand and if you are pointing at a tower, and if you are it spawns a crystal and start shooting
         if (!hasCrystal)
         {
             //DragDrop.crystalInHand != null && 
-            if (DragDrop.crystalInHand != null &&  GameManager.GetTurretHitInfo())
+            if (DragDrop.crystalInHand != null && GameManager.GetTurretHitInfo())
             {
                 //Instantiate(crystalPrefabs[1], crystalSpawnArea.transform.position, Quaternion.identity);
                 //Destroy(DragDrop.crystalInHand);
@@ -93,9 +96,10 @@ public class Tower : MonoBehaviour
                 //        break;
                 //    }
                 //}
-
                 GameObject thisObject = GameManager.GetTurretHitGameObject();
                 thisObject.GetComponent<Tower>().SpawnCrystal();
+
+
             }
             else
             {
@@ -106,12 +110,12 @@ public class Tower : MonoBehaviour
 
     private Enemy GetClosestEnemy()
     {
-        return Enemy.GetClosestEnemy(transform.position, projectileSO.projectileRange);
+        return Enemy.GetClosestEnemy(transform.position, projectileSOs[projectileIndex].projectileRange);
     }
 
     private void SpawnParticles()
     {
-       particles = Instantiate(projectileSO.projectileParticles, lookAtEnemyForParticles.transform.position, Quaternion.identity);
+       particles = Instantiate(projectileSOs[projectileIndex].projectileParticles, lookAtEnemyForParticles.transform.position, Quaternion.identity);
     }
 
     public void SpawnCrystal()
@@ -120,6 +124,11 @@ public class Tower : MonoBehaviour
         {
             if (DragDrop.crystalInHand.tag == crystal.tag)
             {
+                int index = Array.IndexOf(crystalPrefabs, crystal);
+                projectileIndex = index;
+                shootTimerMax = projectileSOs[projectileIndex].projectileAttackSpeed;
+                shootTimer = shootTimerMax;
+
                 SpawnParticles();
                 Instantiate(crystal, crystalSpawnArea.transform.position, Quaternion.identity);
                 particles.Stop();
@@ -128,7 +137,15 @@ public class Tower : MonoBehaviour
                 hasCrystal = true;
                 break;
             }
+            
+           
         }
     }
+
+    //void int GetIndexOfSO()
+    //{
+
+    //    return 0;
+    //}
     
 }

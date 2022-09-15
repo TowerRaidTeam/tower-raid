@@ -11,6 +11,7 @@ TagManager:
   - FireCrystal
   - Point
   - Road
+  - Canvas
   layers:
   - Default
   - TransparentFX

@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class BuildingController : MonoBehaviour
 {
-    [SerializeField] private Camera cam;
+    //[SerializeField] private Camera cam;
     bool canBuild = false;
 
     [SerializeField] private GameObject building;
 
     private void Update()
     {
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
+        //Checks if the tile zou are tring to build on is buildable
+        //??Add chechker to see if there is building all ready placed there
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
             if (hit.transform.tag == "buildable")

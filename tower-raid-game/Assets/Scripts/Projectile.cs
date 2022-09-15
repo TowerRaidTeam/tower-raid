@@ -10,7 +10,7 @@ public class Projectile : MonoBehaviour
     private Enemy enemy;
     private float damageAmount;
 
-    //Stativ methode udes for instantiating projectiles
+    //Static methode used for instantiating projectiles in the tower script
     public static void Create(Vector3 spawnPosition, Enemy enemy, float damageAmount, GameObject projectilePrefab)
     {
         Transform projectileTransform = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity).transform;

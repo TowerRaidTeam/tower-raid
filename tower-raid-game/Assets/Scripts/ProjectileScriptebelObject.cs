@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ScriptableObjects", menuName = "ScriptableObjects/Projectiles")]
 public class ProjectileScriptebelObject : ScriptableObject
 {
+    
     public float projectileDmg;
     public float projectileRange;
     public float projectileAttackSpeed;

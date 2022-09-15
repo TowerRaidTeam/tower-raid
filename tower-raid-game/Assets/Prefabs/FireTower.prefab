@@ -163,11 +163,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38243649c5845b94ea297879655e1fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSO: {fileID: 11400000, guid: 810cffbc627b41f47a743f5c96e80c2b, type: 2}
-  cubeLol: {fileID: 0}
-  hasCrystal: 0
   crystalPrefabs:
   - {fileID: 337489806124124625, guid: fece06e3cd0adc34d9ec5fd22c5b1c20, type: 3}
+  - {fileID: 337489806124124625, guid: ecaa621d8ba44174c9542ffa0e3cb9c2, type: 3}
+  projectileSOs:
+  - {fileID: 11400000, guid: 37c6a4dd99b43204b8c2911556439a19, type: 2}
+  - {fileID: 11400000, guid: 6669f050716a47d45989919555de0383, type: 2}
+  hasCrystal: 0
 --- !u!64 &-328555682655114868
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
 {
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
-    [SerializeField] private Canvas canvas;
+    private Canvas canvas;
 
     public static GameObject crystalInHand;
 
@@ -15,6 +15,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+        canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
