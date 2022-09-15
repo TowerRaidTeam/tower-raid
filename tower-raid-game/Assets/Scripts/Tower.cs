@@ -118,12 +118,15 @@ public class Tower : MonoBehaviour
        particles = Instantiate(projectileSOs[projectileIndex].projectileParticles, lookAtEnemyForParticles.transform.position, Quaternion.identity);
     }
 
+    //Function for spawning the crystal above the tower
     public void SpawnCrystal()
     {
+        
         foreach (GameObject crystal in crystalPrefabs)
         {
             if (DragDrop.crystalInHand.tag == crystal.tag)
             {
+                //Gets the current position in the array and uses that to get the criptable object it needs to
                 int index = Array.IndexOf(crystalPrefabs, crystal);
                 projectileIndex = index;
                 shootTimerMax = projectileSOs[projectileIndex].projectileAttackSpeed;
@@ -132,7 +135,7 @@ public class Tower : MonoBehaviour
                 SpawnParticles();
                 Instantiate(crystal, crystalSpawnArea.transform.position, Quaternion.identity);
                 particles.Stop();
-                Destroy(DragDrop.crystalInHand);
+                Destroy(DragDrop.crystalInHand); //Destory the crystal sprite after spawning the crystal object
                 projectileShootFromPosition = crystalSpawnArea.transform.position;
                 hasCrystal = true;
                 break;
@@ -141,11 +144,4 @@ public class Tower : MonoBehaviour
            
         }
     }
-
-    //void int GetIndexOfSO()
-    //{
-
-    //    return 0;
-    //}
-    
 }

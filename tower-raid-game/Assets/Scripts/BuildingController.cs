@@ -8,6 +8,7 @@ public class BuildingController : MonoBehaviour
     bool canBuild = false;
 
     [SerializeField] private GameObject building;
+    [SerializeField] private LayerMask layerMask;
 
     private void Update()
     {
@@ -16,7 +17,7 @@ public class BuildingController : MonoBehaviour
 
         //Checks if the tile zou are tring to build on is buildable
         //??Add chechker to see if there is building all ready placed there
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
         {
             if (hit.transform.tag == "buildable")
             {
