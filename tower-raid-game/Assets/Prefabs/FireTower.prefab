@@ -166,9 +166,11 @@ MonoBehaviour:
   crystalPrefabs:
   - {fileID: 337489806124124625, guid: fece06e3cd0adc34d9ec5fd22c5b1c20, type: 3}
   - {fileID: 337489806124124625, guid: ecaa621d8ba44174c9542ffa0e3cb9c2, type: 3}
+  - {fileID: 337489806124124625, guid: 18aa743add62c394486b55609764c321, type: 3}
   projectileSOs:
   - {fileID: 11400000, guid: 37c6a4dd99b43204b8c2911556439a19, type: 2}
   - {fileID: 11400000, guid: 6669f050716a47d45989919555de0383, type: 2}
+  - {fileID: 11400000, guid: 81099a1344747484782274a8af2b7540, type: 2}
   hasCrystal: 0
 --- !u!64 &-328555682655114868
 MeshCollider:
