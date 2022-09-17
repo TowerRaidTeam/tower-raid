@@ -36,6 +36,7 @@ public class WorldGeneration : MonoBehaviour
                 UpdateRotation(rotation);
                 
                 Debug.Log("Rotate: " + rotation);
+                GetRoadExpandHex();
             }
         }
     }
@@ -49,7 +50,18 @@ public class WorldGeneration : MonoBehaviour
 
     private void UpdateRotation(int angle)
     {
-        chunk.transform.rotation = Quaternion.Euler(90, 0, chunk.transform.rotation.z - angle);
+        chunk.transform.rotation = Quaternion.Euler(90, 0, chunk.transform.rotation.z + angle);
+    }
+
+    private void GetRoadExpandHex()
+    {
+        foreach (Transform hex in chunk.transform)
+        {
+            if (hex.gameObject.tag == "Road")
+            {
+                Debug.Log(hex.name);
+            }
+        }
     }
 
 

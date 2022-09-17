@@ -12,6 +12,8 @@ TagManager:
   - Point
   - Road
   - Canvas
+  - buildHex
+  - box
   layers:
   - Default
   - TransparentFX
