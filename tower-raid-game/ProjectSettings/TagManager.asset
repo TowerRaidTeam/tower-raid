@@ -14,6 +14,8 @@ TagManager:
   - Canvas
   - buildHex
   - box
+  - RoadConnect
+  - spawnHexPosition
   layers:
   - Default
   - TransparentFX

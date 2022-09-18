@@ -427,6 +427,7 @@ GameObject:
   - component: {fileID: 6332245104353828436}
   - component: {fileID: 7041531895772530957}
   - component: {fileID: 8043500217535712479}
+  - component: {fileID: 4893092156486195739}
   m_Layer: 13
   m_Name: Connector
   m_TagString: buildHex
@@ -507,7 +508,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2560265349452005200}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -525,6 +526,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312bf7340ae4a384f9dea45bbb3c9a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &4893092156486195739
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2560265349452005200}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &2896615390296286981
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,7 +850,7 @@ GameObject:
   - component: {fileID: 4565374261324426702}
   m_Layer: 13
   m_Name: hexagon (9)
-  m_TagString: Road
+  m_TagString: RoadConnect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -930,6 +947,7 @@ GameObject:
   - component: {fileID: 8734050009206246491}
   - component: {fileID: 3824565334307244119}
   - component: {fileID: 781731880279722701}
+  - component: {fileID: 2242683829932664569}
   m_Layer: 13
   m_Name: Connector (3)
   m_TagString: buildHex
@@ -1010,7 +1028,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3502941874201662475}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -1028,6 +1046,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312bf7340ae4a384f9dea45bbb3c9a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &2242683829932664569
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3502941874201662475}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &4254403479067161947
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,7 +1468,7 @@ GameObject:
   - component: {fileID: 3974472249531713205}
   m_Layer: 13
   m_Name: hexagon (14)
-  m_TagString: Road
+  m_TagString: RoadConnect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1531,6 +1565,7 @@ GameObject:
   - component: {fileID: 787270509425333025}
   - component: {fileID: 8288065491532714088}
   - component: {fileID: 452859896579024825}
+  - component: {fileID: 1183351488334918825}
   m_Layer: 13
   m_Name: Connector (1)
   m_TagString: buildHex
@@ -1611,7 +1646,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6442004775887171355}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -1629,6 +1664,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312bf7340ae4a384f9dea45bbb3c9a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &1183351488334918825
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6442004775887171355}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &6847424845667676141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,6 +1987,7 @@ GameObject:
   - component: {fileID: 1259269147812105513}
   - component: {fileID: 8133735428303243135}
   - component: {fileID: 6437797940913078367}
+  - component: {fileID: 5706324028430252103}
   m_Layer: 13
   m_Name: Connector (2)
   m_TagString: buildHex
@@ -2016,7 +2068,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7311428891856812392}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -2034,6 +2086,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312bf7340ae4a384f9dea45bbb3c9a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &5706324028430252103
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7311428891856812392}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &7726035405979148437
 GameObject:
   m_ObjectHideFlags: 0

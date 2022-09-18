@@ -25,8 +25,11 @@ public class WorldGeneration : MonoBehaviour
         if (chunsIsSpawnd)
         {
             chunk.transform.position = GetMousePosition();
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && HexBuildTriggerCheck.isExpandable)
             {
+                //Debug.Log(chunk.transform.root.position - HexBuildTriggerCheck.conectingRoad.transform.position);
+                //HexBuildTriggerCheck.conectingRoad.transform.position = HexBuildTriggerCheck.placmentPosition;
+                chunk.transform.position = HexBuildTriggerCheck.placmentPosition + HexBuildTriggerCheck.hexAdjustmentAmount;
                 chunsIsSpawnd = false;
             }
 
@@ -35,8 +38,8 @@ public class WorldGeneration : MonoBehaviour
                 rotation -= 60;
                 UpdateRotation(rotation);
                 
-                Debug.Log("Rotate: " + rotation);
-                GetRoadExpandHex();
+                //Debug.Log("Rotate: " + rotation);
+                
             }
         }
     }
@@ -53,15 +56,20 @@ public class WorldGeneration : MonoBehaviour
         chunk.transform.rotation = Quaternion.Euler(90, 0, chunk.transform.rotation.z + angle);
     }
 
-    private void GetRoadExpandHex()
+    private Transform GetRoadExpandHex()
     {
         foreach (Transform hex in chunk.transform)
         {
-            if (hex.gameObject.tag == "Road")
+            if (hex.gameObject.tag == "RoadConnect")
             {
-                Debug.Log(hex.name);
+                return hex;
+            }
+            else
+            {
+                return null;
             }
         }
+        return null;
     }
 
 
