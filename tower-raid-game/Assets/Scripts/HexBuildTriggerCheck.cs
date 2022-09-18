@@ -32,7 +32,7 @@ public class HexBuildTriggerCheck : MonoBehaviour
             
             conectingRoad = other.gameObject;
             placmentPosition = transform.position;
-            hexAdjustmentAmount = placmentPosition - transform.root.position;
+            hexAdjustmentAmount = placmentPosition - transform.root.position  /*- new Vector3(mc.bounds.extents.x, 0f, mc.bounds.extents.z)*/ /*- new Vector3(mc.bounds.extents.x, 0f, mc.bounds.extents.z)*/;
 
             //Debug.Log("Placment position: " + placmentPosition);
             //Debug.Log(Vector3.Distance(transform.position, other.gameObject.transform.position));

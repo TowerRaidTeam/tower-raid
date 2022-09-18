@@ -11,8 +11,7 @@ public class WorldGeneration : MonoBehaviour
     private bool chunsIsSpawnd = false;
 
     private int rotation;
-    private float rotationLenght;
-    private float elapsedTime;
+    
 
     private void Update()
     {
