@@ -11,25 +11,26 @@ public class WorldGeneration : MonoBehaviour
     private bool chunsIsSpawnd = false;
 
     private int rotation;
-    
+   
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
             SpawnChunk();
-            
+           
         }
 
         if (chunsIsSpawnd)
         {
             chunk.transform.position = GetMousePosition();
-            if (Input.GetMouseButtonDown(0) && HexBuildTriggerCheck.isExpandable)
+            if (Input.GetMouseButtonDown(0) && GameManager.isExtendable)
             {
                 //Debug.Log(chunk.transform.root.position - HexBuildTriggerCheck.conectingRoad.transform.position);
                 //HexBuildTriggerCheck.conectingRoad.transform.position = HexBuildTriggerCheck.placmentPosition;
-                chunk.transform.position = HexBuildTriggerCheck.placmentPosition + HexBuildTriggerCheck.hexAdjustmentAmount;
+                chunk.transform.position = HexBuildTriggerCheck.spawnPositionLocation;
                 chunsIsSpawnd = false;
+                GameManager.isExtendable = false;
             }
 
             if (Input.GetKeyDown(KeyCode.R))

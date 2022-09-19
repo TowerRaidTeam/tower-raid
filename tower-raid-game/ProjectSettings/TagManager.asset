@@ -16,6 +16,7 @@ TagManager:
   - box
   - RoadConnect
   - spawnHexPosition
+  - SpawnPosition
   layers:
   - Default
   - TransparentFX

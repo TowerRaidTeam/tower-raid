@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject enemyWizard;
     [SerializeField] private Transform enemySpawnPosition;
 
+    public static bool isExtendable = false;
 
     private void Start()
     {
