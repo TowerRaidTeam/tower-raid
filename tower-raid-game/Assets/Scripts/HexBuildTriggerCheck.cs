@@ -43,6 +43,7 @@ public class HexBuildTriggerCheck : MonoBehaviour
 
         if (other.gameObject.tag == "RoadConnect")
         {
+            Debug.Log("Touching");
             //foreach (Transform part in transform.root)
             //{
             //    if (part.gameObject.tag == "SpawnPosition")
