@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class WorldGeneration : MonoBehaviour
 {
@@ -11,10 +12,11 @@ public class WorldGeneration : MonoBehaviour
     private bool chunsIsSpawnd = false;
 
     private int rotation;
-   
+    private Transform[] spawnBlocks;
 
     private void Update()
     {
+        Debug.Log(GameManager.isExtendable);
         if (Input.GetKeyDown(KeyCode.B))
         {
             SpawnChunk();
@@ -29,6 +31,16 @@ public class WorldGeneration : MonoBehaviour
                 //Debug.Log(chunk.transform.root.position - HexBuildTriggerCheck.conectingRoad.transform.position);
                 //HexBuildTriggerCheck.conectingRoad.transform.position = HexBuildTriggerCheck.placmentPosition;
                 chunk.transform.position = HexBuildTriggerCheck.spawnPositionLocation;
+
+                spawnBlocks = chunk.GetComponentsInChildren<Transform>();
+                spawnBlocks = spawnBlocks.Where(child => child.tag == "buildHex").ToArray();
+                Debug.Log(spawnBlocks);
+                foreach (Transform item in spawnBlocks)
+                {
+                    Debug.Log(item.name);
+                    item.gameObject.GetComponent<BoxCollider>().enabled = true;
+                }
+                Destroy(HexBuildTriggerCheck.thisObject);
                 chunsIsSpawnd = false;
                 GameManager.isExtendable = false;
             }
@@ -48,6 +60,7 @@ public class WorldGeneration : MonoBehaviour
     {
         int randomPrefab = Random.Range(0, hexPrefabs.Length);
         chunk = Instantiate(hexPrefabs[randomPrefab], new Vector3(GetMousePosition().x, 0f, GetMousePosition().z), hexPrefabs[randomPrefab].transform.rotation);
+        
         chunsIsSpawnd = true;
     }
 

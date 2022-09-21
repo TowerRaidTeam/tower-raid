@@ -8,7 +8,7 @@ public class HexBuildTriggerCheck : MonoBehaviour
     public static Vector3 hexAdjustmentAmount;
     public static GameObject conectingRoad;
 
-    
+    public static GameObject thisObject;
 
     //private List<Transform> spawnPositionsList;
     [SerializeField] Transform[] spawnPositions;
@@ -17,6 +17,7 @@ public class HexBuildTriggerCheck : MonoBehaviour
 
     private void Start()
     {
+       
         mc = GetComponent<MeshCollider>();
     }
     private void OnTriggerEnter(Collider other)
@@ -44,6 +45,7 @@ public class HexBuildTriggerCheck : MonoBehaviour
         if (other.gameObject.tag == "RoadConnect")
         {
             Debug.Log("Touching");
+            thisObject = this.gameObject;
             //foreach (Transform part in transform.root)
             //{
             //    if (part.gameObject.tag == "SpawnPosition")
