@@ -298,6 +298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 564624452}
   - component: {fileID: 564624451}
+  - component: {fileID: 564624453}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -318,10 +319,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hexPrefabs:
-  - {fileID: 3741127281969725742, guid: 4ca073e267c9a1a4185328c7b065fad2, type: 3}
-  - {fileID: 8319419178430466586, guid: ab013996b0fc143419b461b7126335a3, type: 3}
   - {fileID: 4605541896748636138, guid: e2ccb8cb3921ec04da1fb70fa4a92b86, type: 3}
   - {fileID: 7776038073197607736, guid: 5161e3f072a052640aec7b523ded22d8, type: 3}
+  - {fileID: 7734243521154417482, guid: 0c5e498c0afac7c4fa2d63b87b7fd5d2, type: 3}
   layerMask:
     serializedVersion: 2
     m_Bits: 16384
@@ -340,6 +340,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &564624453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564624450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8079e350669846c45b7dff73755e833a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingSpot: {fileID: 1883151189}
 --- !u!1 &718858459
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,6 +785,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1883151189 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1825368793484145166, guid: 2105aef949eab4a4abca3e9c07d955d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1482397224004030897}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1482397224004030897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -802,7 +821,7 @@ PrefabInstance:
     - target: {fileID: 4688072842765273765, guid: 2105aef949eab4a4abca3e9c07d955d1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.8372774
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4688072842765273765, guid: 2105aef949eab4a4abca3e9c07d955d1,
         type: 3}
@@ -812,7 +831,7 @@ PrefabInstance:
     - target: {fileID: 4688072842765273765, guid: 2105aef949eab4a4abca3e9c07d955d1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.0214107
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4688072842765273765, guid: 2105aef949eab4a4abca3e9c07d955d1,
         type: 3}
