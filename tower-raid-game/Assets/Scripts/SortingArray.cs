@@ -102,6 +102,7 @@ public class SortingArray : MonoBehaviour
         List<Vector3> sortList = sort.ToList();
         List<Vector3> sortListTow = sort.ToList();
         List<Vector3> sortedList = new List<Vector3>();
+        Vector3 biggest = Vector3.zero;
 
         for (int i = 0; i < sort.Length; i++)
         {
@@ -113,17 +114,22 @@ public class SortingArray : MonoBehaviour
                     {
                         continue;
                     }
-                    else
+                    if (Vector3.Distance(startPos, sortedList[i]) < Vector3.Distance(startPos, sortListTow[j]))
                     {
-                        startPosHolder = sort[j];
-                        sortedList.Add(sort[j]);
-                        Debug.Log(sortedList[0]);
+                        Debug.Log("FUCK ME");
                     }
+                    startPosHolder = sort[j];
+                    sortedList.Add(sort[j]);
+
+                    Debug.Log(sortedList[0]);
+
+
 
                     //removeIndex = j;
                 }
             }
             startPos = startPosHolder;
+            //sortedList.Add(startPosHolder);
             //sortListTow.RemoveAt(removeIndex);
             //returnValue.Add(startPos);
         }
