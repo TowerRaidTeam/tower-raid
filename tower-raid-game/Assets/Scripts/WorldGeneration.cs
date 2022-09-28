@@ -16,7 +16,7 @@ public class WorldGeneration : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(GameManager.isExtendable);
+        //Debug.Log(GameManager.isExtendable);
         if (Input.GetKeyDown(KeyCode.B))
         {
             SpawnChunk();
