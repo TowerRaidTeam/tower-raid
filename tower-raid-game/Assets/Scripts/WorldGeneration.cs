@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+[RequireComponent(typeof(SortingArray))]
 public class WorldGeneration : MonoBehaviour
 {
+    SortingArray sortingArray;
     [SerializeField] GameObject[] hexPrefabs;
     [SerializeField] LayerMask layerMask;
 
@@ -13,6 +15,11 @@ public class WorldGeneration : MonoBehaviour
 
     private int rotation;
     private Transform[] spawnBlocks;
+
+    private void Start()
+    {
+        sortingArray = FindObjectOfType<SortingArray>();
+    }
 
     private void Update()
     {
@@ -28,6 +35,7 @@ public class WorldGeneration : MonoBehaviour
             chunk.transform.position = GetMousePosition();
             if (Input.GetMouseButtonDown(0) && GameManager.isExtendable)
             {
+                
                 //Debug.Log(chunk.transform.root.position - HexBuildTriggerCheck.conectingRoad.transform.position);
                 //HexBuildTriggerCheck.conectingRoad.transform.position = HexBuildTriggerCheck.placmentPosition;
                 chunk.transform.position = HexBuildTriggerCheck.spawnPositionLocation;
@@ -43,6 +51,7 @@ public class WorldGeneration : MonoBehaviour
                 Destroy(HexBuildTriggerCheck.thisObject);
                 chunsIsSpawnd = false;
                 GameManager.isExtendable = false;
+                sortingArray.SpawnPreview();
             }
 
             if (Input.GetKeyDown(KeyCode.R))

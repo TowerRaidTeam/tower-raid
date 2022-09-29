@@ -99,14 +99,14 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _DepthFade: 3.55
+    - _DepthFade: 3.22
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _FoamDepth: 2.27
+    - _FoamDepth: 2.26
     - _FoamNoisScale: 4.34
-    - _FoamRippleSpeed: 3.46
+    - _FoamRippleSpeed: 1.31
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -122,8 +122,8 @@ Material:
     - _SrcBlend: 1
     - _Surface: 0
     - _WaterDepth: 0.53
-    - _WaterHeight: 0.08
-    - _WaterNoiseScale: 10
+    - _WaterHeight: 0.002
+    - _WaterNoiseScale: 6.51
     - _WaterSpeed: 0.001
     - _WorkflowMode: 1
     - _ZWrite: 1

@@ -10,24 +10,7 @@ public class SortingArray : MonoBehaviour
     [SerializeField] Transform startPosition;
     [SerializeField] GameObject prefab;
 
-    private void Start()
-    {
-        //Debug.Log("Amount of hexes: " + GetAllHexesPositions().Length);
-        //Vector3[] loler = SortAllPositionFromFarToClose();
-        //StartCoroutine(SpawnPoints(prefab, loler));
-        //foreach (var item in SortAllPositionFromFarToClose())
-        //{
-        //    Debug.Log("SORTED ARRAY TEXT: " + item);
-        //}
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            StartCoroutine(SpawnPoints(prefab, SortAllPositionFromFarToClose()));
-        }
-    }
+    
 
     //Vector3[] SortAllPositionFromFarToClose()
     //{
@@ -68,6 +51,20 @@ public class SortingArray : MonoBehaviour
 
     //    return sortedArray;
     //}
+    public void SpawnPreview()
+    {
+        GameObject[] old = GameObject.FindGameObjectsWithTag("test");
+        foreach (GameObject item in old)
+        {
+            Destroy(item);
+        }
+
+        StartCoroutine(SpawnPoints(prefab, SortAllPositionFromFarToClose()));
+    }
+    public List<Vector3> GenerateNewPath()
+    {
+        return SortAllPositionFromFarToClose().ToList();
+    }
 
     Vector3[] GetAllHexesPositions()
     {

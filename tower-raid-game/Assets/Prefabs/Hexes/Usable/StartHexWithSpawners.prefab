@@ -1988,7 +1988,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312bf7340ae4a384f9dea45bbb3c9a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPositions: []
+  spawnPositions:
+  - {fileID: 4722754642033236809}
+  - {fileID: 5443386280093830473}
 --- !u!54 &850280483422685308
 Rigidbody:
   m_ObjectHideFlags: 0

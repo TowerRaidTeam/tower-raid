@@ -4,24 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - buildable
-  - foliage
-  - WaterCrystal
-  - Tower
-  - FireCrystal
-  - Point
   - Road
-  - Canvas
-  - buildHex
-  - box
-  - RoadConnect
-  - spawnHexPosition
   - SpawnPosition
-  - Center
-<<<<<<< HEAD
-=======
-  - pathGeneratorTest
->>>>>>> 3ccca02245819bb4b0ae5fe5175ece8c0699dee4
+  - buildHex
+  - buildable
+  - RoadConnect
+  - foliage
+  - test
+  - FireCrystal
+  - Tower
+  - WaterCrystal
   layers:
   - Default
   - TransparentFX
@@ -36,8 +28,8 @@ TagManager:
   - 
   - 
   - 
-  - build
-  - hexBuild
+  - Build
+  - Floor
   - 
   - 
   - 
