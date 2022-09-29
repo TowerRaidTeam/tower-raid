@@ -1,86 +1,79 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System;
 using System.Linq;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class SortingArray : MonoBehaviour
 {
-    [SerializeField] GameObject startingSpot;
-    GameObject[] hexess;
+    [SerializeField] Transform startPosition;
+    [SerializeField] GameObject prefab;
 
     private void Start()
     {
-
+        //Debug.Log("Amount of hexes: " + GetAllHexesPositions().Length);
+        //Vector3[] loler = SortAllPositionFromFarToClose();
         
+        //foreach (var item in SortAllPositionFromFarToClose())
+        //{
+        //    Debug.Log("SORTED ARRAY TEXT: " + item);
+        //}
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            SpawnRoadMarker();
+            //GameObject[] cubes = GameObject.FindGameObjectsWithTag("spawnHexPosition");
+            //foreach (GameObject item in cubes)
+            //{
+            //    Destroy(item.gameObject);
+            //}
+
+
+            StartCoroutine(SpawnPoints(prefab, SortAllPositionFromFarToClose()));
         }
     }
-    public void SpawnRoadMarker()
-    {
-        Vector3[] temp = SortByDistanceToLast(GetAllHexesPositions());
-        //foreach (var item in temp)
-        //{
-        //    Debug.Log(item);
-        //}
-        StartCoroutine(SpawnBlocks(temp));
-    }
 
-    Vector3[] SortPoitionArray(Vector3[] sorte)
-    {
-        Vector3[] returnValue = new Vector3[sorte.Length];
-        List<Vector3> returnValuesList = sorte.ToList();
-        List<Vector3> sortList = sorte.ToList();
-
-        //int index = sorte.Length;
-        //Debug.Log(index);
+    //Vector3[] SortAllPositionFromFarToClose()
+    //{
+    //    Vector3 startPos = startPosition.position;
+    //    Vector3[] positions = GetAllHexesPositions();
+    //    List<Vector3> positionCopy = GetAllHexesPositions().ToList();
+    //    Vector3[] sortedArray = new Vector3[positions.Length];
 
 
-        int indexRemove = 0;
-        Debug.Log("before for");
+    //    for (int i = 0; i < positions.Length; i++)
+    //    {
+    //        for (int j = 0; j < positionCopy.Count; j++)
+    //        {
+    //            if (MathF.Abs(Vector3.Distance(startPos, positions[i])) > MathF.Abs(Vector3.Distance(startPos, positionCopy[j])))
+    //            {
+    //                Vector3 temp = positions[i];
 
-        Vector3 startingPosition = startingSpot.transform.position;
-        Vector3 startingPositionHolder = Vector3.zero;
-        //Vector3[] sort = new Vector3[sorte.Length];
-        for (int i = 0; i < sorte.Length; i++)
-        {
-            Debug.Log("first for");
-            for (int j = 0; j > sorte.Length; j++)
-            {
-                Debug.Log("second for");
-                //Debug.Log(j);
-                if (Vector3.Distance(startingPosition, sortList[i]) > Vector3.Distance(startingPosition, returnValuesList[j]))
-                {
-                    Debug.Log("in if");
-                    //Vector3 temp = sorte[i];
-                    //sorte[i] = sorte[j];
-                    //sorte[j] = temp;
-                    //i = -1;
-                    //startingPosition = returnValuesList[j];
-                    Debug.Log(startingPosition);
-                    indexRemove = j;
-                    startingPositionHolder = returnValuesList[j];
+    //                positions[i] = positionCopy[j];
 
-                }
+    //                positions[j] = temp;
 
-            }
-            //index--; 
-            startingPosition = startingPositionHolder;
-            returnValue[i] = startingPositionHolder;
+    //                //positions[i] = positionCopy[j];
+    //                j = 0;
+    //            }
+    //            else if(MathF.Abs(Vector3.Distance(startPos, positions[i])) <= MathF.Abs(Vector3.Distance(startPos, positionCopy[j])))
+    //            {
+    //                continue;
+    //            }
+    //        }
+    //        sortedArray[i] = positions[i];
+    //        //positionCopy.Remove(sortedArray[i]);
+    //        int index = positionCopy.IndexOf(sortedArray[i]);
+    //        positionCopy[index] = Vector3.positiveInfinity;
 
-            returnValuesList.RemoveAt(indexRemove);
-            sortList.RemoveAt(i);
+    //        startPos = sortedArray[i];
+    //        Debug.Log(i);
+    //    }
 
-        }
-        Debug.Log("Lenght " + returnValue.Length);
-        return sortList.ToArray();
-    }
+    //    return sortedArray;
+    //}
 
     Vector3[] GetAllHexesPositions()
     {
@@ -93,54 +86,51 @@ public class SortingArray : MonoBehaviour
         return positions;
     }
 
-    Vector3[] SortByDistanceToLast(Vector3[] sort)
+    IEnumerator SpawnPoints(GameObject prefab, Vector3[] positions)
     {
-        sort = GetAllHexesPositions();
-        Vector3 startPos = startingSpot.transform.position;
-        Vector3 startPosHolder = Vector3.zero;
-
-        List<Vector3> sortList = sort.ToList();
-        List<Vector3> sortListTow = sort.ToList();
-        List<Vector3> sortedList = new List<Vector3>();
-        Vector3 biggest = Vector3.zero;
-
-        for (int i = 0; i < sort.Length; i++)
+        foreach (Vector3 item in positions)
         {
-            for (int j = 0; j < sort.Length; j++)
+            Instantiate(prefab, item, Quaternion.identity);
+            yield return new WaitForSeconds(0.3f);
+        }
+    }
+
+    Vector3[] SortAllPositionFromFarToClose()
+    {
+        Vector3 startPos = startPosition.position;
+        Vector3[] positions = GetAllHexesPositions();
+        //List<Vector3> positionCopy = GetAllHexesPositions().ToList();
+        Vector3[] sortedArray = new Vector3[positions.Length];
+
+
+        for (int i = 0; i < positions.Length; i++)
+        {
+            for (int j = 0; j < positions.Length; j++)
             {
-                if (MathF.Abs(Vector3.Distance(startPos, sortList[i])) > MathF.Abs(Vector3.Distance(startPos, sortListTow[j])))
+                if (MathF.Abs(Vector3.Distance(startPos, positions[i])) > MathF.Abs(Vector3.Distance(startPos, positions[j])))
                 {
-                    if (sortedList.Contains(sortListTow[j]))
+                    if (sortedArray.Contains(positions[j]))
                     {
                         continue;
                     }
-                    if (Vector3.Distance(startPos, sortedList[i]) < Vector3.Distance(startPos, sortListTow[j]))
-                    {
-                        Debug.Log("FUCK ME");
-                    }
-                    startPosHolder = sort[j];
-                    sortedList.Add(sort[j]);
-
-                    Debug.Log(sortedList[0]);
-
-
-
-                    //removeIndex = j;
+                    Vector3 temp = positions[i];
+                    positions[i] = positions[j];
+                    positions[j] = temp;
+                    j = 0;
+                }
+                else if (MathF.Abs(Vector3.Distance(startPos, positions[i])) <= MathF.Abs(Vector3.Distance(startPos, positions[j])))
+                {
+                    continue;
                 }
             }
-            startPos = startPosHolder;
-            //sortedList.Add(startPosHolder);
-            //sortListTow.RemoveAt(removeIndex);
-            //returnValue.Add(startPos);
+            sortedArray[i] = positions[i];
+            //int index = positionCopy.IndexOf(sortedArray[i]);
+            //positionCopy[index] = Vector3.positiveInfinity;
+
+            startPos = sortedArray[i];
+            Debug.Log(i);
         }
-        return sortedList.ToArray();
-    }
-    IEnumerator SpawnBlocks(Vector3[] temp)
-    {
-        foreach (Vector3 item in temp)
-        {
-            Instantiate(GameObject.CreatePrimitive(PrimitiveType.Capsule), item, Quaternion.identity);
-            yield return new WaitForSeconds(2);
-        }
+
+        return sortedArray;
     }
 }
