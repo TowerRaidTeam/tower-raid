@@ -6,6 +6,7 @@ using System.Linq;
 [RequireComponent(typeof(SortingArray))]
 public class WorldGeneration : MonoBehaviour
 {
+    GameManager gameManager;
     SortingArray sortingArray;
     [SerializeField] GameObject[] hexPrefabs;
     [SerializeField] LayerMask layerMask;
@@ -16,13 +17,24 @@ public class WorldGeneration : MonoBehaviour
     private int rotation;
     private Transform[] spawnBlocks;
 
+    public static Vector3[] path;
     private void Start()
     {
         sortingArray = FindObjectOfType<SortingArray>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            gameManager.StartSpawningEnemys();
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            gameManager.StartSpawningEnemys();
+        }
+
         //Debug.Log(GameManager.isExtendable);
         if (Input.GetKeyDown(KeyCode.B))
         {
@@ -51,7 +63,8 @@ public class WorldGeneration : MonoBehaviour
                 Destroy(HexBuildTriggerCheck.thisObject);
                 chunsIsSpawnd = false;
                 GameManager.isExtendable = false;
-                sortingArray.SpawnPreview();
+                //sortingArray.SpawnPreview();
+                path = sortingArray.GenerateNewPath().ToArray();
             }
 
             if (Input.GetKeyDown(KeyCode.R))

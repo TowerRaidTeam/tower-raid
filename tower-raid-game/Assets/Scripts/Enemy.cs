@@ -2,9 +2,12 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Enemy : MonoBehaviour
 {
+    WorldGeneration worldGeneration;
+    SortingArray sortingArray;
     [SerializeField] private float enemyHp = 100f;
     [SerializeField] private float enemySpeed = 30f;
     [SerializeField] private List<Vector3> pathVectorList = new List<Vector3>();
@@ -23,13 +26,18 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        movePoints = GameObject.FindGameObjectsWithTag("Point");
-        //Debug.Log(movePoints);
+        worldGeneration = FindObjectOfType<WorldGeneration>();
+        sortingArray = FindObjectOfType<SortingArray>();
+        //movePoints = GameObject.FindGameObjectsWithTag("Point");
+        ////Debug.Log(movePoints);
 
-        foreach (GameObject point in movePoints)
-        {
-            pathVectorList.Add(point.transform.position);
-        }
+        //foreach (GameObject point in movePoints)
+        //{
+        //    pathVectorList.Add(point.transform.position);
+        //}
+        pathVectorList = WorldGeneration.path.ToList();
+        
+        curretnPathIndex = WorldGeneration.path.Length - 1;
     }
 
     private void Update()
@@ -94,7 +102,7 @@ public class Enemy : MonoBehaviour
         if (pathVectorList != null)
         {
             Vector3 targetPosition = pathVectorList[curretnPathIndex];
-            if (Vector3.Distance(transform.position, targetPosition) > 1f)
+            if (Vector3.Distance(transform.position, targetPosition) > 0.25f)
             {
                 Vector3 moveDir = (targetPosition - transform.position).normalized;
 
@@ -106,8 +114,8 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                curretnPathIndex++;
-                if (curretnPathIndex >= pathVectorList.Count)
+                curretnPathIndex--;
+                if (curretnPathIndex == 0)
                 {
                     StopMoving();
                 }

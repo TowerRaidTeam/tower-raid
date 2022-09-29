@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    SortingArray sortingArray;
     [SerializeField] private GameObject enemyWizard;
-    [SerializeField] private Transform enemySpawnPosition;
+    [SerializeField] private Vector3 enemySpawnPosition;
 
     public static bool isExtendable = false;
+    public static bool spawnEnemies = false;
 
     private void Start()
     {
-        StartCoroutine(SpawnEnemy());
+        //sortingArray = FindObjectOfType<SortingArray>();
+        //Vector3[] path = sortingArray.GenerateNewPath().ToArray();
+        //enemySpawnPosition = path[path.Length];
+        //StartCoroutine(SpawnEnemy());
     }
 
     public static bool  GetTurretHitInfo()
@@ -56,11 +61,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void StartSpawningEnemys()
+    {
+        enemySpawnPosition = WorldGeneration.path[WorldGeneration.path.Length - 1] + Vector3.up;
+        StartCoroutine(SpawnEnemy());
+    }
+
+    public void StopSpawningEnemys()
+    {
+        StopCoroutine(SpawnEnemy());
+    }
+
     IEnumerator SpawnEnemy()
     {
         while (true)
         {
-            Instantiate(enemyWizard, enemySpawnPosition.position, Quaternion.identity);
+            Instantiate(enemyWizard, enemySpawnPosition, Quaternion.identity);
             yield return new WaitForSeconds(1);
         }
         
