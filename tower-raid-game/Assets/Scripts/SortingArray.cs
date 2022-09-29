@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System;
 using System.Linq;
@@ -11,27 +12,12 @@ public class SortingArray : MonoBehaviour
 
     private void Start()
     {
-        //Debug.Log("Amount of hexes: " + GetAllHexesPositions().Length);
-        //Vector3[] loler = SortAllPositionFromFarToClose();
-        
-        //foreach (var item in SortAllPositionFromFarToClose())
-        //{
-        //    Debug.Log("SORTED ARRAY TEXT: " + item);
-        //}
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
+        Debug.Log("Amount of hexes: " + GetAllHexesPositions().Length);
+        Vector3[] loler = SortAllPositionFromFarToClose();
+        StartCoroutine(SpawnPoints(prefab, loler));
+        foreach (var item in SortAllPositionFromFarToClose())
         {
-            //GameObject[] cubes = GameObject.FindGameObjectsWithTag("spawnHexPosition");
-            //foreach (GameObject item in cubes)
-            //{
-            //    Destroy(item.gameObject);
-            //}
-
-
-            StartCoroutine(SpawnPoints(prefab, SortAllPositionFromFarToClose()));
+            Debug.Log("SORTED ARRAY TEXT: " + item);
         }
     }
 
