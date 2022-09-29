@@ -8,7 +8,7 @@ public class HexBuildTriggerCheck : MonoBehaviour
     public static Vector3 hexAdjustmentAmount;
     public static GameObject conectingRoad;
 
-    public static GameObject thisObject;
+    //public static GameObject thisObject;
 
     //private List<Transform> spawnPositionsList;
     [SerializeField] Transform[] spawnPositions;
@@ -25,6 +25,8 @@ public class HexBuildTriggerCheck : MonoBehaviour
         wg = FindObjectOfType<WorldGeneration>();
         mc = GetComponent<MeshCollider>();
     }
+
+    
     private void OnTriggerEnter(Collider other)
     {
         //if (other.gameObject.tag == "buildHex")
@@ -52,7 +54,7 @@ public class HexBuildTriggerCheck : MonoBehaviour
             thisGameObject = this.gameObject;
             //tuchingHex = other.gameObject;
             Debug.Log("Touching");
-            thisObject = this.gameObject;
+            //thisObject = this.gameObject;
             //foreach (Transform part in transform.root)
             //{
             //    if (part.gameObject.tag == "SpawnPosition")

@@ -53,31 +53,9 @@ public class WorldGeneration : MonoBehaviour
 
                 GameManager.isExtendable = false;
                 chunsIsSpawnd = false;
+                Destroy(HexBuildTriggerCheck.thisGameObject);
 
-
-                //HexBuildTriggerCheck.thisObject.GetComponent<HexBuildTriggerCheck>().DestroySpawnPositions();
-                //Destroy(HexBuildTriggerCheck.thisObject);
-                //HexBuildTriggerCheck.isTuching = false;
-                //HexBuildTriggerCheck.spawnPositionLocation = Vector3.zero;
-
-
-                //Destroy(HexBuildTriggerCheck.tuchingHexStatic);
-                //HexBuildTriggerCheck[] hexTrigger = FindObjectsOfType<HexBuildTriggerCheck>();
-                //foreach (HexBuildTriggerCheck item in hexTrigger)
-                //{
-
-                //    if (item.isTuchingForDeleat == true)
-                //    {
-                //        Destroy(item.transform.gameObject);
-
-                //    }
-                //    Destroy(item.tuchingHex);
-                //}
-                //Debug.Log(chunk.transform.root.position - HexBuildTriggerCheck.conectingRoad.transform.position);
-                //HexBuildTriggerCheck.conectingRoad.transform.position = HexBuildTriggerCheck.placmentPosition;
-
-
-                //Destroy(HexBuildTriggerCheck.thisGameObject);
+                
 
                 spawnBlocks = chunk.GetComponentsInChildren<Transform>();
                 spawnBlocks = spawnBlocks.Where(child => child.tag == "buildHex").ToArray();
@@ -97,7 +75,6 @@ public class WorldGeneration : MonoBehaviour
 
                 if (HexBuildTriggerCheck.spawnPositionLocation != Vector3.zero)
                 {
-
                     HexBuildTriggerCheck[] temp = chunk.GetComponentsInChildren<HexBuildTriggerCheck>();
                     foreach (var item in temp)
                     {
@@ -106,7 +83,9 @@ public class WorldGeneration : MonoBehaviour
                             Destroy(item.gameObject);
                         }
                     }
+                    HexBuildTriggerCheck.spawnPositionLocation = Vector3.zero;
                 }
+                HexBuildTriggerCheck.spawnPositionLocation = Vector3.zero;
             }
 
             if (Input.GetKeyDown(KeyCode.R))
