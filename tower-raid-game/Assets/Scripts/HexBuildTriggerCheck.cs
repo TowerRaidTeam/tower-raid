@@ -14,12 +14,15 @@ public class HexBuildTriggerCheck : MonoBehaviour
     [SerializeField] Transform[] spawnPositions;
     public static Vector3 spawnPositionLocation;
     public static bool isTuching = false;
+    public bool isTuchingForDeleat = false;
     public static GameObject thisGameObject;
+   
     MeshCollider mc;
+    WorldGeneration wg;
 
     private void Start()
     {
-        
+        wg = FindObjectOfType<WorldGeneration>();
         mc = GetComponent<MeshCollider>();
     }
     private void OnTriggerEnter(Collider other)
@@ -47,6 +50,7 @@ public class HexBuildTriggerCheck : MonoBehaviour
         if (other.gameObject.tag == "RoadConnect")
         {
             thisGameObject = this.gameObject;
+            //tuchingHex = other.gameObject;
             Debug.Log("Touching");
             thisObject = this.gameObject;
             //foreach (Transform part in transform.root)
@@ -58,11 +62,11 @@ public class HexBuildTriggerCheck : MonoBehaviour
             //    }
             //}
             isTuching = true;
+            isTuchingForDeleat = true;
             spawnPositionLocation = spawnPositions[Random.Range(0, spawnPositions.Length)].position;
             GameManager.isExtendable = true;
         }
-        
-        
+         
     }
 
     //private void OnTriggerStay(Collider other)
@@ -71,18 +75,27 @@ public class HexBuildTriggerCheck : MonoBehaviour
     //    {
     //        isTuching = true;
     //    }
-        
+
     //    Debug.Log(isTuching);
     //}
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "RoadConnect")
-        {
-            thisGameObject = null;
-            isTuching = false;
-            GameManager.isExtendable = false;
-        }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.tag == "RoadConnect")
+    //    {
+    //        thisGameObject = null;
+    //        isTuching = false;
+    //        isTuchingForDeleat = false;
+    //        GameManager.isExtendable = false;
+    //    }
         
+    //}
+
+    public void DestroySpawnPositions()
+    {
+        for (int i = 0; i < spawnPositions.Length; i++)
+        {
+            Destroy(spawnPositions[i]);
+        }
     }
 }
