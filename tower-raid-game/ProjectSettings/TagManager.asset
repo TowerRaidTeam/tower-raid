@@ -14,6 +14,10 @@ TagManager:
   - FireCrystal
   - Tower
   - WaterCrystal
+  - Canvas
+  - Point
+  - Castle
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -13,11 +13,13 @@ public class HexBuildTriggerCheck : MonoBehaviour
     //private List<Transform> spawnPositionsList;
     [SerializeField] Transform[] spawnPositions;
     public static Vector3 spawnPositionLocation;
+    public static bool isTuching = false;
+    public static GameObject thisGameObject;
     MeshCollider mc;
 
     private void Start()
     {
-       
+        
         mc = GetComponent<MeshCollider>();
     }
     private void OnTriggerEnter(Collider other)
@@ -44,6 +46,7 @@ public class HexBuildTriggerCheck : MonoBehaviour
 
         if (other.gameObject.tag == "RoadConnect")
         {
+            thisGameObject = this.gameObject;
             Debug.Log("Touching");
             thisObject = this.gameObject;
             //foreach (Transform part in transform.root)
@@ -54,8 +57,31 @@ public class HexBuildTriggerCheck : MonoBehaviour
             //        Debug.Log(spawnPositionsList);
             //    }
             //}
+            isTuching = true;
             spawnPositionLocation = spawnPositions[Random.Range(0, spawnPositions.Length)].position;
             GameManager.isExtendable = true;
+        }
+        
+        
+    }
+
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if (other.gameObject.tag == "RoadConnect")
+    //    {
+    //        isTuching = true;
+    //    }
+        
+    //    Debug.Log(isTuching);
+    //}
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "RoadConnect")
+        {
+            thisGameObject = null;
+            isTuching = false;
+            GameManager.isExtendable = false;
         }
         
     }

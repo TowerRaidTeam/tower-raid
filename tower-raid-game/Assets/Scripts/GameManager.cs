@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] Image healtBarImage;
     SortingArray sortingArray;
     [SerializeField] private GameObject enemyWizard;
     [SerializeField] private Vector3 enemySpawnPosition;
@@ -82,5 +84,8 @@ public class GameManager : MonoBehaviour
         
     }
 
-    
+    public void TakeDmgCastle(float dmg)
+    {
+        healtBarImage.fillAmount -= dmg;
+    }
 }

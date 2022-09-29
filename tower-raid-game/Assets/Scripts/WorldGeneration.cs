@@ -36,7 +36,7 @@ public class WorldGeneration : MonoBehaviour
         }
 
         //Debug.Log(GameManager.isExtendable);
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B) && !chunsIsSpawnd)
         {
             SpawnChunk();
            
@@ -45,12 +45,19 @@ public class WorldGeneration : MonoBehaviour
         if (chunsIsSpawnd)
         {
             chunk.transform.position = GetMousePosition();
-            if (Input.GetMouseButtonDown(0) && GameManager.isExtendable)
+            if (Input.GetMouseButtonDown(0) && GameManager.isExtendable && HexBuildTriggerCheck.isTuching)
             {
-                
+                HexBuildTriggerCheck.isTuching = false;
+                GameManager.isExtendable = false;
+                chunsIsSpawnd = false;
+                while (HexBuildTriggerCheck.isTuching == true)
+                {
+                    Destroy(HexBuildTriggerCheck.thisObject);
+                }
                 //Debug.Log(chunk.transform.root.position - HexBuildTriggerCheck.conectingRoad.transform.position);
                 //HexBuildTriggerCheck.conectingRoad.transform.position = HexBuildTriggerCheck.placmentPosition;
                 chunk.transform.position = HexBuildTriggerCheck.spawnPositionLocation;
+                Destroy(HexBuildTriggerCheck.thisGameObject);
 
                 spawnBlocks = chunk.GetComponentsInChildren<Transform>();
                 spawnBlocks = spawnBlocks.Where(child => child.tag == "buildHex").ToArray();
@@ -60,11 +67,13 @@ public class WorldGeneration : MonoBehaviour
                     Debug.Log(item.name);
                     item.gameObject.GetComponent<BoxCollider>().enabled = true;
                 }
-                Destroy(HexBuildTriggerCheck.thisObject);
-                chunsIsSpawnd = false;
-                GameManager.isExtendable = false;
+                
+               
+                
                 //sortingArray.SpawnPreview();
                 path = sortingArray.GenerateNewPath().ToArray();
+                
+                Debug.Log(HexBuildTriggerCheck.isTuching);
             }
 
             if (Input.GetKeyDown(KeyCode.R))
