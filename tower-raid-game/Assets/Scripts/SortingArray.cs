@@ -12,12 +12,20 @@ public class SortingArray : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Amount of hexes: " + GetAllHexesPositions().Length);
-        Vector3[] loler = SortAllPositionFromFarToClose();
-        StartCoroutine(SpawnPoints(prefab, loler));
-        foreach (var item in SortAllPositionFromFarToClose())
+        //Debug.Log("Amount of hexes: " + GetAllHexesPositions().Length);
+        //Vector3[] loler = SortAllPositionFromFarToClose();
+        //StartCoroutine(SpawnPoints(prefab, loler));
+        //foreach (var item in SortAllPositionFromFarToClose())
+        //{
+        //    Debug.Log("SORTED ARRAY TEXT: " + item);
+        //}
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            Debug.Log("SORTED ARRAY TEXT: " + item);
+            StartCoroutine(SpawnPoints(prefab, SortAllPositionFromFarToClose()));
         }
     }
 
