@@ -95,7 +95,7 @@ BoxCollider:
   m_GameObject: {fileID: 7499181841528831303}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPositions: []
+  isTuchingForDeleat: 0
 --- !u!54 &8507306462110034469
 Rigidbody:
   m_ObjectHideFlags: 0

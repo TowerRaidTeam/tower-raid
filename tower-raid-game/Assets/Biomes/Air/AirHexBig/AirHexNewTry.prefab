@@ -10637,7 +10637,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9233372, y: 0.71118444, z: 1.0661778}
+  m_Size: {x: 0.62, y: 0.71118444, z: 0.57}
   m_Center: {x: 0, y: 0.55592954, z: 0}
 --- !u!64 &2631675029527026075
 MeshCollider:
@@ -10751,7 +10751,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9233372, y: 0.71118444, z: 1.0661778}
+  m_Size: {x: 0.62, y: 0.71118444, z: 0.57}
   m_Center: {x: 0, y: 0.55592954, z: 0}
 --- !u!64 &5586370258406109220
 MeshCollider:
@@ -10865,7 +10865,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9233372, y: 0.71118444, z: 1.0661778}
+  m_Size: {x: 0.62, y: 0.71118444, z: 0.57}
   m_Center: {x: 0, y: 0.55592954, z: 0}
 --- !u!64 &7805740228240104786
 MeshCollider:
@@ -10979,7 +10979,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9233372, y: 0.71118444, z: 1.0661778}
+  m_Size: {x: 0.62, y: 0.71118444, z: 0.57}
   m_Center: {x: 0, y: 0.55592954, z: 0}
 --- !u!64 &3147447284534663720
 MeshCollider:
@@ -11093,7 +11093,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9233372, y: 0.71118444, z: 1.0661778}
+  m_Size: {x: 0.62, y: 0.71118444, z: 0.57}
   m_Center: {x: 0, y: 0.55592954, z: 0}
 --- !u!64 &343049008149290054
 MeshCollider:
@@ -11432,6 +11432,7 @@ MonoBehaviour:
   spawnPositions:
   - {fileID: 557899504125974800}
   - {fileID: 5320187999574820021}
+  isTuchingForDeleat: 0
 --- !u!54 &8248124838039134234
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11686,6 +11687,7 @@ MonoBehaviour:
   spawnPositions:
   - {fileID: 5320187999084990616}
   - {fileID: 5320187999144589573}
+  isTuchingForDeleat: 0
 --- !u!54 &7127699562189378331
 Rigidbody:
   m_ObjectHideFlags: 0
