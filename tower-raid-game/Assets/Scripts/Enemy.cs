@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
         Enemy closest = null;
         foreach (Enemy enemy in enemyList)
         {
-            if (enemy.IsDead()) continue;
+            if (enemy.IsDead()) { continue; } 
             if (Vector3.Distance(position, enemy.GetPosition()) <= maxRange)
             {
                 if (closest == null)

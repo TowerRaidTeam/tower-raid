@@ -16,7 +16,7 @@ public class CastleHP : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<Enemy>().Damage(10000);
             gm.TakeDmgCastle(0.05f);
         }
     }

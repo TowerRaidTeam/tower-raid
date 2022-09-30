@@ -58,18 +58,21 @@ public class Tower : MonoBehaviour
                 shootTimer = shootTimerMax;
 
                 Enemy enemy = GetClosestEnemy();
-                if (enemy != null)
+
+                if (enemy == null)
+                {
+                    particles.Stop();
+                }
+                else 
                 {
                     Projectile.Create(projectileShootFromPosition, enemy, projectileSOs[projectileIndex].projectileDmg, projectileSOs[projectileIndex].projectilePrefab);
                     lookAtEnemyForParticles.transform.LookAt(enemy.GetPosition());
 
                     particles.Play();
                     particles.transform.forward = lookAtEnemyForParticles.transform.forward;
+                    
                 }
-                else
-                {
-                    particles.Stop();
-                }
+                
             }
            
         }
@@ -98,8 +101,6 @@ public class Tower : MonoBehaviour
                 //}
                 GameObject thisObject = GameManager.GetTurretHitGameObject();
                 thisObject.GetComponent<Tower>().SpawnCrystal();
-
-
             }
             else
             {

@@ -15,10 +15,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        //sortingArray = FindObjectOfType<SortingArray>();
-        //Vector3[] path = sortingArray.GenerateNewPath().ToArray();
-        //enemySpawnPosition = path[path.Length];
-        //StartCoroutine(SpawnEnemy());
     }
 
     public static bool  GetTurretHitInfo()
@@ -88,4 +84,6 @@ public class GameManager : MonoBehaviour
     {
         healtBarImage.fillAmount -= dmg;
     }
+
+
 }
