@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    
     [SerializeField] Image healtBarImage;
     SortingArray sortingArray;
     [SerializeField] private GameObject enemyWizard;
@@ -12,9 +13,11 @@ public class GameManager : MonoBehaviour
 
     public static bool isExtendable = false;
     public static bool spawnEnemies = false;
+    
 
     private void Start()
     {
+        sortingArray = FindObjectOfType<SortingArray>();
     }
 
     public static bool  GetTurretHitInfo()
@@ -61,6 +64,7 @@ public class GameManager : MonoBehaviour
 
     public void StartSpawningEnemys()
     {
+        WorldGeneration.path = sortingArray.GenerateNewPath().ToArray();
         enemySpawnPosition = WorldGeneration.path[WorldGeneration.path.Length - 1] + Vector3.up;
         StartCoroutine(SpawnEnemy());
     }

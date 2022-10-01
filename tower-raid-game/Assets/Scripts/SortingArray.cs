@@ -119,7 +119,7 @@ public class SortingArray : MonoBehaviour
             //positionCopy[index] = Vector3.positiveInfinity;
 
             startPos = sortedArray[i];
-            Debug.Log(i);
+            //Debug.Log(i);
         }
         //Ads height for enemy path
         for (int i = 0; i < sortedArray.Length; i++)

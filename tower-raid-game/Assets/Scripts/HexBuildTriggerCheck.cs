@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class HexBuildTriggerCheck : MonoBehaviour
 {
-    public static Vector3 placmentPosition;
-    public static Vector3 hexAdjustmentAmount;
+    //public static Vector3 placmentPosition;
+    //public static Vector3 hexAdjustmentAmount;
     public static GameObject conectingRoad;
 
     //public static GameObject thisObject;
@@ -13,9 +13,13 @@ public class HexBuildTriggerCheck : MonoBehaviour
     //private List<Transform> spawnPositionsList;
     [SerializeField] Transform[] spawnPositions;
     public static Vector3 spawnPositionLocation;
+    //public Vector3 spawnPositionLocation;
+    //public static bool isTuching = false;
     public static bool isTuching = false;
-    public bool isTuchingForDeleat = false;
-    public static GameObject thisGameObject;
+    public bool isTuchingLocal = false;
+    [SerializeField] bool check = false;
+    //public bool isTuchingForDeleat = false;
+    //public static GameObject thisGameObject;
    
     MeshCollider mc;
     WorldGeneration wg;
@@ -26,72 +30,76 @@ public class HexBuildTriggerCheck : MonoBehaviour
         mc = GetComponent<MeshCollider>();
     }
 
-    
-    private void OnTriggerEnter(Collider other)
+    public void HasBeenPlaces()
     {
-        //if (other.gameObject.tag == "buildHex")
-        //{
-        //    Debug.Log("Can build");
-        //}
-
-
-        //if (other.gameObject.tag == "RoadConnect")
-        //{
-        //    Debug.Log(mc.bounds.max);
-        //    Debug.Log("Position: " + transform.position +" isExoandable: " + isExpandable);
-        //    isExpandable = true;
-
-        //    conectingRoad = other.gameObject;
-        //    placmentPosition = transform.position;
-        //    hexAdjustmentAmount = placmentPosition - transform.root.position  /*- new Vector3(mc.bounds.extents.x, 0f, mc.bounds.extents.z)*/ /*- new Vector3(mc.bounds.extents.x, 0f, mc.bounds.extents.z)*/;
-
-        //    //Debug.Log("Placment position: " + placmentPosition);
-        //    //Debug.Log(Vector3.Distance(transform.position, other.gameObject.transform.position));
-        //}
-
-        if (other.gameObject.tag == "RoadConnect")
-        {
-            thisGameObject = this.gameObject;
-            //tuchingHex = other.gameObject;
-            Debug.Log("Touching");
-            //thisObject = this.gameObject;
-            //foreach (Transform part in transform.root)
-            //{
-            //    if (part.gameObject.tag == "SpawnPosition")
-            //    {
-            //        spawnPositionsList.Add(part);
-            //        Debug.Log(spawnPositionsList);
-            //    }
-            //}
-            isTuching = true;
-            isTuchingForDeleat = true;
-            spawnPositionLocation = spawnPositions[Random.Range(0, spawnPositions.Length)].position;
-            GameManager.isExtendable = true;
-        }
-         
+        check = true;
     }
 
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    if (other.gameObject.tag == "RoadConnect")
-    //    {
-    //        isTuching = true;
-    //    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "RoadConnect")
+        {
+            
+            
+            isTuching = true;
+            
+            //isTuchingForDeleat = true;
+            GameManager.isExtendable = true;
+            spawnPositionLocation = spawnPositions[Random.Range(0, spawnPositions.Length)].position;
+            Debug.Log("Touching " + isTuching);
+        }
 
-    //    Debug.Log(isTuching);
-    //}
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.gameObject.tag == "RoadConnect")
-    //    {
-    //        thisGameObject = null;
-    //        isTuching = false;
-    //        isTuchingForDeleat = false;
-    //        GameManager.isExtendable = false;
-    //    }
         
-    //}
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        //if (check)
+        //{
+        //    if (other.gameObject.tag == "Road")
+        //    {
+        //        Debug.Log("Needs to Be Deleated");
+        //        isPlacedAndTouchingRoadOrBuildable = true;
+
+        //    }
+        //    if (other.gameObject.tag == "buildable")
+        //    {
+        //        Debug.Log("Needs to Be Deleated");
+        //        isPlacedAndTouchingRoadOrBuildable = true;
+        //    }
+        //}
+
+        //if (isPlacedAndTouchingRoadOrBuildable)
+        //{
+        //    spawnPositionLocation = Vector3.zero;
+        //    Destroy(this.gameObject);
+        //}
+        //if (this.gameObject != null)
+        //{
+        //    check = false;
+        //}
+        if (other.gameObject.tag == "RoadConnect")
+        {
+
+            isTuchingLocal = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "RoadConnect")
+        {
+            
+            
+            isTuching = false;
+            isTuchingLocal = false;
+            GameManager.isExtendable = false;
+            //isTuchingForDeleat = true;
+            Debug.Log("Left " + isTuching);
+
+
+        }
+    }
 
     public void DestroySpawnPositions()
     {
@@ -99,5 +107,10 @@ public class HexBuildTriggerCheck : MonoBehaviour
         {
             Destroy(spawnPositions[i]);
         }
+    }
+
+    public bool ReturnBool()
+    {
+        return isTuching;
     }
 }

@@ -11347,8 +11347,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6877557721512970941}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.0491, z: -0}
-  m_LocalScale: {x: 0.029282998, y: 0.0029093982, z: 0.014906991}
+  m_LocalPosition: {x: 0, y: 0.0498, z: -0}
+  m_LocalScale: {x: 0.029282998, y: 0.010780484, z: 0.016788254}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1736884757979103216}
@@ -11432,7 +11432,8 @@ MonoBehaviour:
   spawnPositions:
   - {fileID: 557899504125974800}
   - {fileID: 5320187999574820021}
-  isTuchingForDeleat: 0
+  isPlacedAndTouchingRoadOrBuildable: 0
+  check: 0
 --- !u!54 &8248124838039134234
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11602,8 +11603,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7843737725713445027}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.0497, z: 0}
-  m_LocalScale: {x: 0.029282998, y: 0.0029093982, z: 0.015538991}
+  m_LocalPosition: {x: 0, y: -0.0497, z: 0.00000000318}
+  m_LocalScale: {x: 0.029282998, y: 0.010780484, z: 0.016788254}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1736884757979103216}
@@ -11687,7 +11688,8 @@ MonoBehaviour:
   spawnPositions:
   - {fileID: 5320187999084990616}
   - {fileID: 5320187999144589573}
-  isTuchingForDeleat: 0
+  isPlacedAndTouchingRoadOrBuildable: 0
+  check: 0
 --- !u!54 &7127699562189378331
 Rigidbody:
   m_ObjectHideFlags: 0

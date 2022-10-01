@@ -353,7 +353,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69983620}
-  m_LocalRotation: {x: 0.44074804, y: -0.000000015444979, z: 0.000000007583679, w: 0.8976309}
+  m_LocalRotation: {x: 0.44074804, y: -0.00000001544498, z: 0.000000007583679, w: 0.8976309}
   m_LocalPosition: {x: 0, y: 12.94, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1317,7 +1317,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1873,7 +1873,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &295664838
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3385,7 +3385,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471371717}
-  m_LocalRotation: {x: 0.44074804, y: -0.000000015444979, z: 0.000000007583679, w: 0.8976309}
+  m_LocalRotation: {x: 0.44074804, y: -0.00000001544498, z: 0.000000007583679, w: 0.8976309}
   m_LocalPosition: {x: 0, y: 12.94, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5711,7 +5711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &831259954
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8685,7 +8685,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9001,21 +9001,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hexPrefabs:
   - {fileID: 4605541896748636138, guid: e2ccb8cb3921ec04da1fb70fa4a92b86, type: 3}
-  - {fileID: 7776038073197607736, guid: 5161e3f072a052640aec7b523ded22d8, type: 3}
-  - {fileID: 7734243521154417482, guid: 0c5e498c0afac7c4fa2d63b87b7fd5d2, type: 3}
-  - {fileID: 1389173102030445635, guid: 13f1962eadb1f774fbf98d9468fd6064, type: 3}
-  - {fileID: 6723700281377990933, guid: fa728e0a2b62a73458e8e8c184d51dc5, type: 3}
-  - {fileID: 4178960889361547891, guid: 1412ed6fa2b4de740bcdc1f5e97b8696, type: 3}
-  - {fileID: 8903700442131781437, guid: e07fc0a7f8585c94987fe923c97275c5, type: 3}
-  - {fileID: 5965355428144668092, guid: 0ed071671fd3a794292ef146ab4ab326, type: 3}
-  - {fileID: 1143619474285920385, guid: 48c90f585d8be8c44b5d03d5f634fa77, type: 3}
-  - {fileID: 1109272416994367271, guid: 4bdd802f8467f5c4aa6d88bac650aa36, type: 3}
-  - {fileID: 7123548761712344694, guid: f628e3b01305783429b01e43097b02d7, type: 3}
-  - {fileID: 2226500368974235429, guid: 68bbaa71693ea384397bc80db627fac8, type: 3}
   - {fileID: 5598547443893747036, guid: 98fc69f4846f487428320fb31792b4c2, type: 3}
+  - {fileID: 6723700281377990933, guid: fa728e0a2b62a73458e8e8c184d51dc5, type: 3}
+  - {fileID: 1143619474285920385, guid: 48c90f585d8be8c44b5d03d5f634fa77, type: 3}
+  - {fileID: 7776038073197607736, guid: 5161e3f072a052640aec7b523ded22d8, type: 3}
   - {fileID: 393039951965888713, guid: bd6ee90e408ec294b848d6cfe54f4d27, type: 3}
+  - {fileID: 4178960889361547891, guid: 1412ed6fa2b4de740bcdc1f5e97b8696, type: 3}
+  - {fileID: 1109272416994367271, guid: 4bdd802f8467f5c4aa6d88bac650aa36, type: 3}
+  - {fileID: 7734243521154417482, guid: 0c5e498c0afac7c4fa2d63b87b7fd5d2, type: 3}
   - {fileID: 5144439955674100329, guid: f7202a318aafa1146b432c0f45aee09e, type: 3}
+  - {fileID: 8903700442131781437, guid: e07fc0a7f8585c94987fe923c97275c5, type: 3}
+  - {fileID: 7123548761712344694, guid: f628e3b01305783429b01e43097b02d7, type: 3}
+  - {fileID: 1389173102030445635, guid: 13f1962eadb1f774fbf98d9468fd6064, type: 3}
   - {fileID: 7449799019347663307, guid: bc0379e87f21d0442b8f00fdbc6b6d20, type: 3}
+  - {fileID: 5965355428144668092, guid: 0ed071671fd3a794292ef146ab4ab326, type: 3}
+  - {fileID: 2226500368974235429, guid: 68bbaa71693ea384397bc80db627fac8, type: 3}
   layerMask:
     serializedVersion: 2
     m_Bits: 16384

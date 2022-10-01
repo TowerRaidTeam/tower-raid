@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7499181841528831303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -4.618}
-  m_LocalScale: {x: 2.9283, y: 0.29094, z: 1}
+  m_LocalScale: {x: 2.9283, y: 1.5501574, z: 1.3389}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -112,7 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPositions: []
-  isTuchingForDeleat: 0
+  isPlacedAndTouchingRoadOrBuildable: 0
+  check: 0
 --- !u!54 &8507306462110034469
 Rigidbody:
   m_ObjectHideFlags: 0
