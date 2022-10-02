@@ -2,21 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] GameObject loseScreen;
+    [SerializeField] GameObject winScreen;
+
     [SerializeField] Button spawnEnemysButtons;
+    [SerializeField] TMP_Text waveText;
+
     [SerializeField] Image healtBarImage;
+    float hp = 100;
     SortingArray sortingArray;
     [SerializeField] private GameObject enemyWizard;
     [SerializeField] private Vector3 enemySpawnPosition;
 
     public static bool isExtendable = false;
     public static bool spawnEnemies = false;
-    
+
+    int waveIndex = 0; 
 
     private void Start()
     {
+        UpdateWaveCounter(0);
         sortingArray = FindObjectOfType<SortingArray>();
     }
 
@@ -66,6 +75,7 @@ public class GameManager : MonoBehaviour
     {
         WorldGeneration.path = sortingArray.GenerateNewPath().ToArray();
         enemySpawnPosition = WorldGeneration.path[WorldGeneration.path.Length - 1] + Vector3.up;
+        UpdateWaveCounter(1);
         StartCoroutine(SpawnEnemy());
     }
 
@@ -89,8 +99,27 @@ public class GameManager : MonoBehaviour
 
     public void TakeDmgCastle(float dmg)
     {
+        hp -= dmg * 100;
         healtBarImage.fillAmount -= dmg;
+
+        if (hp <= 0)
+        {
+            loseScreen.SetActive(true);
+        }
     }
 
+    void UpdateWaveCounter(int index)
+    {
+        waveIndex += index;
+        if (waveIndex > 10)
+        {
+            Debug.Log("YOU WIN");
+        }
+        else
+        {
+            waveText.text ="WAWE" + "\n" + waveIndex + "/10";
+        }
+       
+    }
 
 }

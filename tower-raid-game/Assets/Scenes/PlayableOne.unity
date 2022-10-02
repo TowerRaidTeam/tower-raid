@@ -353,7 +353,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69983620}
-  m_LocalRotation: {x: 0.44074804, y: -0.00000001544498, z: 0.000000007583679, w: 0.8976309}
+  m_LocalRotation: {x: 0.44074804, y: 0.000000015444979, z: -0.000000007583678, w: 0.8976309}
   m_LocalPosition: {x: 0, y: 12.94, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2316,7 +2316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &337528361
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3385,7 +3385,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471371717}
-  m_LocalRotation: {x: 0.44074804, y: -0.00000001544498, z: 0.000000007583679, w: 0.8976309}
+  m_LocalRotation: {x: 0.44074804, y: 0.000000015444979, z: -0.000000007583678, w: 0.8976309}
   m_LocalPosition: {x: 0, y: 12.94, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9047,7 +9047,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fb7449fee2e3e4da0a91fc419a3736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loseScreen: {fileID: 1839092160}
+  winScreen: {fileID: 1762220528}
   spawnEnemysButtons: {fileID: 2137818046}
+  waveText: {fileID: 1679765066}
   healtBarImage: {fileID: 1706863576}
   enemyWizard: {fileID: 1455721858916177157, guid: e1718a2a64e576d41bfadbe05c70ecfd,
     type: 3}
