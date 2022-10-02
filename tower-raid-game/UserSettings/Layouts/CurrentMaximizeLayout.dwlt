@@ -227,9 +227,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 8cbd0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 7e3bfcffe25bfcff965ffcff7e60fcffb064fcffca07ffff3818ffffce28ffffb2b4ffff6ac6ffff12fbffff14fbfffff46900006c6e0000
+      m_ExpandedIDs: 14fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -507,9 +507,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 25.336016, y: 11.880847, z: 50.960636}
+    m_Target: {x: -2.5749886, y: 4.8722405, z: -19.300268}
     speed: 2
-    m_Value: {x: 25.336016, y: 11.880847, z: 50.960636}
+    m_Value: {x: -2.5749886, y: 4.8722405, z: -19.300268}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -556,9 +556,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.13982324, y: 0.81771326, z: -0.22112432, w: 0.51348835}
+    m_Target: {x: 0.4152007, y: -0.3395111, z: 0.17196417, w: 0.82677436}
     speed: 2
-    m_Value: {x: 0.13976933, y: 0.81739795, z: -0.22103906, w: 0.51329035}
+    m_Value: {x: 0.41503745, y: -0.33937758, z: 0.17189655, w: 0.8264492}
   m_Size:
     m_Target: 1.2247449
     speed: 2
@@ -750,7 +750,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 135
+  controlID: 47
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -820,22 +820,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Abel\Documents\TowerRaidProject\tower-raid\tower-raid-game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 391}
-    m_SelectedIDs: 7e7a0000
-    m_LastClickedID: 31358
-    m_ExpandedIDs: 000000001e7a0000207a0000227a0000247a0000267a0000287a00002a7a00002c7a0000
+    scrollPos: {x: 0, y: 31}
+    m_SelectedIDs: 0cbd0000
+    m_LastClickedID: 48396
+    m_ExpandedIDs: 000000000cbd00000ebd000010bd000012bd000014bd000016bd000018bd00001abd0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -863,7 +863,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001e7a0000207a0000227a0000247a0000267a0000287a00002a7a00002c7a0000
+    m_ExpandedIDs: 000000000cbd00000ebd000010bd000012bd000014bd000016bd000018bd00001abd0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -888,9 +888,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 8cbd0000
+    m_LastClickedInstanceID: 48524
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -915,7 +915,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 389.80002}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 234
@@ -950,7 +950,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 28166
+  m_LastSelectedObjectID: -1352
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -970,8 +970,8 @@ MonoBehaviour:
     y: 0
     width: 392
     height: 257.19998
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -1025,8 +1025,8 @@ MonoBehaviour:
     y: 0
     width: 320
     height: 730.8
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}

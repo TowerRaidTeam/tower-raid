@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    
+    [SerializeField] Button spawnEnemysButtons;
     [SerializeField] Image healtBarImage;
     SortingArray sortingArray;
     [SerializeField] private GameObject enemyWizard;
@@ -76,12 +76,15 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SpawnEnemy()
     {
-        while (true)
+        spawnEnemysButtons.interactable = false;
+        spawnEnemies = true;
+        for (int i = 0; i < 10; i++)
         {
             Instantiate(enemyWizard, enemySpawnPosition, Quaternion.identity);
             yield return new WaitForSeconds(1);
         }
-        
+        spawnEnemies = false;
+        spawnEnemysButtons.interactable = true;
     }
 
     public void TakeDmgCastle(float dmg)

@@ -83,6 +83,7 @@ public class Tower : MonoBehaviour
             //DragDrop.crystalInHand != null && 
             if (DragDrop.crystalInHand != null && GameManager.GetTurretHitInfo())
             {
+                #region garbage
                 //Instantiate(crystalPrefabs[1], crystalSpawnArea.transform.position, Quaternion.identity);
                 //Destroy(DragDrop.crystalInHand);
                 //projectileShootFromPosition = crystalSpawnArea.transform.position;
@@ -99,6 +100,7 @@ public class Tower : MonoBehaviour
                 //        break;
                 //    }
                 //}
+                #endregion
                 GameObject thisObject = GameManager.GetTurretHitGameObject();
                 thisObject.GetComponent<Tower>().SpawnCrystal();
             }
@@ -125,7 +127,7 @@ public class Tower : MonoBehaviour
         
         foreach (GameObject crystal in crystalPrefabs)
         {
-            if (DragDrop.crystalInHand.tag == crystal.tag)
+            if (DragDrop.crystalInHand.tag == crystal.tag && !hasCrystal)
             {
                 //Gets the current position in the array and uses that to get the criptable object it needs to
                 int index = Array.IndexOf(crystalPrefabs, crystal);
@@ -145,4 +147,6 @@ public class Tower : MonoBehaviour
            
         }
     }
+
+    
 }

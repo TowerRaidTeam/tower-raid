@@ -20,7 +20,9 @@ public class HexBuildTriggerCheck : MonoBehaviour
     [SerializeField] bool check = false;
     //public bool isTuchingForDeleat = false;
     //public static GameObject thisGameObject;
-   
+
+    [SerializeField] GameObject rotationCheckers;
+
     MeshCollider mc;
     WorldGeneration wg;
 
@@ -46,7 +48,7 @@ public class HexBuildTriggerCheck : MonoBehaviour
             //isTuchingForDeleat = true;
             GameManager.isExtendable = true;
             spawnPositionLocation = spawnPositions[Random.Range(0, spawnPositions.Length)].position;
-            Debug.Log("Touching " + isTuching);
+            //Debug.Log("Touching " + isTuching);
         }
 
         

@@ -12,10 +12,12 @@ public class WorldGeneration : MonoBehaviour
     [SerializeField] LayerMask layerMask;
 
     private GameObject chunk;
+    
     private bool chunsIsSpawnd = false;
 
     private int rotation;
     private Transform[] spawnBlocks;
+
 
     public static Vector3[] path;
     private void Start()
@@ -25,6 +27,7 @@ public class WorldGeneration : MonoBehaviour
     }
 
     bool isTuchingPrivate;
+    bool isAlignedCorrectlyToPlace = false;
 
     //private void Update()
     //{
@@ -125,19 +128,22 @@ public class WorldGeneration : MonoBehaviour
             SpawnChunk();
 
         }
-
+        
         //CHECKS IF A NEW CHUNK HAS BEN SPAWNED AND LETSE ME PLACE IT
         if (chunsIsSpawnd)
         {
             //moves the cgunk to the mouse position
             chunk.transform.position = GetMousePosition();
-
-            if (/*Input.GetMouseButtonDown(0) &&*/ GameManager.isExtendable && HexBuildTriggerCheck.spawnPositionLocation != Vector3.zero/*&& HexBuildTriggerCheck.isTuching && HexBuildTriggerCheck.spawnPositionLocation != Vector3.zero*/)
+            
+            
+            if ( GameManager.isExtendable && HexBuildTriggerCheck.spawnPositionLocation != Vector3.zero)
             {
-                //Debug.Log("here");
+                
                 spawnBlocks = chunk.GetComponentsInChildren<Transform>();
                 spawnBlocks = spawnBlocks.Where(child => child.tag == "buildHex").ToArray();
-                Debug.Log(HexBuildTriggerCheck.isTuching);
+
+                
+
 
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -157,9 +163,26 @@ public class WorldGeneration : MonoBehaviour
                         chunsIsSpawnd = false;
                     }
 
-                    
+
+                    //foreach (Transform item in spawnBlocks)
+                    //{
+                    //    item.gameObject.GetComponent<Collider>().enabled = true;
+                    //}
+                    //Debug.Log("HEREEEEE");
+                    //if (HexBuildTriggerCheck.isTuching)
+                    //{
+                    //    Debug.Log("AAAAAAAAAAAAAAAA");
+                    //    Vector3 spawnPosition = HexBuildTriggerCheck.spawnPositionLocation;
+                    //    chunk.transform.position = spawnPosition;
+                    //    GameManager.isExtendable = false;
+                    //    //path = sortingArray.GenerateNewPath().ToArray();
+                    //    //sortingArray.SpawnPreview();
+                    //    chunsIsSpawnd = false;
+                    //}
+
+
                 }
-                
+                #region garbage
 
                 //foreach (Transform item in spawnBlocks)
                 //{
@@ -241,6 +264,7 @@ public class WorldGeneration : MonoBehaviour
                 //    HexBuildTriggerCheck.spawnPositionLocation = Vector3.zero;
                 //}
                 //HexBuildTriggerCheck.spawnPositionLocation = Vector3.zero;
+                #endregion
             }
 
             if (Input.GetKeyDown(KeyCode.R))
@@ -252,6 +276,28 @@ public class WorldGeneration : MonoBehaviour
 
             }
         }
+    }
+
+    private bool ReturnPrviewResoult(GameObject prefab)
+    {
+        bool returnBool = false;
+        GameObject clone = Instantiate(prefab, prefab.transform.position, prefab.transform.rotation);
+        RotationChecker[] rc = clone.GetComponentsInChildren<RotationChecker>();
+
+        foreach (RotationChecker item in rc)
+        {
+            item.gameObject.GetComponent<Collider>().enabled = true;
+        }
+        clone.transform.position = HexBuildTriggerCheck.spawnPositionLocation;
+        foreach (RotationChecker item in rc)
+        {
+            Debug.Log(item.correctAligmentOfRoads);
+        }
+
+
+
+        //Destroy(clone);
+        return returnBool;
     }
     private void SpawnChunk()
     {
@@ -266,6 +312,7 @@ public class WorldGeneration : MonoBehaviour
         HexBuildTriggerCheck.spawnPositionLocation = Vector3.zero;
         int randomPrefab = Random.Range(0, hexPrefabs.Length);
         chunk = Instantiate(hexPrefabs[randomPrefab], new Vector3(GetMousePosition().x, 0f, GetMousePosition().z), hexPrefabs[randomPrefab].transform.rotation);
+
         
         chunsIsSpawnd = true;
     }
@@ -273,6 +320,8 @@ public class WorldGeneration : MonoBehaviour
     private void UpdateRotation(int angle)
     {
         chunk.transform.rotation = Quaternion.Euler(90, 0, chunk.transform.rotation.z + angle);
+
+        
     }
 
     private Transform GetRoadExpandHex()

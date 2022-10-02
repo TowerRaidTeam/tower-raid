@@ -18,6 +18,7 @@ TagManager:
   - Point
   - Castle
   - Enemy
+  - rotationCheckers
   layers:
   - Default
   - TransparentFX
