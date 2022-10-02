@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject loseScreen;
     [SerializeField] GameObject winScreen;
+    [SerializeField] TMP_Text cashText;
+    int cash = 0;
 
     [SerializeField] Button spawnEnemysButtons;
     [SerializeField] TMP_Text waveText;
@@ -26,6 +28,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UpdateWaveCounter(0);
+        AddCash(0);
         sortingArray = FindObjectOfType<SortingArray>();
     }
 
@@ -120,6 +123,12 @@ public class GameManager : MonoBehaviour
             waveText.text ="WAWE" + "\n" + waveIndex + "/10";
         }
        
+    }
+
+    public void AddCash(int moneyAmount)
+    {
+        cash += moneyAmount;
+        cashText.text = cash + "$";
     }
 
 }

@@ -74,7 +74,6 @@ GameObject:
   - component: {fileID: 9020124853447278970}
   - component: {fileID: 9009809189536533420}
   - component: {fileID: 4789360851973544724}
-  - component: {fileID: -328555682655114868}
   - component: {fileID: -3491449654497025423}
   - component: {fileID: 3406079372964016974}
   - component: {fileID: 6867016066187854399}
@@ -173,20 +172,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 37c6a4dd99b43204b8c2911556439a19, type: 2}
   - {fileID: 11400000, guid: 6669f050716a47d45989919555de0383, type: 2}
   hasCrystal: 0
---- !u!64 &-328555682655114868
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9033188170770885058}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 8e2a23ab44bdd874ab659cd16dc31e1b, type: 3}
 --- !u!114 &-3491449654497025423
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
 {
     WorldGeneration worldGeneration;
     SortingArray sortingArray;
+    GameManager gameManager;
     [SerializeField] private float enemyHp = 100f;
     [SerializeField] private float enemySpeed = 30f;
     [SerializeField] private List<Vector3> pathVectorList = new List<Vector3>();
@@ -28,6 +29,7 @@ public class Enemy : MonoBehaviour
     {
         worldGeneration = FindObjectOfType<WorldGeneration>();
         sortingArray = FindObjectOfType<SortingArray>();
+        gameManager = FindObjectOfType<GameManager>();
         //movePoints = GameObject.FindGameObjectsWithTag("Point");
         ////Debug.Log(movePoints);
 
@@ -93,6 +95,7 @@ public class Enemy : MonoBehaviour
 
         if (enemyHp <= 0)
         {
+            gameManager.AddCash(10);
             Destroy(gameObject);
         }
     }
