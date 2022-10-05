@@ -168,11 +168,11 @@ public class WorldGeneration : MonoBehaviour
                             if (HexBuildTriggerCheck.isTuching)
                             {
                                 //MAYBE DELEAT THEM
-                                //foreach (RotationChecker rc in chunk.GetComponentsInChildren<RotationChecker>())
-                                //{
-                                //    Destroy(rc.gameObject);
-                                //}
-                               // Debug.Log("AAAAAAAAAAAAAAAA");
+                                foreach (RotationChecker rc in chunk.GetComponentsInChildren<RotationChecker>())
+                                {
+                                    Destroy(rc.gameObject);
+                                }
+                                // Debug.Log("AAAAAAAAAAAAAAAA");
                                 Vector3 spawnPosition = HexBuildTriggerCheck.spawnPositionLocation;
                                 chunk.transform.position = spawnPosition;
                                 GameManager.isExtendable = false;
@@ -387,16 +387,22 @@ public class WorldGeneration : MonoBehaviour
         #endregion
         for (int i = 0; i < 7; i++)
         {
+            hexCopy.transform.eulerAngles += new Vector3(0f, 0f, -60f);
             for (int j = 0; j < rotationChacker.Length; j++)
             {
                 RaycastHit hit;
-                if (Physics.Raycast(rotationChacker[j].transform.position, transform.TransformDirection(rotationChacker[j].transform.forward), out hit, 0.5f, buildRotaionLayer))
+                if (Physics.Raycast(rotationChacker[j].transform.position, transform.TransformDirection(rotationChacker[j].transform.forward), out hit, 1f, buildRotaionLayer))
                 {
                     Debug.Log(hit.transform.name);
                     if (hit.transform.tag == "RoadConnect")
                     {
                         allowedRotations.Add(hexCopy.transform.eulerAngles);
-                        Debug.Log("IT DETECTED THE POSITION");
+                        if (allowedRotations.Count > 2)
+                        {
+                            i = 0;
+                            j = 0;
+                        }
+                        Debug.Log("NAME OF THE CULPRIT: " + hit.transform.name + " NAME OF THE PARENT" + hit.transform.gameObject.GetComponentInParent<Transform>().name);
                     }
                 }
                 else
@@ -404,8 +410,10 @@ public class WorldGeneration : MonoBehaviour
                     Debug.Log("not");
                 }
             }
-            hexCopy.transform.eulerAngles += new Vector3(0f, 0f, -60f);
+            
         }
+
+        
         
         Destroy(hexCopy);
 
