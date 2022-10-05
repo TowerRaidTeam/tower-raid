@@ -372,7 +372,7 @@ public class WorldGeneration : MonoBehaviour
         RotationChecker[] rotationChacker = hexCopy.GetComponentsInChildren<RotationChecker>();
         Debug.DrawRay(rotationChacker[0].transform.position, transform.TransformDirection(rotationChacker[0].transform.forward), Color.red);
 
-
+        RaycastHit hit;
         #region garbage
         //RaycastHit hitMe;
         //if (Physics.Raycast(rotationChacker[0].transform.position, transform.TransformDirection(rotationChacker[0].transform.forward), out hitMe, 2f, buildRotaionLayer))
@@ -390,18 +390,14 @@ public class WorldGeneration : MonoBehaviour
             hexCopy.transform.eulerAngles += new Vector3(0f, 0f, -60f);
             for (int j = 0; j < rotationChacker.Length; j++)
             {
-                RaycastHit hit;
+                
                 if (Physics.Raycast(rotationChacker[j].transform.position, transform.TransformDirection(rotationChacker[j].transform.forward), out hit, 1f, buildRotaionLayer))
                 {
                     Debug.Log(hit.transform.name);
                     if (hit.transform.tag == "RoadConnect")
                     {
                         allowedRotations.Add(hexCopy.transform.eulerAngles);
-                        if (allowedRotations.Count > 2)
-                        {
-                            i = 0;
-                            j = 0;
-                        }
+                        
                         Debug.Log("NAME OF THE CULPRIT: " + hit.transform.name + " NAME OF THE PARENT" + hit.transform.gameObject.GetComponentInParent<Transform>().name);
                     }
                 }
