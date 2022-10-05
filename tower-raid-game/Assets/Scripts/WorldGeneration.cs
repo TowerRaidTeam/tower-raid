@@ -134,8 +134,8 @@ public class WorldGeneration : MonoBehaviour
         {
             //moves the cgunk to the mouse position
             chunk.transform.position = GetMousePosition();
-            
-            
+
+            ShootRayToCheck(chunk, HexBuildTriggerCheck.spawnPositionLocation);
             if ( GameManager.isExtendable && HexBuildTriggerCheck.spawnPositionLocation != Vector3.zero)
             {
                 
@@ -162,25 +162,6 @@ public class WorldGeneration : MonoBehaviour
                         //sortingArray.SpawnPreview();
                         chunsIsSpawnd = false;
                     }
-
-
-                    //foreach (Transform item in spawnBlocks)
-                    //{
-                    //    item.gameObject.GetComponent<Collider>().enabled = true;
-                    //}
-                    //Debug.Log("HEREEEEE");
-                    //if (HexBuildTriggerCheck.isTuching)
-                    //{
-                    //    Debug.Log("AAAAAAAAAAAAAAAA");
-                    //    Vector3 spawnPosition = HexBuildTriggerCheck.spawnPositionLocation;
-                    //    chunk.transform.position = spawnPosition;
-                    //    GameManager.isExtendable = false;
-                    //    //path = sortingArray.GenerateNewPath().ToArray();
-                    //    //sortingArray.SpawnPreview();
-                    //    chunsIsSpawnd = false;
-                    //}
-
-
                 }
                 #region garbage
 
@@ -355,5 +336,36 @@ public class WorldGeneration : MonoBehaviour
         {
             return Vector3.zero;
         }
+    }
+
+    private void ShootRayToCheck(GameObject hex, Vector3 spawnPosition)
+    {
+        //GameObject hexCopy = Instantiate(hex, spawnPosition, hex.transform.rotation);
+        RotationChecker[] rotationChacker = hex.GetComponentsInChildren<RotationChecker>();
+        Debug.DrawRay(rotationChacker[0].transform.position, transform.TransformDirection(rotationChacker[0].transform.forward), Color.red);
+        RaycastHit hit;
+        if (Physics.Raycast(rotationChacker[0].transform.position, transform.TransformDirection(rotationChacker[0].transform.forward), out hit, 2f))
+        {
+            Debug.Log(hit.transform.name);
+            //if (hit.transform.tag == "RoadConnect")
+            //{
+            //    Debug.Log("Touching");
+            //}
+        }
+        //for (int i = 0; i < 6; i++)
+        //{
+        //    for (int j = 0; j < rotationChacker.Length; j++)
+        //    {
+        //        RaycastHit hit;
+        //        if (Physics.Raycast(rotationChacker[j].transform.position, transform.TransformDirection(rotationChacker[j].transform.forward), out hit, 1f))
+        //        {
+        //            if (hit.transform.tag == "RoadConnect")
+        //            {
+        //                Debug.Log("Touching");
+        //            }
+        //        }
+
+        //    }
+        //}
     }
 }
