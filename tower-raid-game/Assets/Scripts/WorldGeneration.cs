@@ -10,6 +10,7 @@ public class WorldGeneration : MonoBehaviour
     SortingArray sortingArray;
     [SerializeField] GameObject[] hexPrefabs;
     [SerializeField] LayerMask layerMask;
+    [SerializeField] LayerMask buildRotaionLayer;
 
     private GameObject chunk;
     
@@ -135,7 +136,7 @@ public class WorldGeneration : MonoBehaviour
             //moves the cgunk to the mouse position
             chunk.transform.position = GetMousePosition();
 
-            ShootRayToCheck(chunk, HexBuildTriggerCheck.spawnPositionLocation);
+            
             if ( GameManager.isExtendable && HexBuildTriggerCheck.spawnPositionLocation != Vector3.zero)
             {
                 
@@ -147,21 +148,47 @@ public class WorldGeneration : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
-                    foreach (Transform item in spawnBlocks)
+                    Vector3[] pos = ShootRayToCheck(chunk, HexBuildTriggerCheck.spawnPositionLocation);
+                    foreach (var item in pos)
                     {
-                        item.gameObject.GetComponent<Collider>().enabled = true;
+                        Debug.Log(item);
                     }
-                    Debug.Log("HEREEEEE");
-                    if (HexBuildTriggerCheck.isTuching)
+
+                    //Vector3[] pos = ShootRayToCheck(chunk, HexBuildTriggerCheck.spawnPositionLocation);
+                    foreach (Vector3 item in pos)
                     {
-                        Debug.Log("AAAAAAAAAAAAAAAA");
-                        Vector3 spawnPosition = HexBuildTriggerCheck.spawnPositionLocation;
-                        chunk.transform.position = spawnPosition;
-                        GameManager.isExtendable = false;
-                        //path = sortingArray.GenerateNewPath().ToArray();
-                        //sortingArray.SpawnPreview();
-                        chunsIsSpawnd = false;
+                        if (item == chunk.transform.eulerAngles)
+                        {
+                            Debug.Log("CAN PLACE CORRECT");
+                            foreach (Transform trans in spawnBlocks)
+                            {
+                                trans.gameObject.GetComponent<Collider>().enabled = true;
+                            }
+                            //Debug.Log("HEREEEEE");
+                            if (HexBuildTriggerCheck.isTuching)
+                            {
+                                //MAYBE DELEAT THEM
+                                //foreach (RotationChecker rc in chunk.GetComponentsInChildren<RotationChecker>())
+                                //{
+                                //    Destroy(rc.gameObject);
+                                //}
+                               // Debug.Log("AAAAAAAAAAAAAAAA");
+                                Vector3 spawnPosition = HexBuildTriggerCheck.spawnPositionLocation;
+                                chunk.transform.position = spawnPosition;
+                                GameManager.isExtendable = false;
+                                //path = sortingArray.GenerateNewPath().ToArray();
+                                //sortingArray.SpawnPreview();
+                                chunsIsSpawnd = false;
+                            }
+                        }
+                        else
+                        {
+                            Debug.Log("Cant playce wrong rotation");
+                        }
                     }
+
+
+                    
                 }
                 #region garbage
 
@@ -293,7 +320,7 @@ public class WorldGeneration : MonoBehaviour
         HexBuildTriggerCheck.spawnPositionLocation = Vector3.zero;
         int randomPrefab = Random.Range(0, hexPrefabs.Length);
         chunk = Instantiate(hexPrefabs[randomPrefab], new Vector3(GetMousePosition().x, 0f, GetMousePosition().z), hexPrefabs[randomPrefab].transform.rotation);
-
+        
         
         chunsIsSpawnd = true;
     }
@@ -338,34 +365,98 @@ public class WorldGeneration : MonoBehaviour
         }
     }
 
-    private void ShootRayToCheck(GameObject hex, Vector3 spawnPosition)
+    private Vector3[] ShootRayToCheck(GameObject hex, Vector3 spawnPosition)
     {
-        //GameObject hexCopy = Instantiate(hex, spawnPosition, hex.transform.rotation);
-        RotationChecker[] rotationChacker = hex.GetComponentsInChildren<RotationChecker>();
+        List<Vector3> allowedRotations = new List<Vector3>();
+        GameObject hexCopy = Instantiate(hex, spawnPosition, hex.transform.rotation);
+        RotationChecker[] rotationChacker = hexCopy.GetComponentsInChildren<RotationChecker>();
         Debug.DrawRay(rotationChacker[0].transform.position, transform.TransformDirection(rotationChacker[0].transform.forward), Color.red);
-        RaycastHit hit;
-        if (Physics.Raycast(rotationChacker[0].transform.position, transform.TransformDirection(rotationChacker[0].transform.forward), out hit, 2f))
-        {
-            Debug.Log(hit.transform.name);
-            //if (hit.transform.tag == "RoadConnect")
-            //{
-            //    Debug.Log("Touching");
-            //}
-        }
-        //for (int i = 0; i < 6; i++)
-        //{
-        //    for (int j = 0; j < rotationChacker.Length; j++)
-        //    {
-        //        RaycastHit hit;
-        //        if (Physics.Raycast(rotationChacker[j].transform.position, transform.TransformDirection(rotationChacker[j].transform.forward), out hit, 1f))
-        //        {
-        //            if (hit.transform.tag == "RoadConnect")
-        //            {
-        //                Debug.Log("Touching");
-        //            }
-        //        }
 
-        //    }
+
+        #region garbage
+        //RaycastHit hitMe;
+        //if (Physics.Raycast(rotationChacker[0].transform.position, transform.TransformDirection(rotationChacker[0].transform.forward), out hitMe, 2f, buildRotaionLayer))
+        //{
+        //    Debug.Log(hitMe.transform.name);
+        //    //if (hit.transform.tag == "RoadConnect")
+        //    //{
+        //    //    Debug.Log("Touching");
+        //    //}
         //}
+        //WORKS
+        #endregion
+        for (int i = 0; i < 7; i++)
+        {
+            for (int j = 0; j < rotationChacker.Length; j++)
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(rotationChacker[j].transform.position, transform.TransformDirection(rotationChacker[j].transform.forward), out hit, 0.5f, buildRotaionLayer))
+                {
+                    Debug.Log(hit.transform.name);
+                    if (hit.transform.tag == "RoadConnect")
+                    {
+                        allowedRotations.Add(hexCopy.transform.eulerAngles);
+                        Debug.Log("IT DETECTED THE POSITION");
+                    }
+                }
+                else
+                {
+                    Debug.Log("not");
+                }
+            }
+            hexCopy.transform.eulerAngles += new Vector3(0f, 0f, -60f);
+        }
+        
+        Destroy(hexCopy);
+
+        return allowedRotations.ToArray();
     }
+    
+    //IEnumerator ShootRayToCheck(GameObject hex, Vector3 spawnPosition)
+    //{
+    //    List<Vector3> allowedRotations = new List<Vector3>();
+    //    GameObject hexCopy = Instantiate(hex, spawnPosition, hex.transform.rotation);
+    //    RotationChecker[] rotationChacker = hexCopy.GetComponentsInChildren<RotationChecker>();
+    //    Debug.DrawRay(rotationChacker[0].transform.position, transform.TransformDirection(rotationChacker[0].transform.forward), Color.red);
+
+    //    #region garbage
+    //    //RaycastHit hitMe;
+    //    //if (Physics.Raycast(rotationChacker[0].transform.position, transform.TransformDirection(rotationChacker[0].transform.forward), out hitMe, 2f, buildRotaionLayer))
+    //    //{
+    //    //    Debug.Log(hitMe.transform.name);
+    //    //    //if (hit.transform.tag == "RoadConnect")
+    //    //    //{
+    //    //    //    Debug.Log("Touching");
+    //    //    //}
+    //    //}
+    //    //WORKS
+    //    #endregion
+    //    for (int i = 0; i < 7; i++)
+    //    {
+    //        for (int j = 0; j < rotationChacker.Length; j++)
+    //        {
+    //            RaycastHit hit;
+    //            if (Physics.Raycast(rotationChacker[j].transform.position, transform.TransformDirection(rotationChacker[j].transform.forward), out hit, 1f, buildRotaionLayer))
+    //            {
+    //                Debug.Log(hit.transform.name);
+    //                if (hit.transform.tag == "RoadConnect")
+    //                {
+    //                    allowedRotations.Add(hexCopy.transform.eulerAngles);
+    //                    Debug.Log(hexCopy.transform.eulerAngles);
+    //                    Debug.Log("IN HERE BABAY GIRL");
+    //                }
+    //            }
+    //            else
+    //            {
+    //                Debug.Log("not");
+    //            }
+    //        }
+    //        yield return new WaitForSeconds(1);
+    //        Debug.Log("ROTATION: " + i);
+    //        hexCopy.transform.eulerAngles += new Vector3(0f, 0f, -60f);
+            
+    //    }
+    //    Destroy(hexCopy);
+    //    //return allowedRotations.ToArray();
+    //}
 }
