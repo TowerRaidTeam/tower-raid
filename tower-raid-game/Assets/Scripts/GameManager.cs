@@ -6,6 +6,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] Texture2D cursourTexture;
     [SerializeField] GameObject loseScreen;
     [SerializeField] GameObject winScreen;
     [SerializeField] TMP_Text cashText;
@@ -28,6 +29,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Cursor.SetCursor(cursourTexture, Vector2.zero, CursorMode.Auto);
+
         gameSpeedSlider.value = 1;
         Time.timeScale = gameSpeedSlider.value;
 

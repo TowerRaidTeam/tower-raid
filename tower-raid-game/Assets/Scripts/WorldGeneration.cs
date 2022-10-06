@@ -312,13 +312,12 @@ public class WorldGeneration : MonoBehaviour
             //FIX LATER HAS LITTLE STOP AT ROTATION
             if (Input.GetKeyDown(KeyCode.R))
             {
-                float[] correctRotation = { 0, -60, -120, -180, -240, -300, -360 };
+                float[] correctRotation = {  -60, -120, -180, -240, -300, -360 };
                 rotationIndex++;
-                if (rotationIndex > 6)
+                if (rotationIndex > 5)
                 {
                     rotationIndex = 0;
                     chunk.transform.rotation = Quaternion.Euler(90, 0, correctRotation[rotationIndex]);
-
                 }
                 else
                 {
@@ -353,7 +352,7 @@ public class WorldGeneration : MonoBehaviour
         //Destroy(clone);
         return returnBool;
     }
-    private void SpawnChunk()
+    public void SpawnChunk()
     {
         GameObject[] pads = GameObject.FindGameObjectsWithTag("buildHex");
         foreach (GameObject item in pads)

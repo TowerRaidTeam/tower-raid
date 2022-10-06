@@ -57,7 +57,7 @@ public class CameraSystem : MonoBehaviour
         Vector3 moveDir = transform.forward * inputDir.z + transform.right * inputDir.x; //Makes the global forwar equal to the rotation
 
         
-        transform.position += moveDir * moveSpeed * Time.deltaTime; //Move the camera
+        transform.position += moveDir * moveSpeed * Time.unscaledDeltaTime; //Move the camera
     }
 
     private void HandleCameraRotation()
@@ -68,7 +68,7 @@ public class CameraSystem : MonoBehaviour
         if (Input.GetKey(KeyCode.E)) rotateDir = -1f;
 
         float rotateSpeed = 150f; //Speed of camer rotation
-        transform.eulerAngles += new Vector3(0f, rotateDir * rotateSpeed * Time.deltaTime, 0f);
+        transform.eulerAngles += new Vector3(0f, rotateDir * rotateSpeed * Time.unscaledDeltaTime, 0f);
     }
 
     private void HandleCamerMovmetnEdgeScrolling()
@@ -87,7 +87,7 @@ public class CameraSystem : MonoBehaviour
         Vector3 moveDir = transform.forward * inputDir.z + transform.right * inputDir.x; //Makes the global forwar equal to the rotation
 
         float moveSpeed = 50; //Speed of camer movment
-        transform.position += moveDir * moveSpeed * Time.deltaTime; //Move the camera
+        transform.position += moveDir * moveSpeed * Time.unscaledDeltaTime; //Move the camera
     }
 
     private void HandleCameraMovmentDragPan()
@@ -119,7 +119,7 @@ public class CameraSystem : MonoBehaviour
         Vector3 moveDir = transform.forward * inputDir.z + transform.right * inputDir.x; //Makes the global forwar equal to the rotation
 
         float moveSpeed = 50; //Speed of camer movment
-        transform.position += moveDir * moveSpeed * Time.deltaTime; //Move the camera
+        transform.position += moveDir * moveSpeed * Time.unscaledDeltaTime; //Move the camera
     }
 
     private void HandleCamerZoom_FieldOfView()
@@ -136,7 +136,7 @@ public class CameraSystem : MonoBehaviour
         targetFieldOfView = Mathf.Clamp(targetFieldOfView, fieldOfViewMin, fieldOfViewMax);
 
         float zoomSpeed = 10f;
-        cinemachineVirtualCamera.m_Lens.FieldOfView = Mathf.Lerp(cinemachineVirtualCamera.m_Lens.FieldOfView, targetFieldOfView, Time.deltaTime * zoomSpeed);
+        cinemachineVirtualCamera.m_Lens.FieldOfView = Mathf.Lerp(cinemachineVirtualCamera.m_Lens.FieldOfView, targetFieldOfView, Time.unscaledDeltaTime * zoomSpeed);
     }
 
     private void HandleCameraZoom_MoveForward()
@@ -161,7 +161,7 @@ public class CameraSystem : MonoBehaviour
         }
 
         float zoomSpeed = 10f;
-        cinemachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset = Vector3.Lerp(cinemachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset, followOffset, Time.deltaTime * zoomSpeed);
+        cinemachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset = Vector3.Lerp(cinemachineVirtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset, followOffset, Time.unscaledDeltaTime * zoomSpeed);
          
     }
 
