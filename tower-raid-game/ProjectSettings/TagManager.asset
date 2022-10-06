@@ -19,6 +19,8 @@ TagManager:
   - Castle
   - Enemy
   - rotationCheckers
+  - EarthCrystal
+  - AirCrystal
   layers:
   - Default
   - TransparentFX

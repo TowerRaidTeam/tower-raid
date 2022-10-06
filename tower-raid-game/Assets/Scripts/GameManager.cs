@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject loseScreen;
     [SerializeField] GameObject winScreen;
     [SerializeField] TMP_Text cashText;
+    [SerializeField] Slider gameSpeedSlider;
     int cash = 0;
 
     [SerializeField] Button spawnEnemysButtons;
@@ -27,6 +28,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        gameSpeedSlider.value = 1;
+        Time.timeScale = gameSpeedSlider.value;
+
         UpdateWaveCounter(0);
         AddCash(0);
         sortingArray = FindObjectOfType<SortingArray>();
@@ -129,6 +133,11 @@ public class GameManager : MonoBehaviour
     {
         cash += moneyAmount;
         cashText.text = cash + "$";
+    }
+
+    public void UpdatedGameSpeedSlider()
+    {
+        Time.timeScale = gameSpeedSlider.value;
     }
 
 }
