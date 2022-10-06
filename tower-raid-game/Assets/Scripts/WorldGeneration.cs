@@ -29,6 +29,7 @@ public class WorldGeneration : MonoBehaviour
 
     bool isTuchingPrivate;
     bool isAlignedCorrectlyToPlace = false;
+    [SerializeField] int rotationIndex = 0;
 
     //private void Update()
     //{
@@ -148,6 +149,22 @@ public class WorldGeneration : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0))
                 {
+                    foreach (Transform item in chunk.transform)
+                    {
+                        if (item.GetComponentsInChildren<Collider>() != null)
+                        {
+                            Collider[] itemsBaby = item.GetComponentsInChildren<Collider>();
+                            foreach (var cols in itemsBaby)
+                            {
+                                cols.enabled = false;
+                            }
+                        }
+                        else
+                        {
+                            item.gameObject.GetComponent<Collider>().enabled = false;
+                        }
+                        
+                    }
                     Vector3[] pos = ShootRayToCheck(chunk, HexBuildTriggerCheck.spawnPositionLocation);
                     foreach (var item in pos)
                     {
@@ -168,6 +185,23 @@ public class WorldGeneration : MonoBehaviour
                             if (HexBuildTriggerCheck.isTuching)
                             {
                                 //MAYBE DELEAT THEM
+                                foreach (Transform itemTwo in chunk.transform)
+                                {
+                                    if (itemTwo.GetComponentsInChildren<Collider>() != null)
+                                    {
+                                        Collider[] itemsBaby = itemTwo.GetComponentsInChildren<Collider>();
+                                        foreach (var cols in itemsBaby)
+                                        {
+                                            cols.enabled = true;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        itemTwo.gameObject.GetComponent<Collider>().enabled = true;
+                                    }
+
+                                }
+
                                 foreach (RotationChecker rc in chunk.GetComponentsInChildren<RotationChecker>())
                                 {
                                     Destroy(rc.gameObject);
@@ -275,13 +309,25 @@ public class WorldGeneration : MonoBehaviour
                 #endregion
             }
 
+            //FIX LATER HAS LITTLE STOP AT ROTATION
             if (Input.GetKeyDown(KeyCode.R))
             {
-                rotation -= 60;
-                UpdateRotation(rotation);
+                float[] correctRotation = { 0, -60, -120, -180, -240, -300, -360 };
+                rotationIndex++;
+                if (rotationIndex > 6)
+                {
+                    rotationIndex = 0;
+                    chunk.transform.rotation = Quaternion.Euler(90, 0, correctRotation[rotationIndex]);
+
+                }
+                else
+                {
+                    chunk.transform.rotation = Quaternion.Euler(90, 0, correctRotation[rotationIndex]);
+                }
+                //rotation -= 60;
+                //UpdateRotation(rotation);
 
                 //Debug.Log("Rotate: " + rotation);
-
             }
         }
     }
@@ -367,11 +413,13 @@ public class WorldGeneration : MonoBehaviour
 
     private Vector3[] ShootRayToCheck(GameObject hex, Vector3 spawnPosition)
     {
+        float[] correctRotation = {-60,-120,-180,-240,-300, -360};
         List<Vector3> allowedRotations = new List<Vector3>();
+        Debug.Log(allowedRotations.Count + " SIZE AT THE START BABAY");
         GameObject hexCopy = Instantiate(hex, spawnPosition, hex.transform.rotation);
         RotationChecker[] rotationChacker = hexCopy.GetComponentsInChildren<RotationChecker>();
         Debug.DrawRay(rotationChacker[0].transform.position, transform.TransformDirection(rotationChacker[0].transform.forward), Color.red);
-
+        
         RaycastHit hit;
         #region garbage
         //RaycastHit hitMe;
@@ -387,17 +435,17 @@ public class WorldGeneration : MonoBehaviour
         #endregion
         for (int i = 0; i < 7; i++)
         {
-            hexCopy.transform.eulerAngles += new Vector3(0f, 0f, -60f);
+            
             for (int j = 0; j < rotationChacker.Length; j++)
             {
-                
-                if (Physics.Raycast(rotationChacker[j].transform.position, transform.TransformDirection(rotationChacker[j].transform.forward), out hit, 1f, buildRotaionLayer))
+                Ray ray = new Ray(rotationChacker[j].transform.position, transform.TransformDirection(rotationChacker[j].transform.forward));
+                if (Physics.Raycast(ray, out hit, 1f, buildRotaionLayer))
                 {
                     Debug.Log(hit.transform.name);
                     if (hit.transform.tag == "RoadConnect")
                     {
                         allowedRotations.Add(hexCopy.transform.eulerAngles);
-                        
+                        Debug.Log("DISTANCE BABY " + hit.distance);
                         Debug.Log("NAME OF THE CULPRIT: " + hit.transform.name + " NAME OF THE PARENT" + hit.transform.gameObject.GetComponentInParent<Transform>().name);
                     }
                 }
@@ -406,11 +454,8 @@ public class WorldGeneration : MonoBehaviour
                     Debug.Log("not");
                 }
             }
-            
+            hexCopy.transform.eulerAngles = new Vector3(hexCopy.transform.eulerAngles.x, hexCopy.transform.eulerAngles.y, correctRotation[0]);
         }
-
-        
-        
         Destroy(hexCopy);
 
         return allowedRotations.ToArray();
