@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/LevelDesignExample.unity
     guid: 6634068b80366a043995fa146793bd6c
   - enabled: 1
-    path: Assets/Scenes/PlayableOne.unity
+    path: Assets/Scenes/Showcase/PlayableOne.unity
     guid: 09b2fe500bfe9b84c93c92ed6c75e12c
   m_configObjects: {}
