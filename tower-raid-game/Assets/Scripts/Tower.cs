@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
+    [SerializeField] GameManager gm;
     [SerializeField] GameObject[] crystalPrefabs;
     [SerializeField] ProjectileScriptebelObject[] projectileSOs;
     private int projectileIndex;
@@ -40,6 +41,7 @@ public class Tower : MonoBehaviour
     }
     private void Start()
     {
+        gm = FindObjectOfType<GameManager>();
         Debug.Log(projectileShootFromPosition);
         //SpawnParticles();
         //particles.Stop();
@@ -129,6 +131,7 @@ public class Tower : MonoBehaviour
         {
             if (DragDrop.crystalInHand.tag == crystal.tag && !hasCrystal)
             {
+                
                 //Gets the current position in the array and uses that to get the criptable object it needs to
                 int index = Array.IndexOf(crystalPrefabs, crystal);
                 projectileIndex = index;
@@ -138,14 +141,20 @@ public class Tower : MonoBehaviour
                 SpawnParticles();
                 Instantiate(crystal, crystalSpawnArea.transform.position, Quaternion.identity);
                 particles.Stop();
+                Debug.Log(DragDrop.crystalInHand.transform.name);
+                //GameManager.crystalIndexDeleated = int.Parse(DragDrop.crystalInHand.transform.name);
+                gm.RefreshShopSlots(int.Parse(DragDrop.crystalInHand.transform.name));
                 Destroy(DragDrop.crystalInHand); //Destory the crystal sprite after spawning the crystal object
+                
                 projectileShootFromPosition = crystalSpawnArea.transform.position;
                 hasCrystal = true;
+                
                 break;
             }
-            
            
+            
         }
+        
     }
 
     

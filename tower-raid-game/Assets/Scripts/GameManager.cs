@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,7 +26,15 @@ public class GameManager : MonoBehaviour
     public static bool isExtendable = false;
     public static bool spawnEnemies = false;
 
-    int waveIndex = 0; 
+    int waveIndex = 0;
+
+    [Header("FOR SHOP")]
+    public static int crystalIndexDeleated = 69; //69 broj koji sigurno nije
+    [SerializeField] GameObject parentForSpawning;
+    int[] filledInventorySlots = { 0, 0, 0 };
+    [SerializeField] GameObject[] elementalCrystals;
+    [SerializeField] GameObject[] itemSlots;
+    List<GameObject> spawnedCrystals = new List<GameObject>();
 
     private void Start()
     {
@@ -143,4 +152,52 @@ public class GameManager : MonoBehaviour
         Time.timeScale = gameSpeedSlider.value;
     }
 
+    public void BuyNewCrystal()
+    {
+        foreach (var item in filledInventorySlots)
+        {
+            if (item == 0)
+            {
+                SpawnCrystalOnSlot(item);
+                break;
+            }
+            else
+            {
+                Debug.Log("Inventory Full");
+            }
+        }
+    }
+
+    private void SpawnCrystalOnSlot(float valueChange)
+    {
+        valueChange = 1;
+        //foreach (GameObject slots in itemSlots)
+        //{
+        //    if (!slots.GetComponent<ItemSlot>().slotFilled)
+        //    {
+        //        GameObject crystal = Instantiate(elementalCrystals[Random.Range(0, elementalCrystals.Length)], slots.GetComponent<ItemSlot>().ceneterLocation, Quaternion.identity);
+        //        crystal.transform.SetParent(parentForSpawning.transform);
+        //        slots.GetComponent<ItemSlot>().slotFilled = true;
+        //        break;
+        //    }
+        //}
+        for (int i = 0; i < filledInventorySlots.Length; i++)
+        {
+            if (filledInventorySlots[i] == 0)
+            {
+                GameObject crystal = Instantiate(elementalCrystals[UnityEngine.Random.Range(0, elementalCrystals.Length)], itemSlots[i].GetComponent<ItemSlot>().ceneterLocation, Quaternion.identity);
+                crystal.transform.SetParent(parentForSpawning.transform);
+                crystal.name = i.ToString();
+                spawnedCrystals.Add(crystal);
+                //slots.GetComponent<ItemSlot>().slotFilled = true;
+                filledInventorySlots[i] = 1;
+                break;
+            }
+        }
+    }
+
+    public void RefreshShopSlots(int index)
+    {
+        filledInventorySlots[index] = 0;
+    }
 }
