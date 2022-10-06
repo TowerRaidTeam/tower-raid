@@ -11,6 +11,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
 
     public static GameObject crystalInHand;
 
+    Vector3 startPosition;
+
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -19,6 +21,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
+        startPosition = rectTransform.position;
         //Debug.Log("OnBeginDrag");
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
@@ -35,6 +38,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
     public void OnEndDrag(PointerEventData eventData)
     {
         //Debug.Log("OnEndDrag");
+        rectTransform.position = startPosition;
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
 
