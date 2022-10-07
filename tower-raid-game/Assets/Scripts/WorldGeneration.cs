@@ -30,6 +30,7 @@ public class WorldGeneration : MonoBehaviour
     bool isTuchingPrivate;
     bool isAlignedCorrectlyToPlace = false;
     [SerializeField] int rotationIndex = 0;
+    [SerializeField] private GameObject shopCoverPanel;
 
     //private void Update()
     //{
@@ -207,6 +208,7 @@ public class WorldGeneration : MonoBehaviour
                                     Destroy(rc.gameObject);
                                 }
                                 // Debug.Log("AAAAAAAAAAAAAAAA");
+                                shopCoverPanel.SetActive(false);
                                 Vector3 spawnPosition = HexBuildTriggerCheck.spawnPositionLocation;
                                 chunk.transform.position = spawnPosition;
                                 GameManager.isExtendable = false;
@@ -365,8 +367,8 @@ public class WorldGeneration : MonoBehaviour
         HexBuildTriggerCheck.spawnPositionLocation = Vector3.zero;
         int randomPrefab = Random.Range(0, hexPrefabs.Length);
         chunk = Instantiate(hexPrefabs[randomPrefab], new Vector3(GetMousePosition().x, 0f, GetMousePosition().z), hexPrefabs[randomPrefab].transform.rotation);
-        
-        
+        shopCoverPanel.SetActive(true);
+
         chunsIsSpawnd = true;
     }
 

@@ -38,7 +38,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
     public void OnEndDrag(PointerEventData eventData)
     {
         //Debug.Log("OnEndDrag");
-        //rectTransform.position = startPosition;
+        rectTransform.position = startPosition;
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
 

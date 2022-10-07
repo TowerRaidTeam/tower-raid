@@ -10,7 +10,7 @@ public class BuildingController : MonoBehaviour
 
     [SerializeField] private GameObject building;
     [SerializeField] private LayerMask layerMask;
-
+    [SerializeField] private GameObject shopCoverPanel;
     GameObject turret;
 
     private void Update()
@@ -41,8 +41,10 @@ public class BuildingController : MonoBehaviour
                     if (canBuild)
                     {
                         Destroy(turret);
+                        
                         GameObject buildSpawn = Instantiate(building, hit.transform.position + new Vector3(0f, hit.transform.GetComponent<Renderer>().bounds.extents.y, 0f), Quaternion.Euler(0f, Random.Range(0, 360), 0f));
                         buildSpawn.transform.position = new Vector3(buildSpawn.transform.position.x, buildSpawn.transform.position.y + (buildSpawn.transform.localScale.y / 2), buildSpawn.transform.position.z);
+                        shopCoverPanel.SetActive(false);
                         isBought = false;
                     }
 
@@ -83,6 +85,7 @@ public class BuildingController : MonoBehaviour
 
     public void BoughtATower()
     {
+        shopCoverPanel.SetActive(true);
         isBought = true;
         turret = Instantiate(building, GetMousePosition(), Quaternion.Euler(0f, Random.Range(0, 360), 0f));
         turret.GetComponent<Collider>().enabled = false;

@@ -35,9 +35,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject[] elementalCrystals;
     [SerializeField] GameObject[] itemSlots;
     List<GameObject> spawnedCrystals = new List<GameObject>();
+    
 
     private void Start()
     {
+        
         Cursor.SetCursor(cursourTexture, Vector2.zero, CursorMode.Auto);
 
         gameSpeedSlider.value = 1;
@@ -136,7 +138,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            waveText.text ="WAWE" + "\n" + waveIndex + "/10";
+            waveText.text ="WAVE" + "\n" + waveIndex + "/10";
         }
        
     }
