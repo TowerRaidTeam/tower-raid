@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public static bool spawnEnemies = false;
 
     int waveIndex = 0;
+    int numberOfEnemiesToSpawn = 20;
 
     [Header("FOR SHOP")]
     public static int crystalIndexDeleated = 69; //69 broj koji sigurno nije
@@ -109,11 +110,12 @@ public class GameManager : MonoBehaviour
     {
         spawnEnemysButtons.interactable = false;
         spawnEnemies = true;
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < numberOfEnemiesToSpawn; i++)
         {
             Instantiate(enemyWizard, enemySpawnPosition, Quaternion.identity);
             yield return new WaitForSeconds(1);
         }
+        numberOfEnemiesToSpawn += 5;
         spawnEnemies = false;
         spawnEnemysButtons.interactable = true;
     }
@@ -132,14 +134,15 @@ public class GameManager : MonoBehaviour
     void UpdateWaveCounter(int index)
     {
         waveIndex += index;
-        if (waveIndex > 10)
-        {
-            Debug.Log("YOU WIN");
-        }
-        else
-        {
-            waveText.text ="WAVE" + "\n" + waveIndex + "/10";
-        }
+        waveText.text = "WAVE: " + waveIndex;
+        //if (waveIndex > 10)
+        //{
+        //    Debug.Log("YOU WIN");
+        //}
+        //else
+        //{
+            
+        //}
        
     }
 
@@ -216,5 +219,10 @@ public class GameManager : MonoBehaviour
     public void UpdateCash()
     {
         cashText.text = cash.ToString() + "$"; 
+    }
+
+    public float EnemyHpIncrees(float startHp)
+    {
+        return startHp * waveIndex;
     }
 }

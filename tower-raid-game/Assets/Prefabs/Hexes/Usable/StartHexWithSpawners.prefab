@@ -3301,6 +3301,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Grass_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
+      propertyPath: m_TagString
+      value: foliage
+      objectReference: {fileID: 0}
     - target: {fileID: 4234986379825688, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
       propertyPath: m_RootOrder
       value: 36
@@ -3365,6 +3369,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 84023358271948929}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &85539491900921909 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c,
+    type: 3}
+  m_PrefabInstance: {fileID: 84023358271948929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &809870582122659925
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85539491900921909}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.33247006, y: 0.31006902, z: 0.42412734}
+  m_Center: {x: 0.0020297244, y: 0.11965935, z: 0.018452503}
 --- !u!1001 &314041140400932088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3375,6 +3398,10 @@ PrefabInstance:
     - target: {fileID: 1530165478891328, guid: b3d5bf97186b3d949b317b06faa1e9b8, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Tree_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530165478891328, guid: b3d5bf97186b3d949b317b06faa1e9b8, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4961893655098138, guid: b3d5bf97186b3d949b317b06faa1e9b8, type: 3}
       propertyPath: m_RootOrder
@@ -3440,6 +3467,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 314041140400932088}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &314932487197678520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1530165478891328, guid: b3d5bf97186b3d949b317b06faa1e9b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 314041140400932088}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3216882291573445488
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314932487197678520}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.429991, y: 1.309619, z: 0.37237936}
+  m_Center: {x: 0.0000004246831, y: 0.39829555, z: -0.00000021606672}
 --- !u!1001 &935225712581873911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3450,6 +3496,10 @@ PrefabInstance:
     - target: {fileID: 1163024405393112, guid: 24dc813cd0e005041808f843844cb12e, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Rock_08 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163024405393112, guid: 24dc813cd0e005041808f843844cb12e, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4612836243221156, guid: 24dc813cd0e005041808f843844cb12e, type: 3}
       propertyPath: m_RootOrder
@@ -3515,6 +3565,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 935225712581873911}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &936387082619551279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1163024405393112, guid: 24dc813cd0e005041808f843844cb12e,
+    type: 3}
+  m_PrefabInstance: {fileID: 935225712581873911}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7155205615628214878
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936387082619551279}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5208029, y: 0.17254585, z: 0.41195953}
+  m_Center: {x: 0.0000009536743, y: 0.05339775, z: 0.00000047683716}
 --- !u!1001 &1187453059928007216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3525,6 +3594,10 @@ PrefabInstance:
     - target: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
       propertyPath: m_Name
       value: SM_Env_Grass_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4234986379825688, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
       propertyPath: m_RootOrder
@@ -3590,6 +3663,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1187453059928007216}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1188890095375266436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1187453059928007216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5355124093582466469
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188890095375266436}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.33247006, y: 0.31006902, z: 0.42412734}
+  m_Center: {x: 0.0020302013, y: 0.11965935, z: 0.018452503}
 --- !u!1001 &1217537396178982800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3600,6 +3692,10 @@ PrefabInstance:
     - target: {fileID: 1925081358165220, guid: 4ed4e898f8232c44da85dd5d6d4c15be, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Rock_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925081358165220, guid: 4ed4e898f8232c44da85dd5d6d4c15be, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4613294979525578, guid: 4ed4e898f8232c44da85dd5d6d4c15be, type: 3}
       propertyPath: m_RootOrder
@@ -3659,6 +3755,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ed4e898f8232c44da85dd5d6d4c15be, type: 3}
+--- !u!1 &1216914276661654388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1925081358165220, guid: 4ed4e898f8232c44da85dd5d6d4c15be,
+    type: 3}
+  m_PrefabInstance: {fileID: 1217537396178982800}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5753382953110202191
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216914276661654388}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.83434296, y: 0.9378033, z: 1.0105859}
+  m_Center: {x: -0.00000028312206, y: 0.41504323, z: 0.00000029802317}
 --- !u!4 &1222142409387752538 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4613294979525578, guid: 4ed4e898f8232c44da85dd5d6d4c15be,
@@ -3675,6 +3790,10 @@ PrefabInstance:
     - target: {fileID: 1530165478891328, guid: b3d5bf97186b3d949b317b06faa1e9b8, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Tree_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530165478891328, guid: b3d5bf97186b3d949b317b06faa1e9b8, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4961893655098138, guid: b3d5bf97186b3d949b317b06faa1e9b8, type: 3}
       propertyPath: m_RootOrder
@@ -3740,6 +3859,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1575710183503743968}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1574962159528826016 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1530165478891328, guid: b3d5bf97186b3d949b317b06faa1e9b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1575710183503743968}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4650062940791990004
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574962159528826016}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.429991, y: 1.309619, z: 0.37237936}
+  m_Center: {x: 0.0000004246831, y: 0.3982955, z: 0.00000079721224}
 --- !u!1001 &1656190887897572759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3750,6 +3888,10 @@ PrefabInstance:
     - target: {fileID: 1163024405393112, guid: 24dc813cd0e005041808f843844cb12e, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Rock_08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163024405393112, guid: 24dc813cd0e005041808f843844cb12e, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4612836243221156, guid: 24dc813cd0e005041808f843844cb12e, type: 3}
       propertyPath: m_RootOrder
@@ -3815,6 +3957,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1656190887897572759}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1657281875499273039 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1163024405393112, guid: 24dc813cd0e005041808f843844cb12e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1656190887897572759}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4688935396430122803
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657281875499273039}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5208029, y: 0.17254585, z: 0.41195953}
+  m_Center: {x: 0.0000009536743, y: 0.05339772, z: -0.0000005662441}
 --- !u!1001 &2174049921596172146
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3825,6 +3986,10 @@ PrefabInstance:
     - target: {fileID: 1149964068514196, guid: 7bf03ea436de85340a610548fc71b0ee, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Tree_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149964068514196, guid: 7bf03ea436de85340a610548fc71b0ee, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4035636657140036, guid: 7bf03ea436de85340a610548fc71b0ee, type: 3}
       propertyPath: m_RootOrder
@@ -3890,6 +4055,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2174049921596172146}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2175189143263006438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1149964068514196, guid: 7bf03ea436de85340a610548fc71b0ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 2174049921596172146}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1480993213439541022
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2175189143263006438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0274798, y: 1.0852683, z: 1.0128436}
+  m_Center: {x: 0.00000029802322, y: 0.32090992, z: 0.00000023841866}
 --- !u!1001 &2367522037885184402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3900,6 +4084,10 @@ PrefabInstance:
     - target: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
       propertyPath: m_Name
       value: SM_Env_Grass_01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4234986379825688, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
       propertyPath: m_RootOrder
@@ -3965,6 +4153,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2367522037885184402}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2368409367921375526 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2367522037885184402}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8819701207397369138
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2368409367921375526}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.33247006, y: 0.31006902, z: 0.42412734}
+  m_Center: {x: 0.002030678, y: 0.11965935, z: 0.01845131}
 --- !u!1001 &2422003364749019738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3975,6 +4182,10 @@ PrefabInstance:
     - target: {fileID: 1462044914024364, guid: 491e0eccb7eb82f499f7dc7f6b1dfecf, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_River_Stone_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462044914024364, guid: 491e0eccb7eb82f499f7dc7f6b1dfecf, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4054527318753274, guid: 491e0eccb7eb82f499f7dc7f6b1dfecf, type: 3}
       propertyPath: m_RootOrder
@@ -4040,6 +4251,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2422003364749019738}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2421140558070445558 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1462044914024364, guid: 491e0eccb7eb82f499f7dc7f6b1dfecf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2422003364749019738}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4477803872542051771
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2421140558070445558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3919472, y: 0.10294645, z: 0.35538262}
+  m_Center: {x: 0.00000047683716, y: 0.05147327, z: 0.00000047683716}
 --- !u!1001 &2491758664528514412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4050,6 +4280,10 @@ PrefabInstance:
     - target: {fileID: 1615928772230236, guid: ec9930b9cf3efd445aee3260feef6ccb, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Rock_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615928772230236, guid: ec9930b9cf3efd445aee3260feef6ccb, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4685845829956448, guid: ec9930b9cf3efd445aee3260feef6ccb, type: 3}
       propertyPath: m_RootOrder
@@ -4115,6 +4349,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2491758664528514412}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2490839001905901872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1615928772230236, guid: ec9930b9cf3efd445aee3260feef6ccb,
+    type: 3}
+  m_PrefabInstance: {fileID: 2491758664528514412}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7645807870609657182
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490839001905901872}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4988942, y: 0.15196304, z: 0.51070064}
+  m_Center: {x: 0.0000013560057, y: 0.018450124, z: -0.00000007450575}
 --- !u!1001 &2837027399586229124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4125,6 +4378,10 @@ PrefabInstance:
     - target: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
       propertyPath: m_Name
       value: SM_Env_Grass_01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4234986379825688, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
       propertyPath: m_RootOrder
@@ -4190,6 +4447,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2837027399586229124}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2835651594312497968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2837027399586229124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4956009803892806803
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2835651594312497968}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.33247006, y: 0.31006902, z: 0.42412734}
+  m_Center: {x: 0.0020297244, y: 0.11965935, z: 0.01845143}
 --- !u!1001 &2988126113241168553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4200,6 +4476,10 @@ PrefabInstance:
     - target: {fileID: 1512766923517790, guid: d12c561d905a63e48bda5852738cbd41, type: 3}
       propertyPath: m_Name
       value: SM_Env_Western_Cactus_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512766923517790, guid: d12c561d905a63e48bda5852738cbd41, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4897951128109442, guid: d12c561d905a63e48bda5852738cbd41, type: 3}
       propertyPath: m_RootOrder
@@ -4265,6 +4545,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2988126113241168553}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2986637537588827639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1512766923517790, guid: d12c561d905a63e48bda5852738cbd41,
+    type: 3}
+  m_PrefabInstance: {fileID: 2988126113241168553}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5489643736893461958
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2986637537588827639}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.24187596, y: 0.31288165, z: 0.25431612}
+  m_Center: {x: -0.007902466, y: 0.15644088, z: 0.0067894855}
 --- !u!1001 &3108812085179291157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4275,6 +4574,10 @@ PrefabInstance:
     - target: {fileID: 1670227200470880, guid: 475b0e4fd881f70468083514520b6fdd, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Treestump_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670227200470880, guid: 475b0e4fd881f70468083514520b6fdd, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4639418368294384, guid: 475b0e4fd881f70468083514520b6fdd, type: 3}
       propertyPath: m_RootOrder
@@ -4334,6 +4637,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 475b0e4fd881f70468083514520b6fdd, type: 3}
+--- !u!1 &3107860939135252853 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1670227200470880, guid: 475b0e4fd881f70468083514520b6fdd,
+    type: 3}
+  m_PrefabInstance: {fileID: 3108812085179291157}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8096457450107223323
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3107860939135252853}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.24936417, y: 0.08997324, z: 0.20359683}
+  m_Center: {x: 0.0022839457, y: 0.04498665, z: 0.026528543}
 --- !u!4 &3113328300177746917 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4639418368294384, guid: 475b0e4fd881f70468083514520b6fdd,
@@ -4350,6 +4672,10 @@ PrefabInstance:
     - target: {fileID: 1222998144502202, guid: d3b936423ee49f44c8c960c445e06b6d, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Bush_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222998144502202, guid: d3b936423ee49f44c8c960c445e06b6d, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4519230917711060, guid: d3b936423ee49f44c8c960c445e06b6d, type: 3}
       propertyPath: m_RootOrder
@@ -4415,6 +4741,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3755909599109903407}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3754862643104071061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1222998144502202, guid: d3b936423ee49f44c8c960c445e06b6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3755909599109903407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5321736171164236942
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754862643104071061}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3236084, y: 0.27209613, z: 0.2802532}
+  m_Center: {x: 0.00000047683716, y: 0.13604811, z: 0.00000026077032}
 --- !u!1001 &3815942158459807981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4425,6 +4770,10 @@ PrefabInstance:
     - target: {fileID: 1061410200461678, guid: 84650fac5bc773e4f9e6eac4cb77c5ee, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Tree_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1061410200461678, guid: 84650fac5bc773e4f9e6eac4cb77c5ee, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4696929857222602, guid: 84650fac5bc773e4f9e6eac4cb77c5ee, type: 3}
       propertyPath: m_RootOrder
@@ -4490,6 +4839,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3815942158459807981}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3816579081996765571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1061410200461678, guid: 84650fac5bc773e4f9e6eac4cb77c5ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 3815942158459807981}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3450309960144938380
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3816579081996765571}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5498081, y: 1.117416, z: 0.47614938}
+  m_Center: {x: 0.00000047683716, y: 0.3021941, z: 0.0000012740494}
 --- !u!1001 &4336209445557411927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4500,6 +4868,10 @@ PrefabInstance:
     - target: {fileID: 1311470211110828, guid: 5885fb5b9d4415247879099e1d890ec2, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_River_Stone_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1311470211110828, guid: 5885fb5b9d4415247879099e1d890ec2, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4385866732726834, guid: 5885fb5b9d4415247879099e1d890ec2, type: 3}
       propertyPath: m_RootOrder
@@ -4565,6 +4937,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4336209445557411927}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4335250388286814203 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1311470211110828, guid: 5885fb5b9d4415247879099e1d890ec2,
+    type: 3}
+  m_PrefabInstance: {fileID: 4336209445557411927}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7807643384168843093
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4335250388286814203}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6102306, y: 0.10294645, z: 0.54089314}
+  m_Center: {x: 0.0000009536743, y: 0.051473316, z: -0.00000035762787}
 --- !u!1001 &5046862267332567556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4575,6 +4966,10 @@ PrefabInstance:
     - target: {fileID: 1222998144502202, guid: d3b936423ee49f44c8c960c445e06b6d, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Bush_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222998144502202, guid: d3b936423ee49f44c8c960c445e06b6d, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4519230917711060, guid: d3b936423ee49f44c8c960c445e06b6d, type: 3}
       propertyPath: m_RootOrder
@@ -4634,6 +5029,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3b936423ee49f44c8c960c445e06b6d, type: 3}
+--- !u!1 &5048067002180627390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1222998144502202, guid: d3b936423ee49f44c8c960c445e06b6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5046862267332567556}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4679631032815676443
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5048067002180627390}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3236084, y: 0.27209613, z: 0.2802532}
+  m_Center: {x: 0.00000047683716, y: 0.13604818, z: -0.0000003054738}
 --- !u!4 &5051350246977451728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4519230917711060, guid: d3b936423ee49f44c8c960c445e06b6d,
@@ -4650,6 +5064,10 @@ PrefabInstance:
     - target: {fileID: 1038591557101520, guid: bc2c73acc0998b14993375cfae2e1205, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Bush_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1038591557101520, guid: bc2c73acc0998b14993375cfae2e1205, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4821290073050224, guid: bc2c73acc0998b14993375cfae2e1205, type: 3}
       propertyPath: m_RootOrder
@@ -4715,6 +5133,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5238321438364899946}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5238232891990638010 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1038591557101520, guid: bc2c73acc0998b14993375cfae2e1205,
+    type: 3}
+  m_PrefabInstance: {fileID: 5238321438364899946}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5015694578167525531
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238232891990638010}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.35817474, y: 0.25858757, z: 0.32929748}
+  m_Center: {x: 0.00000047683716, y: 0.12929384, z: -0.00000001490117}
 --- !u!1001 &5296010075756270490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4725,6 +5162,10 @@ PrefabInstance:
     - target: {fileID: 1149964068514196, guid: 7bf03ea436de85340a610548fc71b0ee, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Tree_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149964068514196, guid: 7bf03ea436de85340a610548fc71b0ee, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4035636657140036, guid: 7bf03ea436de85340a610548fc71b0ee, type: 3}
       propertyPath: m_RootOrder
@@ -4790,6 +5231,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5296010075756270490}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5294862038099130894 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1149964068514196, guid: 7bf03ea436de85340a610548fc71b0ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 5296010075756270490}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3020179777455363893
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5294862038099130894}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0274798, y: 1.0852683, z: 1.0128436}
+  m_Center: {x: 0.00000029802322, y: 0.32090992, z: 0.00000023841866}
 --- !u!1001 &5362798267070914321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4800,6 +5260,10 @@ PrefabInstance:
     - target: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
       propertyPath: m_Name
       value: SM_Env_Grass_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4234986379825688, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
       propertyPath: m_RootOrder
@@ -4865,6 +5329,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5362798267070914321}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5361847506780065701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5362798267070914321}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1697192925788158227
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5361847506780065701}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.33247006, y: 0.31006902, z: 0.42412734}
+  m_Center: {x: 0.002030678, y: 0.11965935, z: 0.01845155}
 --- !u!1001 &5476558637424227753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4875,6 +5358,10 @@ PrefabInstance:
     - target: {fileID: 1311470211110828, guid: 5885fb5b9d4415247879099e1d890ec2, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_River_Stone_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1311470211110828, guid: 5885fb5b9d4415247879099e1d890ec2, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4385866732726834, guid: 5885fb5b9d4415247879099e1d890ec2, type: 3}
       propertyPath: m_RootOrder
@@ -4934,6 +5421,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5885fb5b9d4415247879099e1d890ec2, type: 3}
+--- !u!1 &5477518263780221445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1311470211110828, guid: 5885fb5b9d4415247879099e1d890ec2,
+    type: 3}
+  m_PrefabInstance: {fileID: 5476558637424227753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8776320904279720116
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5477518263780221445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6102306, y: 0.10294645, z: 0.54089314}
+  m_Center: {x: 0.00000047683716, y: 0.051473256, z: 0.00000047683716}
 --- !u!4 &5480654232684486555 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4385866732726834, guid: 5885fb5b9d4415247879099e1d890ec2,
@@ -4950,6 +5456,10 @@ PrefabInstance:
     - target: {fileID: 1222998144502202, guid: d3b936423ee49f44c8c960c445e06b6d, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Bush_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222998144502202, guid: d3b936423ee49f44c8c960c445e06b6d, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4519230917711060, guid: d3b936423ee49f44c8c960c445e06b6d, type: 3}
       propertyPath: m_RootOrder
@@ -5009,6 +5519,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3b936423ee49f44c8c960c445e06b6d, type: 3}
+--- !u!1 &5665994527021176887 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1222998144502202, guid: d3b936423ee49f44c8c960c445e06b6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5667199931892453773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7481887272701267229
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5665994527021176887}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3236084, y: 0.27209613, z: 0.2802532}
+  m_Center: {x: 0.0000009536743, y: 0.13604811, z: 0.000000022351745}
 --- !u!4 &5671719099945928025 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4519230917711060, guid: d3b936423ee49f44c8c960c445e06b6d,
@@ -5025,6 +5554,10 @@ PrefabInstance:
     - target: {fileID: 1615928772230236, guid: ec9930b9cf3efd445aee3260feef6ccb, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Rock_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615928772230236, guid: ec9930b9cf3efd445aee3260feef6ccb, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4685845829956448, guid: ec9930b9cf3efd445aee3260feef6ccb, type: 3}
       propertyPath: m_RootOrder
@@ -5090,6 +5623,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6032563466158555006}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6030958919320486690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1615928772230236, guid: ec9930b9cf3efd445aee3260feef6ccb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6032563466158555006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1012540553494831945
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6030958919320486690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4988942, y: 0.15196304, z: 0.51070064}
+  m_Center: {x: 0.0000008791685, y: 0.018450094, z: 0.00000016391283}
 --- !u!1001 &6427483480784206013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5100,6 +5652,10 @@ PrefabInstance:
     - target: {fileID: 1462044914024364, guid: 491e0eccb7eb82f499f7dc7f6b1dfecf, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_River_Stone_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462044914024364, guid: 491e0eccb7eb82f499f7dc7f6b1dfecf, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4054527318753274, guid: 491e0eccb7eb82f499f7dc7f6b1dfecf, type: 3}
       propertyPath: m_RootOrder
@@ -5159,6 +5715,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 491e0eccb7eb82f499f7dc7f6b1dfecf, type: 3}
+--- !u!1 &6428382225584850705 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1462044914024364, guid: 491e0eccb7eb82f499f7dc7f6b1dfecf,
+    type: 3}
+  m_PrefabInstance: {fileID: 6427483480784206013}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2440978247760915777
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6428382225584850705}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3919472, y: 0.10294645, z: 0.35538262}
+  m_Center: {x: 0.00000047683716, y: 0.051473346, z: -0.0000004172325}
 --- !u!4 &6430407691742840647 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4054527318753274, guid: 491e0eccb7eb82f499f7dc7f6b1dfecf,
@@ -5175,6 +5750,10 @@ PrefabInstance:
     - target: {fileID: 1530165478891328, guid: b3d5bf97186b3d949b317b06faa1e9b8, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Tree_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530165478891328, guid: b3d5bf97186b3d949b317b06faa1e9b8, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4961893655098138, guid: b3d5bf97186b3d949b317b06faa1e9b8, type: 3}
       propertyPath: m_RootOrder
@@ -5234,6 +5813,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5bf97186b3d949b317b06faa1e9b8, type: 3}
+--- !u!1 &6524890281726135467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1530165478891328, guid: b3d5bf97186b3d949b317b06faa1e9b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6523603189160104939}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4814769319869272878
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6524890281726135467}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.429991, y: 1.309619, z: 0.37237936}
+  m_Center: {x: 0.0000004246831, y: 0.39829555, z: 0.00000032037508}
 --- !u!4 &6528493611330822385 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4961893655098138, guid: b3d5bf97186b3d949b317b06faa1e9b8,
@@ -5250,6 +5848,10 @@ PrefabInstance:
     - target: {fileID: 1149964068514196, guid: 7bf03ea436de85340a610548fc71b0ee, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Tree_03 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149964068514196, guid: 7bf03ea436de85340a610548fc71b0ee, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4035636657140036, guid: 7bf03ea436de85340a610548fc71b0ee, type: 3}
       propertyPath: m_RootOrder
@@ -5315,6 +5917,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6559810104974722913}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6560958962114998005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1149964068514196, guid: 7bf03ea436de85340a610548fc71b0ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 6559810104974722913}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &261401542716474077
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6560958962114998005}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0274798, y: 1.0852683, z: 1.0128436}
+  m_Center: {x: -0.0000006556511, y: 0.32090992, z: -0.00000029802314}
 --- !u!1001 &7702003029105626311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5325,6 +5946,10 @@ PrefabInstance:
     - target: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
       propertyPath: m_Name
       value: SM_Env_Grass_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4234986379825688, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
       propertyPath: m_RootOrder
@@ -5384,6 +6009,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
+--- !u!1 &7702955851001486451 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7702003029105626311}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7869281006259180649
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7702955851001486451}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.33247006, y: 0.31006902, z: 0.42412734}
+  m_Center: {x: 0.0020302013, y: 0.11965935, z: 0.018451065}
 --- !u!4 &7704543233713282783 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4234986379825688, guid: 922382aacbe5e3547a83f0d53e5a850c,
@@ -5400,6 +6044,10 @@ PrefabInstance:
     - target: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
       propertyPath: m_Name
       value: SM_Env_Grass_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4234986379825688, guid: 922382aacbe5e3547a83f0d53e5a850c, type: 3}
       propertyPath: m_RootOrder
@@ -5465,6 +6113,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7965439520692579582}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7966738483594804298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1521150239117492, guid: 922382aacbe5e3547a83f0d53e5a850c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7965439520692579582}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1033370674840787431
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7966738483594804298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.33247006, y: 0.31006902, z: 0.42412734}
+  m_Center: {x: 0.002030678, y: 0.11965935, z: 0.018452503}
 --- !u!1001 &8007942779779602722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5475,6 +6142,10 @@ PrefabInstance:
     - target: {fileID: 1935603645121562, guid: ed14f566be6563e4a9902b7a2adfe83c, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Tree_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935603645121562, guid: ed14f566be6563e4a9902b7a2adfe83c, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4907178158916736, guid: ed14f566be6563e4a9902b7a2adfe83c, type: 3}
       propertyPath: m_RootOrder
@@ -5534,6 +6205,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed14f566be6563e4a9902b7a2adfe83c, type: 3}
+--- !u!1 &8009385769931857208 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1935603645121562, guid: ed14f566be6563e4a9902b7a2adfe83c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8007942779779602722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3670239417965640962
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8009385769931857208}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.52926373, y: 0.9673995, z: 0.4841221}
+  m_Center: {x: 0.004014358, y: 0.22718576, z: 0.021873891}
 --- !u!4 &8012047269285715362 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4907178158916736, guid: ed14f566be6563e4a9902b7a2adfe83c,
@@ -5550,6 +6240,10 @@ PrefabInstance:
     - target: {fileID: 1347649080250482, guid: d2173579f77d045409b1db6572c574bb, type: 3}
       propertyPath: m_Name
       value: SM_Env_Reed_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347649080250482, guid: d2173579f77d045409b1db6572c574bb, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4827250442899704, guid: d2173579f77d045409b1db6572c574bb, type: 3}
       propertyPath: m_RootOrder
@@ -5615,6 +6309,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8295101061249774885}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8294178991895995735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1347649080250482, guid: d2173579f77d045409b1db6572c574bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 8295101061249774885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8342911668035906288
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8294178991895995735}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.24990782, y: 0.41229615, z: 0.34529552}
+  m_Center: {x: -0.0003863126, y: 0.15963611, z: 0.012239997}
 --- !u!1001 &8312618835411546558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5625,6 +6338,10 @@ PrefabInstance:
     - target: {fileID: 1061410200461678, guid: 84650fac5bc773e4f9e6eac4cb77c5ee, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Tree_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1061410200461678, guid: 84650fac5bc773e4f9e6eac4cb77c5ee, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4696929857222602, guid: 84650fac5bc773e4f9e6eac4cb77c5ee, type: 3}
       propertyPath: m_RootOrder
@@ -5690,6 +6407,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8312618835411546558}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8313538883142324432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1061410200461678, guid: 84650fac5bc773e4f9e6eac4cb77c5ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 8312618835411546558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8687798610432380917
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8313538883142324432}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5498081, y: 1.117416, z: 0.47614938}
+  m_Center: {x: 0.00000047683716, y: 0.30219415, z: -0.0000001862644}
 --- !u!1001 &8655067764909190438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5700,6 +6436,10 @@ PrefabInstance:
     - target: {fileID: 1149964068514196, guid: 7bf03ea436de85340a610548fc71b0ee, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Tree_03 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149964068514196, guid: 7bf03ea436de85340a610548fc71b0ee, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4035636657140036, guid: 7bf03ea436de85340a610548fc71b0ee, type: 3}
       propertyPath: m_RootOrder
@@ -5765,6 +6505,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8655067764909190438}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8653930172947776690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1149964068514196, guid: 7bf03ea436de85340a610548fc71b0ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 8655067764909190438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4145346563272024753
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8653930172947776690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0274798, y: 1.0852683, z: 1.0128436}
+  m_Center: {x: -0.0000006556511, y: 0.3209099, z: 0.00000023841866}
 --- !u!1001 &8945749647745832664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5775,6 +6534,10 @@ PrefabInstance:
     - target: {fileID: 1222998144502202, guid: d3b936423ee49f44c8c960c445e06b6d, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Bush_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222998144502202, guid: d3b936423ee49f44c8c960c445e06b6d, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4519230917711060, guid: d3b936423ee49f44c8c960c445e06b6d, type: 3}
       propertyPath: m_RootOrder
@@ -5834,6 +6597,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3b936423ee49f44c8c960c445e06b6d, type: 3}
+--- !u!1 &8944702631608164194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1222998144502202, guid: d3b936423ee49f44c8c960c445e06b6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8945749647745832664}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8003518673390438933
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8944702631608164194}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3236084, y: 0.27209613, z: 0.2802532}
+  m_Center: {x: 0.00000047683716, y: 0.13604812, z: -0.00000045448542}
 --- !u!4 &8950237813668135436 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4519230917711060, guid: d3b936423ee49f44c8c960c445e06b6d,
@@ -5850,6 +6632,10 @@ PrefabInstance:
     - target: {fileID: 1149964068514196, guid: 7bf03ea436de85340a610548fc71b0ee, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_Tree_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149964068514196, guid: 7bf03ea436de85340a610548fc71b0ee, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4035636657140036, guid: 7bf03ea436de85340a610548fc71b0ee, type: 3}
       propertyPath: m_RootOrder
@@ -5909,6 +6695,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bf03ea436de85340a610548fc71b0ee, type: 3}
+--- !u!1 &9079497863228223647 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1149964068514196, guid: 7bf03ea436de85340a610548fc71b0ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 9080610147128842507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &688491650748901824
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9079497863228223647}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0274798, y: 1.0852683, z: 1.0128436}
+  m_Center: {x: -0.00000017881393, y: 0.32090998, z: -0.00000035762778}
 --- !u!4 &9082239491804506191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4035636657140036, guid: 7bf03ea436de85340a610548fc71b0ee,
@@ -5925,6 +6730,10 @@ PrefabInstance:
     - target: {fileID: 1311470211110828, guid: 5885fb5b9d4415247879099e1d890ec2, type: 3}
       propertyPath: m_Name
       value: SM_Env_Generic_River_Stone_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1311470211110828, guid: 5885fb5b9d4415247879099e1d890ec2, type: 3}
+      propertyPath: m_TagString
+      value: foliage
       objectReference: {fileID: 0}
     - target: {fileID: 4385866732726834, guid: 5885fb5b9d4415247879099e1d890ec2, type: 3}
       propertyPath: m_RootOrder
@@ -5984,6 +6793,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5885fb5b9d4415247879099e1d890ec2, type: 3}
+--- !u!1 &9169950457837490359 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1311470211110828, guid: 5885fb5b9d4415247879099e1d890ec2,
+    type: 3}
+  m_PrefabInstance: {fileID: 9171190989547931419}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5403525969990334820
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9169950457837490359}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6102306, y: 0.10294645, z: 0.54089314}
+  m_Center: {x: 0, y: 0.05147327, z: -1.0972176e-15}
 --- !u!4 &9171872497185221929 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4385866732726834, guid: 5885fb5b9d4415247879099e1d890ec2,

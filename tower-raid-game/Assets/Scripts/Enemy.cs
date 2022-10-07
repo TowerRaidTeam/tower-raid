@@ -27,9 +27,12 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+
         worldGeneration = FindObjectOfType<WorldGeneration>();
         sortingArray = FindObjectOfType<SortingArray>();
         gameManager = FindObjectOfType<GameManager>();
+
+        enemyHp = gameManager.EnemyHpIncrees(enemyHp);
         //movePoints = GameObject.FindGameObjectsWithTag("Point");
         ////Debug.Log(movePoints);
 

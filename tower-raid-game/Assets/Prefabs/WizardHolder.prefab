@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d581623e18f5d24c990e917012003a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHp: 400
+  enemyHp: 100
   enemySpeed: 2
   pathVectorList: []
 --- !u!65 &5888919163979111641
