@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject winScreen;
     [SerializeField] TMP_Text cashText;
     [SerializeField] Slider gameSpeedSlider;
-    int cash = 0;
+    public int cash = 0;
 
     [SerializeField] Button spawnEnemysButtons;
     [SerializeField] TMP_Text waveText;
@@ -156,18 +156,28 @@ public class GameManager : MonoBehaviour
 
     public void BuyNewCrystal()
     {
-        foreach (var item in filledInventorySlots)
+        if (cash >= 50)
         {
-            if (item == 0)
+            cash -= 50;
+            UpdateCash();
+            foreach (var item in filledInventorySlots)
             {
-                SpawnCrystalOnSlot(item);
-                break;
-            }
-            else
-            {
-                Debug.Log("Inventory Full");
+                if (item == 0)
+                {
+                    SpawnCrystalOnSlot(item);
+                    break;
+                }
+                else
+                {
+                    Debug.Log("Inventory Full");
+                }
             }
         }
+        else
+        {
+            Debug.Log("not enaugh money");
+        }
+        
     }
 
     private void SpawnCrystalOnSlot(float valueChange)
@@ -201,5 +211,10 @@ public class GameManager : MonoBehaviour
     public void RefreshShopSlots(int index)
     {
         filledInventorySlots[index] = 0;
+    }
+
+    public void UpdateCash()
+    {
+        cashText.text = cash.ToString() + "$"; 
     }
 }

@@ -13,6 +13,13 @@ public class BuildingController : MonoBehaviour
     [SerializeField] private GameObject shopCoverPanel;
     GameObject turret;
 
+    GameManager gm;
+
+    private void Start()
+    {
+        gm = FindObjectOfType<GameManager>();
+    }
+
     private void Update()
     {
         if (isBought)
@@ -85,10 +92,20 @@ public class BuildingController : MonoBehaviour
 
     public void BoughtATower()
     {
-        shopCoverPanel.SetActive(true);
-        isBought = true;
-        turret = Instantiate(building, GetMousePosition(), Quaternion.Euler(0f, Random.Range(0, 360), 0f));
-        turret.GetComponent<Collider>().enabled = false;
+        if (gm.cash >= 50)
+        {
+            gm.cash -= 50;
+            gm.UpdateCash();
+            shopCoverPanel.SetActive(true);
+            isBought = true;
+            turret = Instantiate(building, GetMousePosition(), Quaternion.Euler(0f, Random.Range(0, 360), 0f));
+            turret.GetComponent<Collider>().enabled = false;
+        }
+        else
+        {
+            Debug.Log("NOT ENAUGH MONEY");
+        }
+        
         
     }
 

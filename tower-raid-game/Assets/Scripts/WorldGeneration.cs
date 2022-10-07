@@ -356,20 +356,30 @@ public class WorldGeneration : MonoBehaviour
     }
     public void SpawnChunk()
     {
-        GameObject[] pads = GameObject.FindGameObjectsWithTag("buildHex");
-        foreach (GameObject item in pads)
+        if (gameManager.cash >= 50)
         {
-            if (item.GetComponent<HexBuildTriggerCheck>().isTuchingLocal)
+            gameManager.cash -= 50;
+            gameManager.UpdateCash();
+            GameObject[] pads = GameObject.FindGameObjectsWithTag("buildHex");
+            foreach (GameObject item in pads)
             {
-                Destroy(item.gameObject);
+                if (item.GetComponent<HexBuildTriggerCheck>().isTuchingLocal)
+                {
+                    Destroy(item.gameObject);
+                }
             }
-        }
-        HexBuildTriggerCheck.spawnPositionLocation = Vector3.zero;
-        int randomPrefab = Random.Range(0, hexPrefabs.Length);
-        chunk = Instantiate(hexPrefabs[randomPrefab], new Vector3(GetMousePosition().x, 0f, GetMousePosition().z), hexPrefabs[randomPrefab].transform.rotation);
-        shopCoverPanel.SetActive(true);
+            HexBuildTriggerCheck.spawnPositionLocation = Vector3.zero;
+            int randomPrefab = Random.Range(0, hexPrefabs.Length);
+            chunk = Instantiate(hexPrefabs[randomPrefab], new Vector3(GetMousePosition().x, 0f, GetMousePosition().z), hexPrefabs[randomPrefab].transform.rotation);
+            shopCoverPanel.SetActive(true);
 
-        chunsIsSpawnd = true;
+            chunsIsSpawnd = true;
+        }
+        else
+        {
+            Debug.Log("DONT HAVE ENAUGH MONEY");
+        }
+        
     }
 
     private void UpdateRotation(int angle)
