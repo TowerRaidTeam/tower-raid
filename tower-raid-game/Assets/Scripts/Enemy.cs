@@ -6,11 +6,12 @@ using System.Linq;
 
 public class Enemy : MonoBehaviour
 {
-    WorldGeneration worldGeneration;
-    SortingArray sortingArray;
+    [SerializeField]EnemyScriptableObject enemyScriptableObject;
+    //WorldGeneration worldGeneration;
+    //SortingArray sortingArray;
     GameManager gameManager;
-    [SerializeField] private float enemyHp = 100f;
-    [SerializeField] private float enemySpeed = 30f;
+    private float enemyHp;
+    private float enemySpeed;
     [SerializeField] private List<Vector3> pathVectorList = new List<Vector3>();
     private GameObject[] movePoints;
     private int curretnPathIndex;
@@ -27,9 +28,10 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-
-        worldGeneration = FindObjectOfType<WorldGeneration>();
-        sortingArray = FindObjectOfType<SortingArray>();
+        enemyHp = enemyScriptableObject.enemyHp;
+        enemySpeed = enemyScriptableObject.enemySpeed;
+        //worldGeneration = FindObjectOfType<WorldGeneration>();
+        //sortingArray = FindObjectOfType<SortingArray>();
         gameManager = FindObjectOfType<GameManager>();
 
         enemyHp = gameManager.EnemyHpIncrees(enemyHp);

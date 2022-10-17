@@ -14,7 +14,7 @@ public class BuildingController : MonoBehaviour
     GameObject turret;
 
     GameManager gm;
-
+    private int turretPrice = 50;
     private void Start()
     {
         gm = FindObjectOfType<GameManager>();
@@ -57,6 +57,15 @@ public class BuildingController : MonoBehaviour
 
                 }
             }
+            else if (Input.GetMouseButtonDown(1))
+            {
+                gm.cash += turretPrice;
+                gm.UpdateCash();
+                Destroy(turret);
+                shopCoverPanel.SetActive(false);
+                isBought = false;
+            }
+
         }
 
         //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -92,9 +101,9 @@ public class BuildingController : MonoBehaviour
 
     public void BoughtATower()
     {
-        if (gm.cash >= 50)
+        if (gm.cash >= turretPrice)
         {
-            gm.cash -= 50;
+            gm.cash -= turretPrice;
             gm.UpdateCash();
             shopCoverPanel.SetActive(true);
             isBought = true;

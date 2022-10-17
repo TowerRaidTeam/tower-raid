@@ -7,6 +7,7 @@ public class MenuManager : MonoBehaviour
 {
     public void StartGame()
     {
+        PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("PlayableOne");
     }
 

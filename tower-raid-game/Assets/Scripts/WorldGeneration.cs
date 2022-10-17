@@ -32,6 +32,8 @@ public class WorldGeneration : MonoBehaviour
     [SerializeField] int rotationIndex = 0;
     [SerializeField] private GameObject shopCoverPanel;
 
+    private int hexPrice = 50;
+
     //private void Update()
     //{
     //   // Debug.Log(HexBuildTriggerCheck.spawnPositionLocation);
@@ -135,6 +137,15 @@ public class WorldGeneration : MonoBehaviour
         //CHECKS IF A NEW CHUNK HAS BEN SPAWNED AND LETSE ME PLACE IT
         if (chunsIsSpawnd)
         {
+            if (Input.GetMouseButtonDown(1))
+            {
+                gameManager.cash += hexPrice;
+                gameManager.UpdateCash();
+                HexBuildTriggerCheck.isTuching = false;
+                Destroy(chunk);
+                shopCoverPanel.SetActive(false);
+                chunsIsSpawnd = false;
+            }
             //moves the cgunk to the mouse position
             chunk.transform.position = GetMousePosition();
 
@@ -222,10 +233,8 @@ public class WorldGeneration : MonoBehaviour
                             Debug.Log("Cant playce wrong rotation");
                         }
                     }
-
-
-                    
                 }
+                
                 #region garbage
 
                 //foreach (Transform item in spawnBlocks)
@@ -331,6 +340,7 @@ public class WorldGeneration : MonoBehaviour
                 //Debug.Log("Rotate: " + rotation);
             }
         }
+        
     }
 
     private bool ReturnPrviewResoult(GameObject prefab)
@@ -356,9 +366,9 @@ public class WorldGeneration : MonoBehaviour
     }
     public void SpawnChunk()
     {
-        if (gameManager.cash >= 50)
+        if (gameManager.cash >= hexPrice)
         {
-            gameManager.cash -= 50;
+            gameManager.cash -= hexPrice;
             gameManager.UpdateCash();
             GameObject[] pads = GameObject.FindGameObjectsWithTag("buildHex");
             foreach (GameObject item in pads)

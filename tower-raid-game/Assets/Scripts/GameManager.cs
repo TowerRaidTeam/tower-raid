@@ -20,7 +20,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Image healtBarImage;
     float hp = 100;
     SortingArray sortingArray;
-    [SerializeField] private GameObject enemyWizard;
+    [Header("----------------FOR ENEMY PREFABS----------------")]
+    [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private Vector3 enemySpawnPosition;
 
     public static bool isExtendable = false;
@@ -112,7 +113,7 @@ public class GameManager : MonoBehaviour
         spawnEnemies = true;
         for (int i = 0; i < numberOfEnemiesToSpawn; i++)
         {
-            Instantiate(enemyWizard, enemySpawnPosition, Quaternion.identity);
+            Instantiate(enemyPrefabs[UnityEngine.Random.Range(0, enemyPrefabs.Length)], enemySpawnPosition, Quaternion.identity);
             yield return new WaitForSeconds(1);
         }
         numberOfEnemiesToSpawn += 5;
@@ -135,15 +136,6 @@ public class GameManager : MonoBehaviour
     {
         waveIndex += index;
         waveText.text = "WAVE: " + waveIndex;
-        //if (waveIndex > 10)
-        //{
-        //    Debug.Log("YOU WIN");
-        //}
-        //else
-        //{
-            
-        //}
-       
     }
 
     public void AddCash(int moneyAmount)

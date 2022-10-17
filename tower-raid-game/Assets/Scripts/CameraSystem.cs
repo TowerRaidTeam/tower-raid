@@ -12,6 +12,7 @@ public class CameraSystem : MonoBehaviour
     [Header("Change camera movment type")]
     [SerializeField] private bool useEdgeScrolling = false;
     [SerializeField] private bool useDragPan = false;
+    [SerializeField] private bool useSpaceToBack = false;
 
     [Header("Zoom with FieldOfView")]
     [SerializeField] private float fieldOfViewMax = 50f;
@@ -40,6 +41,7 @@ public class CameraSystem : MonoBehaviour
         HandleCameraRotation();
         if(useEdgeScrolling) HandleCamerMovmetnEdgeScrolling();
         if(useDragPan) HandleCameraMovmentDragPan();
+        if (useSpaceToBack) MoveCamerBackOnSpace();
 
         HandleCameraZoom_MoveForward();
     }
@@ -165,5 +167,12 @@ public class CameraSystem : MonoBehaviour
          
     }
 
+    private void MoveCamerBackOnSpace()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            transform.position = Vector3.zero;
+        }
+    }
    
 }
