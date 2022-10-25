@@ -33,11 +33,15 @@ public class GameManager : MonoBehaviour
     [Header("FOR SHOP")]
     public static int crystalIndexDeleated = 69; //69 broj koji sigurno nije
     [SerializeField] GameObject parentForSpawning;
-    int[] filledInventorySlots = { 0, 0, 0 };
+    int[] filledInventorySlots = { 0, 0, 0 , 0, 0, 0};
     [SerializeField] GameObject[] elementalCrystals;
     [SerializeField] GameObject[] itemSlots;
-    List<GameObject> spawnedCrystals = new List<GameObject>();
-    
+    [HideInInspector] public List<GameObject> spawnedCrystals = new List<GameObject>();
+
+    [Header("SHOP")]
+    [SerializeField] ShopItem[] notInUse;
+    ShopManager shopManager;
+    //List<GameObject> itemsToDisplayInShop;
 
     private void Start()
     {
@@ -50,6 +54,7 @@ public class GameManager : MonoBehaviour
         UpdateWaveCounter(0);
         AddCash(0);
         sortingArray = FindObjectOfType<SortingArray>();
+        shopManager = GetComponent<ShopManager>();
     }
 
     public static bool  GetTurretHitInfo()
@@ -149,60 +154,87 @@ public class GameManager : MonoBehaviour
         Time.timeScale = gameSpeedSlider.value;
     }
 
-    public void BuyNewCrystal()
+    //public void BuyNewCrystal()
+    //{
+    //    if (cash >= 50)
+    //    {
+    //        cash -= 50;
+    //        UpdateCash();
+    //        foreach (var item in filledInventorySlots)
+    //        {
+    //            if (item == 0)
+    //            {
+    //                SpawnItemOnSlot();
+    //                break;
+    //            }
+    //            else
+    //            {
+    //                Debug.Log("Inventory Full");
+    //            }
+    //        }
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("not enaugh money");
+    //    }
+
+    //}
+
+    //private void SpawnItemOnSlot()
+    //{
+    //    //valueChange = 1;
+
+    //    for (int i = 0; i < filledInventorySlots.Length; i++)
+    //    {
+    //        if (filledInventorySlots[i] == 0)
+    //        {
+    //            GameObject item = Instantiate(elementalCrystals[UnityEngine.Random.Range(0, elementalCrystals.Length)], itemSlots[i].GetComponent<ItemSlot>().ceneterLocation, Quaternion.identity);
+    //            item.transform.SetParent(parentForSpawning.transform);
+    //            item.name = i.ToString();
+    //            spawnedCrystals.Add(item);
+    //            //slots.GetComponent<ItemSlot>().slotFilled = true;
+    //            filledInventorySlots[i] = 1;
+    //            break;
+    //        }
+    //    }
+    //}
+    public void BuyNewItem(GameObject itemToInstantiate)
     {
-        if (cash >= 50)
+        cash -= 50;
+        UpdateCash();
+        foreach (var item in filledInventorySlots)
         {
-            cash -= 50;
-            UpdateCash();
-            foreach (var item in filledInventorySlots)
+            if (item == 0)
             {
-                if (item == 0)
-                {
-                    SpawnCrystalOnSlot(item);
-                    break;
-                }
-                else
-                {
-                    Debug.Log("Inventory Full");
-                }
+                SpawnItemOnSlot(itemToInstantiate);
+                break;
+            }
+            else
+            {
+                Debug.Log("Inventory Full");
             }
         }
-        else
-        {
-            Debug.Log("not enaugh money");
-        }
-        
     }
 
-    private void SpawnCrystalOnSlot(float valueChange)
+    private void SpawnItemOnSlot(GameObject itemToSpawn)
     {
-        valueChange = 1;
-        //foreach (GameObject slots in itemSlots)
-        //{
-        //    if (!slots.GetComponent<ItemSlot>().slotFilled)
-        //    {
-        //        GameObject crystal = Instantiate(elementalCrystals[Random.Range(0, elementalCrystals.Length)], slots.GetComponent<ItemSlot>().ceneterLocation, Quaternion.identity);
-        //        crystal.transform.SetParent(parentForSpawning.transform);
-        //        slots.GetComponent<ItemSlot>().slotFilled = true;
-        //        break;
-        //    }
-        //}
+        //valueChange = 1;
+
         for (int i = 0; i < filledInventorySlots.Length; i++)
         {
             if (filledInventorySlots[i] == 0)
             {
-                GameObject crystal = Instantiate(elementalCrystals[UnityEngine.Random.Range(0, elementalCrystals.Length)], itemSlots[i].GetComponent<ItemSlot>().ceneterLocation, Quaternion.identity);
-                crystal.transform.SetParent(parentForSpawning.transform);
-                crystal.name = i.ToString();
-                spawnedCrystals.Add(crystal);
+                GameObject item = Instantiate(itemToSpawn, itemSlots[i].GetComponent<ItemSlot>().ceneterLocation, Quaternion.identity);
+                item.transform.SetParent(parentForSpawning.transform);
+                item.name = i.ToString();
+                spawnedCrystals.Add(item);
                 //slots.GetComponent<ItemSlot>().slotFilled = true;
                 filledInventorySlots[i] = 1;
+                shopManager.DisplayInventoryInShop(spawnedCrystals.ToArray());
                 break;
             }
         }
     }
-
     public void RefreshShopSlots(int index)
     {
         filledInventorySlots[index] = 0;
@@ -216,5 +248,16 @@ public class GameManager : MonoBehaviour
     public float EnemyHpIncrees(float startHp)
     {
         return startHp * waveIndex;
+    }
+
+    public void ShowShop()
+    {
+        shopManager.DisplayInventoryInShop(spawnedCrystals.ToArray());
+        shopManager.OpenShopAndItems();
+    }
+
+    public void UpdateShopInventory()
+    {
+        shopManager.DisplayInventoryInShop(spawnedCrystals.ToArray());
     }
 }

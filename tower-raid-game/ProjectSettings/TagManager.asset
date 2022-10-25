@@ -21,6 +21,7 @@ TagManager:
   - rotationCheckers
   - EarthCrystal
   - AirCrystal
+  - HexItem
   layers:
   - Default
   - TransparentFX

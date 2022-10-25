@@ -10,6 +10,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
     private Canvas canvas;
 
     public static GameObject crystalInHand;
+    public static GameObject itemInHandUpgrade;
+    WorldGeneration wg;
 
     Vector3 startPosition;
 
@@ -17,6 +19,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+        wg = FindObjectOfType<WorldGeneration>();
         canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
     }
     public void OnBeginDrag(PointerEventData eventData)
@@ -27,6 +30,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
         canvasGroup.blocksRaycasts = false;
 
         crystalInHand = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
+        itemInHandUpgrade = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -43,11 +47,16 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
         canvasGroup.blocksRaycasts = true;
 
         crystalInHand = null;
+        itemInHandUpgrade = null;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        //Debug.Log("OnPointerDown");
+        if (gameObject.tag == "HexItem")
+        {
+            wg.SpawnChunkWithItem(gameObject.GetComponent<HexBought>().hexIndex);
+            Destroy(this.gameObject);
+        }
     }
 
     

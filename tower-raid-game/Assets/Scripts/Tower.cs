@@ -21,7 +21,9 @@ public class Tower : MonoBehaviour
     
 
     [SerializeField] private bool hasCrystal = false;
-   
+    [SerializeField] private string[] allUpgradesTags;
+
+    float dmgUpgrade = 0;
 
     enum CrystalsEnum
     {
@@ -67,7 +69,7 @@ public class Tower : MonoBehaviour
                 }
                 else 
                 {
-                    Projectile.Create(projectileShootFromPosition, enemy, projectileSOs[projectileIndex].projectileDmg, projectileSOs[projectileIndex].projectilePrefab);
+                    Projectile.Create(projectileShootFromPosition, enemy, projectileSOs[projectileIndex].projectileDmg + dmgUpgrade, projectileSOs[projectileIndex].projectilePrefab);
                     lookAtEnemyForParticles.transform.LookAt(enemy.GetPosition());
 
                     particles.Play();
@@ -144,6 +146,8 @@ public class Tower : MonoBehaviour
                 Debug.Log(DragDrop.crystalInHand.transform.name);
                 //GameManager.crystalIndexDeleated = int.Parse(DragDrop.crystalInHand.transform.name);
                 gm.RefreshShopSlots(int.Parse(DragDrop.crystalInHand.transform.name));
+                gm.spawnedCrystals.Remove(DragDrop.crystalInHand);
+                gm.UpdateShopInventory();
                 Destroy(DragDrop.crystalInHand); //Destory the crystal sprite after spawning the crystal object
                 
                 projectileShootFromPosition = crystalSpawnArea.transform.position;
@@ -154,6 +158,19 @@ public class Tower : MonoBehaviour
            
             
         }
+
+        if (DragDrop.itemInHandUpgrade != null)
+        {
+            switch (allUpgradesTags)
+            {
+                case DragDrop.itemInHandUpgrade.tag == allUpgradesTags[0]:
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
         
     }
 

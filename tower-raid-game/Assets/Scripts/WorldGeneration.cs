@@ -148,16 +148,12 @@ public class WorldGeneration : MonoBehaviour
             }
             //moves the cgunk to the mouse position
             chunk.transform.position = GetMousePosition();
-
             
             if ( GameManager.isExtendable && HexBuildTriggerCheck.spawnPositionLocation != Vector3.zero)
             {
                 
                 spawnBlocks = chunk.GetComponentsInChildren<Transform>();
                 spawnBlocks = spawnBlocks.Where(child => child.tag == "buildHex").ToArray();
-
-                
-
 
                 if (Input.GetMouseButtonDown(0))
                 {
@@ -390,6 +386,25 @@ public class WorldGeneration : MonoBehaviour
             Debug.Log("DONT HAVE ENAUGH MONEY");
         }
         
+    }
+
+    public void SpawnChunkWithItem(int index)
+    {
+        GameObject[] pads = GameObject.FindGameObjectsWithTag("buildHex");
+        foreach (GameObject item in pads)
+        {
+            if (item.GetComponent<HexBuildTriggerCheck>().isTuchingLocal)
+            {
+                Destroy(item.gameObject);
+            }
+        }
+        HexBuildTriggerCheck.spawnPositionLocation = Vector3.zero;
+        
+        chunk = Instantiate(hexPrefabs[index], new Vector3(GetMousePosition().x, 0f, GetMousePosition().z), hexPrefabs[index].transform.rotation);
+        shopCoverPanel.SetActive(true);
+
+        chunsIsSpawnd = true;
+
     }
 
     private void UpdateRotation(int angle)
