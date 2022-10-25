@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] ShopItem[] notInUse;
     ShopManager shopManager;
     [SerializeField] GameObject shopPanel;
+    [SerializeField] TMP_Text shopMoneyView;
     int shopRefreshIndex = 0;
     //List<GameObject> itemsToDisplayInShop;
 
@@ -242,7 +243,8 @@ public class GameManager : MonoBehaviour
 
     public void UpdateCash()
     {
-        cashText.text = cash.ToString() + "$"; 
+        cashText.text = cash.ToString() + "$";
+        shopMoneyView.text = cash.ToString() + "$";
     }
 
     public float EnemyHpIncrees(float startHp)
