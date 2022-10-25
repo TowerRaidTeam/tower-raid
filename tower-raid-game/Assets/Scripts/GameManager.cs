@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
     [Header("SHOP")]
     [SerializeField] ShopItem[] notInUse;
     ShopManager shopManager;
+    [SerializeField] GameObject shopPanel;
+    int shopRefreshIndex = 0;
     //List<GameObject> itemsToDisplayInShop;
 
     private void Start()
@@ -123,6 +125,7 @@ public class GameManager : MonoBehaviour
         numberOfEnemiesToSpawn += 5;
         spawnEnemies = false;
         spawnEnemysButtons.interactable = true;
+        shopManager.OpenShopAndItems();
     }
 
     public void TakeDmgCastle(float dmg)
@@ -139,7 +142,7 @@ public class GameManager : MonoBehaviour
     void UpdateWaveCounter(int index)
     {
         waveIndex += index;
-        waveText.text = "WAVE: " + waveIndex;
+        waveText.text = "WAVE: " + waveIndex + "/30";
     }
 
     public void AddCash(int moneyAmount)
@@ -199,8 +202,6 @@ public class GameManager : MonoBehaviour
     //}
     public void BuyNewItem(GameObject itemToInstantiate)
     {
-        cash -= 50;
-        UpdateCash();
         foreach (var item in filledInventorySlots)
         {
             if (item == 0)
@@ -265,7 +266,18 @@ public class GameManager : MonoBehaviour
 
     public void UpdateShopInventory()
     {
-        
         shopManager.DisplayInventoryInShop(spawnedCrystals.ToArray());
+    }
+
+    public void RefreshShop()
+    {
+        shopRefreshIndex++;
+        if (cash >= 50 * shopRefreshIndex / 2)
+        {
+            cash -= 50 * shopRefreshIndex / 2;
+            
+            UpdateCash();
+            shopManager.RefreshShop();
+        }
     }
 }

@@ -37,19 +37,38 @@ public class ShopManager : MonoBehaviour
         shopPanel.SetActive(true);
     }
 
+    public void RefreshShop()
+    {
+        allChldren = itemShopHolder.GetComponentsInChildren<ItemManager>();
+        foreach (ItemManager item in allChldren)
+        {
+            Destroy(item.gameObject);
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            GameObject item = Instantiate(itemPrefab, Vector2.zero, Quaternion.identity);
+            item.transform.SetParent(itemShopHolder.transform);
+        }
+    }
+
     //This parameter does nothing i just didnt whatn to change it everywhere
     public void DisplayInventoryInShop(GameObject[] items)
     {
-        for (int i = 0; i < gm.filledInventorySlots.Length; i++)
+        //for (int i = 0; i < gm.filledInventorySlots.Length; i++)
+        //{
+        //    if (gm.filledInventorySlots[i] == 0)
+        //    {
+        //        inventoryItem[i].GetComponent<Image>().sprite = emptyCell;
+        //    }
+        //    else
+        //    {
+        //        inventoryItem[i].GetComponent<Image>().sprite = items[i].GetComponent<Image>().sprite;
+        //    }
+        //}
+
+        for (int i = 0; i < items.Length; i++)
         {
-            if (gm.filledInventorySlots[i] == 0)
-            {
-                inventoryItem[i].GetComponent<Image>().sprite = emptyCell;
-            }
-            else
-            {
-                inventoryItem[i].GetComponent<Image>().sprite = items[i].GetComponent<Image>().sprite;
-            }
+            inventoryItem[i].GetComponent<Image>().sprite = items[i].GetComponent<Image>().sprite;
         }
     }
 

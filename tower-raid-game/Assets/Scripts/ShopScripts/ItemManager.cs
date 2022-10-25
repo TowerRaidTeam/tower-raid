@@ -16,6 +16,7 @@ public class ItemManager : MonoBehaviour
     ShopItem itemTOUse;
 
     GameManager gm;
+    [SerializeField] GameObject itemSoldPanel;
 
     private void Start()
     {
@@ -24,7 +25,7 @@ public class ItemManager : MonoBehaviour
         {
             itemTOUse = items[Random.Range(0, items.Length)];
             itemName.text = itemTOUse.itemName;
-            price.text = itemTOUse.price.ToString();
+            price.text = itemTOUse.price.ToString() + "$";
             description.text = itemTOUse.description;
             icon.sprite = itemTOUse.icon;
             type.text = itemTOUse.typeOfItem;
@@ -33,12 +34,14 @@ public class ItemManager : MonoBehaviour
 
     public void BuyItem()
     {
-        if (itemTOUse.price >= gm.cash)
+        if (itemTOUse.price <= gm.cash)
         {
-            
-            
+            gm.cash -= itemTOUse.price;
+            gm.UpdateCash();
+            Debug.Log("BOUGHT NEW ITEM");
+            gm.BuyNewItem(itemTOUse.boughtItem);
+            itemSoldPanel.SetActive(true);
         }
-        gm.BuyNewItem(itemTOUse.boughtItem);
-        Debug.Log("BOUGHT NEW ITEM");
+        
     }
 }
