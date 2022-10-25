@@ -12,6 +12,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
     public static GameObject crystalInHand;
     public static GameObject itemInHandUpgrade;
     WorldGeneration wg;
+    BuildingController bc;
+    GameManager gm;
 
     Vector3 startPosition;
 
@@ -20,6 +22,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         wg = FindObjectOfType<WorldGeneration>();
+        bc = FindObjectOfType<BuildingController>();
+        gm = FindObjectOfType<GameManager>();
         canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
     }
     public void OnBeginDrag(PointerEventData eventData)
@@ -55,6 +59,15 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
         if (gameObject.tag == "HexItem")
         {
             wg.SpawnChunkWithItem(gameObject.GetComponent<HexBought>().hexIndex);
+            gm.spawnedCrystals.Remove(gameObject);
+            gm.RefreshShopSlots(int.Parse(gameObject.transform.name));
+            Destroy(this.gameObject);
+        }
+        else if (gameObject.tag == "TowerItem")
+        {
+            bc.BoughtATower();
+            gm.spawnedCrystals.Remove(gameObject);
+            gm.RefreshShopSlots(int.Parse(gameObject.transform.name));
             Destroy(this.gameObject);
         }
     }

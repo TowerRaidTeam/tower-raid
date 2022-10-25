@@ -52,6 +52,29 @@ public class Tower : MonoBehaviour
 
     private void Update()
     {
+        if (DragDrop.itemInHandUpgrade != null && GameManager.GetTurretHitInfo())
+        {
+            switch (DragDrop.itemInHandUpgrade.tag)
+            {
+                case "DmgUpgrade":
+                    dmgUpgrade += 100;
+                    gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
+                    gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
+                    gm.UpdateShopInventory();
+                    Destroy(DragDrop.itemInHandUpgrade);
+                    break;
+                case "AttackSpeedUpgrade":
+                    shootTimerMax -= shootTimerMax * 0.5f;
+                    gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
+                    gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
+                    gm.UpdateShopInventory();
+                    Destroy(DragDrop.itemInHandUpgrade);
+                    break;
+                default:
+                    Debug.Log("NOTHIN TO UPGRADE");
+                    break;
+            }
+        }
         //??Change this ti IEnumerator later
         if (hasCrystal)
         {
@@ -69,6 +92,7 @@ public class Tower : MonoBehaviour
                 }
                 else 
                 {
+                    Debug.Log(shootTimerMax);
                     Projectile.Create(projectileShootFromPosition, enemy, projectileSOs[projectileIndex].projectileDmg + dmgUpgrade, projectileSOs[projectileIndex].projectilePrefab);
                     lookAtEnemyForParticles.transform.LookAt(enemy.GetPosition());
 
@@ -159,16 +183,7 @@ public class Tower : MonoBehaviour
             
         }
 
-        if (DragDrop.itemInHandUpgrade != null)
-        {
-            switch (allUpgradesTags)
-            {
-                case DragDrop.itemInHandUpgrade.tag == allUpgradesTags[0]:
-                    break;
-                default:
-                    break;
-            }
-        }
+        
 
 
         

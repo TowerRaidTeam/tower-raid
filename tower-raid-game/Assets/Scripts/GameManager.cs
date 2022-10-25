@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     [Header("FOR SHOP")]
     public static int crystalIndexDeleated = 69; //69 broj koji sigurno nije
     [SerializeField] GameObject parentForSpawning;
-    int[] filledInventorySlots = { 0, 0, 0 , 0, 0, 0};
+    [HideInInspector] public int[] filledInventorySlots = { 0, 0, 0 , 0, 0, 0};
     [SerializeField] GameObject[] elementalCrystals;
     [SerializeField] GameObject[] itemSlots;
     [HideInInspector] public List<GameObject> spawnedCrystals = new List<GameObject>();
@@ -45,7 +45,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        
         Cursor.SetCursor(cursourTexture, Vector2.zero, CursorMode.Auto);
 
         gameSpeedSlider.value = 1;
@@ -252,12 +251,21 @@ public class GameManager : MonoBehaviour
 
     public void ShowShop()
     {
+        foreach (var item in spawnedCrystals)
+        {
+            Debug.Log("LIST: " + item);
+        }
+        foreach (var item in filledInventorySlots)
+        {
+            Debug.Log(item);
+        }
         shopManager.DisplayInventoryInShop(spawnedCrystals.ToArray());
         shopManager.OpenShopAndItems();
     }
 
     public void UpdateShopInventory()
     {
+        
         shopManager.DisplayInventoryInShop(spawnedCrystals.ToArray());
     }
 }

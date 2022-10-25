@@ -96,6 +96,7 @@ public class Enemy : MonoBehaviour
 
     public void Damage(float damageAmount)
     {
+        Debug.Log(damageAmount);
         enemyHp -= damageAmount;
 
         if (enemyHp <= 0)

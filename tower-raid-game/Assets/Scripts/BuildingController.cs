@@ -99,23 +99,32 @@ public class BuildingController : MonoBehaviour
         //Debug.DrawRay(ray.origin, ray.direction * 10, Color.red);
     }
 
+    //public void BoughtATower()
+    //{
+    //    if (gm.cash >= turretPrice)
+    //    {
+    //        gm.cash -= turretPrice;
+    //        gm.UpdateCash();
+    //        shopCoverPanel.SetActive(true);
+    //        isBought = true;
+    //        turret = Instantiate(building, GetMousePosition(), Quaternion.Euler(0f, Random.Range(0, 360), 0f));
+    //        turret.GetComponent<Collider>().enabled = false;
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("NOT ENAUGH MONEY");
+    //    }
+
+
+    //}
+
     public void BoughtATower()
     {
-        if (gm.cash >= turretPrice)
-        {
-            gm.cash -= turretPrice;
-            gm.UpdateCash();
-            shopCoverPanel.SetActive(true);
-            isBought = true;
-            turret = Instantiate(building, GetMousePosition(), Quaternion.Euler(0f, Random.Range(0, 360), 0f));
-            turret.GetComponent<Collider>().enabled = false;
-        }
-        else
-        {
-            Debug.Log("NOT ENAUGH MONEY");
-        }
-        
-        
+        shopCoverPanel.SetActive(true);
+        isBought = true;
+        turret = Instantiate(building, GetMousePosition(), Quaternion.Euler(0f, Random.Range(0, 360), 0f));
+        turret.GetComponent<Collider>().enabled = false;
+
     }
 
     private Vector3 GetMousePosition()

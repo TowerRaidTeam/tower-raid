@@ -12,7 +12,13 @@ public class ShopManager : MonoBehaviour
 
     ItemManager[] allChldren;
 
-    
+    [SerializeField] Sprite emptyCell;
+    GameManager gm;
+
+    private void Start()
+    {
+        gm = FindObjectOfType<GameManager>();
+    }
 
     public void OpenShopAndItems()
     {
@@ -31,12 +37,22 @@ public class ShopManager : MonoBehaviour
         shopPanel.SetActive(true);
     }
 
+    //This parameter does nothing i just didnt whatn to change it everywhere
     public void DisplayInventoryInShop(GameObject[] items)
     {
-        for (int i = 0; i < items.Length; i++)
+        for (int i = 0; i < gm.filledInventorySlots.Length; i++)
         {
-            inventoryItem[i].GetComponent<Image>().sprite = items[i].GetComponent<Image>().sprite;
+            if (gm.filledInventorySlots[i] == 0)
+            {
+                inventoryItem[i].GetComponent<Image>().sprite = emptyCell;
+            }
+            else
+            {
+                inventoryItem[i].GetComponent<Image>().sprite = items[i].GetComponent<Image>().sprite;
+            }
         }
     }
-    
+
+   
+
 }
