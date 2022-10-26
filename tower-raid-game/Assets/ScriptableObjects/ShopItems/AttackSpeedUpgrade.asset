@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Attack Speed Upgrade
   typeOfItem: Upgrade
   icon: {fileID: 21300000, guid: c012ad47ffcd4ce41b0f04ee61686d04, type: 3}
-  price: 50
+  price: 150
   description: Attack Speed Upgrade
   boughtItem: {fileID: 6692222140751621592, guid: 07ae7e8b8dc78f14d84e008e92539dd5,
     type: 3}

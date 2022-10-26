@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Dmg Upgrade
   typeOfItem: Upgrade
   icon: {fileID: 21300000, guid: 284b76fdab4a0aa4fb1d80af1f0f0d2d, type: 3}
-  price: 50
+  price: 150
   description: Dmg Upgrade
   boughtItem: {fileID: 6692222140751621592, guid: 2c17ebb9dc1a69344aaa8f1ab05ebc6b,
     type: 3}

@@ -261,7 +261,7 @@ public class GameManager : MonoBehaviour
 
     public float EnemyHpIncrees(float startHp)
     {
-        return startHp * waveIndex * 2;
+        return startHp * (waveIndex * 0.50f) * (FindObjectsOfType<Tower>().Length * 0.5f);
     }
 
     public void ShowShop()
