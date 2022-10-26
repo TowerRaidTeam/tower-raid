@@ -11,4 +11,7 @@ public class ShopItem : ScriptableObject
     public int price;
     public string description;
     public GameObject boughtItem;
+    public bool isPassive = false;
+    [Header("DONT FUCK UP THE KEY IT IS USED TO ADD PASSIV EFFECTS")]
+    public string passivItemKey;
 }

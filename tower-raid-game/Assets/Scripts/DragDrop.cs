@@ -45,7 +45,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        //Debug.Log("OnEndDrag");
+        Debug.Log("OnEndDrag");
         rectTransform.position = startPosition;
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
@@ -71,6 +71,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
             Destroy(this.gameObject);
         }
     }
+        
+    
 
     
 }

@@ -14,6 +14,7 @@ public class ShopManager : MonoBehaviour
 
     [SerializeField] Sprite emptyCell;
     GameManager gm;
+    public List<string> passivItemKeys = new List<string>();
 
     private void Start()
     {

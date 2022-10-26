@@ -1,3 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <ui:Button text="LOL" display-tooltip-when-elided="true" style="position: absolute; top: 866px; left: 394px; -unity-text-align: upper-center; width: 134px; height: 46px; font-size: 40px; -unity-font-style: bold;" />
-</ui:UXML>

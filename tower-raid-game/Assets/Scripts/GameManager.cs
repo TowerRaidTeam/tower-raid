@@ -43,7 +43,13 @@ public class GameManager : MonoBehaviour
     ShopManager shopManager;
     [SerializeField] GameObject shopPanel;
     [SerializeField] TMP_Text shopMoneyView;
+    [SerializeField] Transform passivItemHolder;
+    [SerializeField] GameObject passivItemPrefab;
     int shopRefreshIndex = 0;
+    public int itemPriceIncress;
+
+    //Passive Item Variables
+    public float piggyBankInterest;
     //List<GameObject> itemsToDisplayInShop;
 
     private void Start()
@@ -103,9 +109,12 @@ public class GameManager : MonoBehaviour
 
     public void StartSpawningEnemys()
     {
+        itemPriceIncress = waveIndex * 25;
         WorldGeneration.path = sortingArray.GenerateNewPath().ToArray();
         enemySpawnPosition = WorldGeneration.path[WorldGeneration.path.Length - 1] + Vector3.up;
         UpdateWaveCounter(1);
+        cash += (int)(cash * piggyBankInterest);
+        UpdateCash();
         StartCoroutine(SpawnEnemy());
     }
 
@@ -226,6 +235,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void BuyNewPassiveItem(Sprite iconToUse)
+    {
+        GameObject iconHolder = Instantiate(passivItemPrefab, Vector2.zero, Quaternion.identity);
+        iconHolder.transform.SetParent(passivItemHolder);
+        iconHolder.GetComponent<Image>().sprite = iconToUse;
+    }
+
     private void SpawnItemOnSlot(GameObject itemToSpawn)
     {
         //valueChange = 1;
@@ -290,5 +306,10 @@ public class GameManager : MonoBehaviour
             UpdateCash();
             shopManager.RefreshShop();
         }
+    }
+
+    public void ItemFollowHand(Transform transform)
+    {
+        transform.position = Input.mousePosition;
     }
 }
