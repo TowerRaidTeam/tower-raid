@@ -57,14 +57,14 @@ public class Tower : MonoBehaviour
             switch (DragDrop.itemInHandUpgrade.tag)
             {
                 case "DmgUpgrade":
-                    dmgUpgrade += 100;
+                    dmgUpgrade += 5;
                     gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
                     gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
                     gm.UpdateShopInventory();
                     Destroy(DragDrop.itemInHandUpgrade);
                     break;
                 case "AttackSpeedUpgrade":
-                    shootTimerMax -= shootTimerMax * 0.5f;
+                    shootTimerMax -= shootTimerMax * 0.05f;
                     gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
                     gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
                     gm.UpdateShopInventory();
