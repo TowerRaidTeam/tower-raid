@@ -57,8 +57,10 @@ public class ItemManager : MonoBehaviour
                 Debug.Log("BOUGHT NEW ITEM");
                 gm.BuyNewItem(itemTOUse.boughtItem);
                 itemSoldPanel.SetActive(true);
+                sm.CheckIfYouHaveEnaughrSpaceAndTurnOnPanel();
             }
         }
+        
     }
 
     void AddPassivEffects()

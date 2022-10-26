@@ -9,6 +9,7 @@ public class ShopManager : MonoBehaviour
     [SerializeField] GameObject itemShopHolder;
     [SerializeField] GameObject itemPrefab;
     [SerializeField] GameObject[] inventoryItem;
+    [SerializeField] GameObject inventoryFullPanel;
 
     ItemManager[] allChldren;
 
@@ -23,19 +24,36 @@ public class ShopManager : MonoBehaviour
 
     public void OpenShopAndItems()
     {
-        
-
-        allChldren = itemShopHolder.GetComponentsInChildren<ItemManager>();
-        foreach (ItemManager item in allChldren)
+        if (!CheckIfInventoryHasSpace(gm.filledInventorySlots))
         {
-            Destroy(item.gameObject);
+            inventoryFullPanel.SetActive(true);
+            allChldren = itemShopHolder.GetComponentsInChildren<ItemManager>();
+            foreach (ItemManager item in allChldren)
+            {
+                Destroy(item.gameObject);
+            }
+            for (int i = 0; i < 4; i++)
+            {
+                GameObject item = Instantiate(itemPrefab, Vector2.zero, Quaternion.identity);
+                item.transform.SetParent(itemShopHolder.transform);
+            }
+            shopPanel.SetActive(true);
         }
-        for (int i = 0; i < 4; i++)
+        else
         {
-            GameObject item = Instantiate(itemPrefab, Vector2.zero, Quaternion.identity);
-            item.transform.SetParent(itemShopHolder.transform);
+            inventoryFullPanel.SetActive(false);
+            allChldren = itemShopHolder.GetComponentsInChildren<ItemManager>();
+            foreach (ItemManager item in allChldren)
+            {
+                Destroy(item.gameObject);
+            }
+            for (int i = 0; i < 4; i++)
+            {
+                GameObject item = Instantiate(itemPrefab, Vector2.zero, Quaternion.identity);
+                item.transform.SetParent(itemShopHolder.transform);
+            }
+            shopPanel.SetActive(true);
         }
-        shopPanel.SetActive(true);
     }
 
     public void RefreshShop()
@@ -73,6 +91,34 @@ public class ShopManager : MonoBehaviour
         }
     }
 
-   
+    public bool CheckIfInventoryHasSpace(int[] array)
+    {
+        bool returnBool = true;
+        foreach (int slot in array)
+        {
+            if (slot == 0)
+            {
+                returnBool = true;
+                break;
+            }
+            else
+            {
+                returnBool = false;
+            }
+        }
+        return returnBool;
+    }
 
+
+    public void CheckIfYouHaveEnaughrSpaceAndTurnOnPanel()
+    {
+        if (!CheckIfInventoryHasSpace(gm.filledInventorySlots))
+        {
+            inventoryFullPanel.SetActive(true);
+        }
+        else
+        {
+            inventoryFullPanel.SetActive(false);
+        }
+    }
 }
