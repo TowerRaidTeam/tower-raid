@@ -126,6 +126,15 @@ public class GameManager : MonoBehaviour
         numberOfEnemiesToSpawn += 5;
         spawnEnemies = false;
         spawnEnemysButtons.interactable = true;
+        StartCoroutine(ShowShopAfterAllMinions());
+    }
+
+    IEnumerator ShowShopAfterAllMinions()
+    {
+        while (FindObjectsOfType<Enemy>().Length > 0)
+        {
+            yield return new WaitForSeconds(0.25f);
+        }
         shopManager.OpenShopAndItems();
     }
 
@@ -249,7 +258,7 @@ public class GameManager : MonoBehaviour
 
     public float EnemyHpIncrees(float startHp)
     {
-        return startHp * waveIndex;
+        return startHp * waveIndex * (FindObjectsOfType<Tower>().Length * 0.5f);
     }
 
     public void ShowShop()

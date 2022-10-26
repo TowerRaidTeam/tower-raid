@@ -29,12 +29,14 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         enemyHp = enemyScriptableObject.enemyHp;
+        
         enemySpeed = enemyScriptableObject.enemySpeed;
         //worldGeneration = FindObjectOfType<WorldGeneration>();
         //sortingArray = FindObjectOfType<SortingArray>();
         gameManager = FindObjectOfType<GameManager>();
 
         enemyHp = gameManager.EnemyHpIncrees(enemyHp);
+        Debug.Log(enemyHp);
         //movePoints = GameObject.FindGameObjectsWithTag("Point");
         ////Debug.Log(movePoints);
 
@@ -102,6 +104,7 @@ public class Enemy : MonoBehaviour
         if (enemyHp <= 0)
         {
             gameManager.AddCash(10);
+            gameManager.UpdateCash();
             Destroy(gameObject);
         }
     }

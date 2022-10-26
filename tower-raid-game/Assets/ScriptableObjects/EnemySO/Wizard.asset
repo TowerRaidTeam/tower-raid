@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a20abbe9d0745449a41a734fb63583, type: 3}
   m_Name: Wizard
   m_EditorClassIdentifier: 
-  enemyHp: 100
+  enemyHp: 80
   enemySpeed: 2

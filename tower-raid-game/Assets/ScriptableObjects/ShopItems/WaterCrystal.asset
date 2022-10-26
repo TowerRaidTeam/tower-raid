@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Water Crystal
   typeOfItem: Crystal
   icon: {fileID: 21300000, guid: d649a6bd95c65be41a50a8341fc6c2f8, type: 3}
-  price: 50
+  price: 100
   description: Water Crystal
   boughtItem: {fileID: 6692222140751621592, guid: 510a7666fc348dd428d572ad3daff879,
     type: 3}

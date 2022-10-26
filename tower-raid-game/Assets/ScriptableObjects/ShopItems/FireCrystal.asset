@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Fire Crystal
   typeOfItem: Crystal
   icon: {fileID: 21300000, guid: 75fd416e48aecdf408e5d6c43bb7982a, type: 3}
-  price: 50
+  price: 100
   description: Water Crystal
   boughtItem: {fileID: 852569067453026780, guid: 6e6d20866d4944e458a27e5f24cd1b36,
     type: 3}

@@ -52,19 +52,19 @@ public class Tower : MonoBehaviour
 
     private void Update()
     {
-        if (DragDrop.itemInHandUpgrade != null && GameManager.GetTurretHitInfo())
+        if (DragDrop.itemInHandUpgrade != null && GameManager.GetTurretHitInfo() && hasCrystal == true)
         {
             switch (DragDrop.itemInHandUpgrade.tag)
             {
                 case "DmgUpgrade":
-                    dmgUpgrade += 100;
+                    dmgUpgrade += 10;
                     gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
                     gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
                     gm.UpdateShopInventory();
                     Destroy(DragDrop.itemInHandUpgrade);
                     break;
                 case "AttackSpeedUpgrade":
-                    shootTimerMax -= shootTimerMax * 0.5f;
+                    shootTimerMax -= shootTimerMax * 0.05f;
                     gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
                     gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
                     gm.UpdateShopInventory();

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1db10ce7f691ac644879f9f2b14ece7a, type: 3}
   m_Name: AirProjectile
   m_EditorClassIdentifier: 
-  projectileDmg: 15
+  projectileDmg: 10
   projectileRange: 5
   projectileAttackSpeed: 0.1
   projectilePrefab: {fileID: 7437496764383799490, guid: d7685db04107bf24998014fc2577693f,
