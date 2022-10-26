@@ -52,7 +52,7 @@ public class Tower : MonoBehaviour
 
     private void Update()
     {
-        if (DragDrop.itemInHandUpgrade != null && GameManager.GetTurretHitInfo())
+        if (DragDrop.itemInHandUpgrade != null && GameManager.GetTurretHitInfo() && hasCrystal == true)
         {
             switch (DragDrop.itemInHandUpgrade.tag)
             {

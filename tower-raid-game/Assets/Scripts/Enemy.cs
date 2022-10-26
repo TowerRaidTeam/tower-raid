@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private List<Vector3> pathVectorList = new List<Vector3>();
     private GameObject[] movePoints;
     private int curretnPathIndex;
-    
+    public static bool isAlive = true;
 
 
     public static List<Enemy> enemyList = new List<Enemy>();
@@ -102,6 +102,8 @@ public class Enemy : MonoBehaviour
         if (enemyHp <= 0)
         {
             gameManager.AddCash(10);
+            isAlive = false;
+            gameManager.UpdateCash();
             Destroy(gameObject);
         }
     }

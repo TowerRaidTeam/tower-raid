@@ -22,8 +22,6 @@ public class ShopManager : MonoBehaviour
 
     public void OpenShopAndItems()
     {
-        
-
         allChldren = itemShopHolder.GetComponentsInChildren<ItemManager>();
         foreach (ItemManager item in allChldren)
         {
@@ -35,6 +33,7 @@ public class ShopManager : MonoBehaviour
             item.transform.SetParent(itemShopHolder.transform);
         }
         shopPanel.SetActive(true);
+        gm.UpdateCash();
     }
 
     public void RefreshShop()
@@ -49,6 +48,7 @@ public class ShopManager : MonoBehaviour
             GameObject item = Instantiate(itemPrefab, Vector2.zero, Quaternion.identity);
             item.transform.SetParent(itemShopHolder.transform);
         }
+        gm.UpdateCash();
     }
 
     //This parameter does nothing i just didnt whatn to change it everywhere

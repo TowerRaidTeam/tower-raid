@@ -137,15 +137,16 @@ public class WorldGeneration : MonoBehaviour
         //CHECKS IF A NEW CHUNK HAS BEN SPAWNED AND LETSE ME PLACE IT
         if (chunsIsSpawnd)
         {
-            if (Input.GetMouseButtonDown(1))
-            {
-                gameManager.cash += hexPrice;
-                gameManager.UpdateCash();
-                HexBuildTriggerCheck.isTuching = false;
-                Destroy(chunk);
-                shopCoverPanel.SetActive(false);
-                chunsIsSpawnd = false;
-            }
+            //ZA REFUND HEXA
+            //if (Input.GetMouseButtonDown(1))
+            //{
+            //    gameManager.cash += hexPrice;
+            //    gameManager.UpdateCash();
+            //    HexBuildTriggerCheck.isTuching = false;
+            //    Destroy(chunk);
+            //    shopCoverPanel.SetActive(false);
+            //    chunsIsSpawnd = false;
+            //}
             //moves the cgunk to the mouse position
             chunk.transform.position = GetMousePosition();
             

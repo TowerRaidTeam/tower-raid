@@ -126,7 +126,19 @@ public class GameManager : MonoBehaviour
         numberOfEnemiesToSpawn += 5;
         spawnEnemies = false;
         spawnEnemysButtons.interactable = true;
-        shopManager.OpenShopAndItems();
+        //ShowShop();
+        StartCoroutine(CheckIfAllAreDead());
+        //shopManager.OpenShopAndItems();
+    }
+
+    IEnumerator CheckIfAllAreDead()
+    {
+        while (GameObject.FindObjectsOfType<Enemy>().Length > 0)
+        {
+            Debug.Log(GameObject.FindObjectsOfType<Enemy>().Length);
+            yield return new WaitForSeconds(0.2f);
+        }
+        ShowShop();
     }
 
     public void TakeDmgCastle(float dmg)
@@ -264,11 +276,13 @@ public class GameManager : MonoBehaviour
         }
         shopManager.DisplayInventoryInShop(spawnedCrystals.ToArray());
         shopManager.OpenShopAndItems();
+        UpdateCash();
     }
 
     public void UpdateShopInventory()
     {
         shopManager.DisplayInventoryInShop(spawnedCrystals.ToArray());
+        UpdateCash();
     }
 
     public void RefreshShop()
@@ -277,9 +291,8 @@ public class GameManager : MonoBehaviour
         if (cash >= 50 * shopRefreshIndex / 2)
         {
             cash -= 50 * shopRefreshIndex / 2;
-            
-            UpdateCash();
             shopManager.RefreshShop();
+            UpdateCash();
         }
     }
 }

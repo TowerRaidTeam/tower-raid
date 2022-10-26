@@ -57,14 +57,15 @@ public class BuildingController : MonoBehaviour
 
                 }
             }
-            else if (Input.GetMouseButtonDown(1))
-            {
-                gm.cash += turretPrice;
-                gm.UpdateCash();
-                Destroy(turret);
-                shopCoverPanel.SetActive(false);
-                isBought = false;
-            }
+            //Cancle build
+            //else if (Input.GetMouseButtonDown(1))
+            //{
+            //    gm.cash += turretPrice;
+            //    gm.UpdateCash();
+            //    Destroy(turret);
+            //    shopCoverPanel.SetActive(false);
+            //    isBought = false;
+            //}
 
         }
 
@@ -121,10 +122,16 @@ public class BuildingController : MonoBehaviour
     public void BoughtATower()
     {
         shopCoverPanel.SetActive(true);
-        isBought = true;
+        
         turret = Instantiate(building, GetMousePosition(), Quaternion.Euler(0f, Random.Range(0, 360), 0f));
         turret.GetComponent<Collider>().enabled = false;
+        Invoke(nameof(IsBoughChange), 0.05f);
 
+    }
+
+    void IsBoughChange()
+    {
+        isBought = true;
     }
 
     private Vector3 GetMousePosition()
