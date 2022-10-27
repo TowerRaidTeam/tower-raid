@@ -57,7 +57,7 @@ public class Tower : MonoBehaviour
             switch (DragDrop.itemInHandUpgrade.tag)
             {
                 case "DmgUpgrade":
-                    dmgUpgrade += 10;
+                    dmgUpgrade += 5;
                     gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
                     gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
                     gm.UpdateShopInventory();

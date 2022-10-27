@@ -84,6 +84,10 @@ public class ShopManager : MonoBehaviour
         //        inventoryItem[i].GetComponent<Image>().sprite = items[i].GetComponent<Image>().sprite;
         //    }
         //}
+        foreach (var item in inventoryItem)
+        {
+            item.GetComponent<Image>().sprite = emptyCell;
+        }
 
         for (int i = 0; i < items.Length; i++)
         {

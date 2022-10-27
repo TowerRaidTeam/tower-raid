@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text shopMoneyView;
     [SerializeField] Transform passivItemHolder;
     [SerializeField] GameObject passivItemPrefab;
+    [SerializeField] GameObject openShopButton;
     int shopRefreshIndex = 0;
     public int itemPriceIncress;
 
@@ -109,12 +110,14 @@ public class GameManager : MonoBehaviour
 
     public void StartSpawningEnemys()
     {
+        
         itemPriceIncress = waveIndex * 25;
         WorldGeneration.path = sortingArray.GenerateNewPath().ToArray();
         enemySpawnPosition = WorldGeneration.path[WorldGeneration.path.Length - 1] + Vector3.up;
         UpdateWaveCounter(1);
         cash += (int)(cash * piggyBankInterest);
         UpdateCash();
+        OpenAndCloseShop(openShopButton, false);
         StartCoroutine(SpawnEnemy());
     }
 
@@ -145,6 +148,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
         }
         shopManager.OpenShopAndItems();
+        OpenAndCloseShop(openShopButton, true);
     }
 
     public void TakeDmgCastle(float dmg)
@@ -274,7 +278,7 @@ public class GameManager : MonoBehaviour
 
     public float EnemyHpIncrees(float startHp)
     {
-        return startHp * waveIndex * (FindObjectsOfType<Tower>().Length * 0.5f);
+        return startHp * (waveIndex * 0.5f) * (FindObjectsOfType<Tower>().Length * 0.5f);
     }
 
     public void ShowShop()
@@ -311,5 +315,12 @@ public class GameManager : MonoBehaviour
     public void ItemFollowHand(Transform transform)
     {
         transform.position = Input.mousePosition;
+    }
+
+    void OpenAndCloseShop(GameObject gameObject, bool isActive)
+    {
+        gameObject.SetActive(isActive);
+        shopManager.CheckIfYouHaveEnaughrSpaceAndTurnOnPanel();
+
     }
 }
