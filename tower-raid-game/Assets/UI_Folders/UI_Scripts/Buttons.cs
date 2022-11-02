@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Buttons : MonoBehaviour
@@ -24,17 +25,22 @@ public class Buttons : MonoBehaviour
     {
         optionsImage.SetActive(true);
         pauseImage.SetActive(false);
+        
     }
 
     public void ExitOptionsbutton()
     {
         optionsImage.SetActive(false);
+        pauseImage.SetActive(true);
+        pauseackgroundImage.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void PauseButton ()
     {
         pauseImage.SetActive(true);
         pauseackgroundImage.SetActive(true);
+        Time.timeScale = 0;
         // + stop the timer, freeze enemies/towers/vfx
     }
 
@@ -42,6 +48,7 @@ public class Buttons : MonoBehaviour
     {
         pauseImage.SetActive(false);
         pauseackgroundImage.SetActive(false);
+        Time.timeScale = 1;
         // + resume the timer, unfreeze enemies/towers/vfx
     }
 
@@ -63,20 +70,16 @@ public class Buttons : MonoBehaviour
 
     public void MainMenuButton()
     {
-        mainmenuImage.SetActive(true);
-        //turn off current image
-        inGameImage.SetActive(false);
-        pauseImage.SetActive(false);
-        loseScreenImage.SetActive(false);
-        winScreenImage.SetActive(false);
+        SceneManager.LoadScene(0);
     }
 
     public void PlayAgainButton()
     {
-        winScreenImage.SetActive(false);
-        loseScreenImage.SetActive(false);
-        inGameImage.SetActive(true);
-        //reset the level
+        //winScreenImage.SetActive(false);
+        //loseScreenImage.SetActive(false);
+        //inGameImage.SetActive(true);
+        ////reset the level
+        SceneManager.LoadScene(1);
     }
 
     public void ExitButton()
