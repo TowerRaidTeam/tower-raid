@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public static bool isExtendable = false;
     public static bool spawnEnemies = false;
 
-    int waveIndex = 0;
+    public int waveIndex = 0;
     int numberOfEnemiesToSpawn = 20;
 
     [Header("FOR SHOP")]
@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject openShopButton;
     int shopRefreshIndex = 0;
     public int itemPriceIncress;
+    public float discountNew = 0;
+    
 
     //Passive Item Variables
     public float piggyBankInterest;
@@ -64,6 +66,8 @@ public class GameManager : MonoBehaviour
         AddCash(0);
         sortingArray = FindObjectOfType<SortingArray>();
         shopManager = GetComponent<ShopManager>();
+        Debug.Log(discountNew);
+        
     }
 
     public static bool  GetTurretHitInfo()
@@ -110,8 +114,8 @@ public class GameManager : MonoBehaviour
 
     public void StartSpawningEnemys()
     {
-        
-        itemPriceIncress = waveIndex * 25;
+        itemPriceIncress = (waveIndex * 25);
+
         WorldGeneration.path = sortingArray.GenerateNewPath().ToArray();
         enemySpawnPosition = WorldGeneration.path[WorldGeneration.path.Length - 1] + Vector3.up;
         UpdateWaveCounter(1);

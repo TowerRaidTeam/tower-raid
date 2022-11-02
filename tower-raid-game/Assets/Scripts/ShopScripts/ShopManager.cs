@@ -24,6 +24,7 @@ public class ShopManager : MonoBehaviour
 
     public void OpenShopAndItems()
     {
+        RefreshPrices();
         if (!CheckIfInventoryHasSpace(gm.filledInventorySlots))
         {
             inventoryFullPanel.SetActive(true);
@@ -67,6 +68,15 @@ public class ShopManager : MonoBehaviour
         {
             GameObject item = Instantiate(itemPrefab, Vector2.zero, Quaternion.identity);
             item.transform.SetParent(itemShopHolder.transform);
+        }
+    }
+
+    public void RefreshPrices()
+    {
+        allChldren = itemShopHolder.GetComponentsInChildren<ItemManager>();
+        foreach (ItemManager item in allChldren)
+        {
+            item.UpdatePrice();
         }
     }
 

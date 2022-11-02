@@ -29,7 +29,7 @@ public class ItemManager : MonoBehaviour
         {
             itemTOUse = items[Random.Range(0, items.Length)];
             itemName.text = itemTOUse.itemName;
-            price.text = (itemTOUse.price + gm.itemPriceIncress).ToString() + "$";
+            price.text = (itemTOUse.price + gm.itemPriceIncress - (int)((itemTOUse.price + gm.itemPriceIncress) * gm.discountNew)).ToString() + "$";
             description.text = itemTOUse.description;
             icon.sprite = itemTOUse.icon;
             type.text = itemTOUse.typeOfItem;
@@ -42,7 +42,7 @@ public class ItemManager : MonoBehaviour
         {
             if (itemTOUse.isPassive == true)
             {
-                gm.cash -= itemTOUse.price + gm.itemPriceIncress;
+                gm.cash -= itemTOUse.price + gm.itemPriceIncress - (int)((itemTOUse.price + gm.itemPriceIncress) * gm.discountNew);
                 gm.UpdateCash();
                 sm.passivItemKeys.Add(itemTOUse.passivItemKey);
                 Debug.Log("BOUGHT NEW ITEM");
@@ -52,7 +52,7 @@ public class ItemManager : MonoBehaviour
             }
             else
             {
-                gm.cash -= itemTOUse.price + gm.itemPriceIncress;
+                gm.cash -= itemTOUse.price + gm.itemPriceIncress - (int)((itemTOUse.price + gm.itemPriceIncress) * gm.discountNew);
                 gm.UpdateCash();
                 Debug.Log("BOUGHT NEW ITEM");
                 gm.BuyNewItem(itemTOUse.boughtItem);
@@ -74,10 +74,24 @@ public class ItemManager : MonoBehaviour
                     Debug.Log("ADDED PIGGY BANK EFFECT");
                     sm.passivItemKeys.Remove(item);
                     break;
+                case "Discount":
+                    gm.discountNew += 0.05f;
+                    Debug.Log(gm.discountNew);
+                    UpdatePrice();
+                    sm.RefreshPrices();
+                    UpdatePrice();
+                    sm.passivItemKeys.Remove(item);
+                    break;
                 default:
                     Debug.Log("NO ITEM IN LIST IN ITEM MANAGER");
                     break;
             }
         }
+    } 
+
+    public void UpdatePrice()
+    {
+        price.text = (itemTOUse.price + gm.itemPriceIncress - (int)((itemTOUse.price + gm.itemPriceIncress) * gm.discountNew)).ToString() + "$";
     }
+
 }
