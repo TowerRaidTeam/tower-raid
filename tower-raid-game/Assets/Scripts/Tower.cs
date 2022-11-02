@@ -71,7 +71,7 @@ public class Tower : MonoBehaviour
                     Destroy(DragDrop.itemInHandUpgrade);
                     break;
                 default:
-                    Debug.Log("NOTHIN TO UPGRADE");
+                    Debug.Log("NOTHING TO UPGRADE");
                     break;
             }
         }
