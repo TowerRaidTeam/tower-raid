@@ -75,8 +75,8 @@ public class Buttons : MonoBehaviour
 
     public void PlayAgainButton()
     {
-        //winScreenImage.SetActive(false);
-        //loseScreenImage.SetActive(false);
+        winScreenImage.SetActive(false);
+        loseScreenImage.SetActive(false);
         //inGameImage.SetActive(true);
         ////reset the level
         SceneManager.LoadScene(1);

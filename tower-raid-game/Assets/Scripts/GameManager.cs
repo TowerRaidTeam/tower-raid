@@ -151,6 +151,10 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(0.25f);
         }
+        if(waveIndex == 5) {
+            winScreen.SetActive(true);
+            
+        }
         shopManager.OpenShopAndItems();
         OpenAndCloseShop(openShopButton, true);
     }
