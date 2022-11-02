@@ -147,6 +147,10 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(0.25f);
         }
+        if (waveIndex >= 30)
+        {
+            winScreen.SetActive(true);
+        }
         shopManager.OpenShopAndItems();
         OpenAndCloseShop(openShopButton, true);
     }
@@ -166,6 +170,7 @@ public class GameManager : MonoBehaviour
     {
         waveIndex += index;
         waveText.text = "WAVE: " + waveIndex + "/30";
+
     }
 
     public void AddCash(int moneyAmount)

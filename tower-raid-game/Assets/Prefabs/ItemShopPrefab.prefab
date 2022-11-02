@@ -110,6 +110,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c1cdf9a2b9c4f8f439843734ba33399e, type: 2}
   - {fileID: 11400000, guid: 5df764c115e272c42a23fb76772becee, type: 2}
   - {fileID: 11400000, guid: c0d8fedb3961743459fee005c7eda38f, type: 2}
+  - {fileID: 11400000, guid: 5df764c115e272c42a23fb76772becee, type: 2}
+  - {fileID: 11400000, guid: 5df764c115e272c42a23fb76772becee, type: 2}
+  - {fileID: 11400000, guid: 5df764c115e272c42a23fb76772becee, type: 2}
+  - {fileID: 11400000, guid: 49084b2b30eb0964e921f9d4f942fc4a, type: 2}
   itemSoldPanel: {fileID: 4369700203879458123}
 --- !u!1 &1496061661971343539
 GameObject:
