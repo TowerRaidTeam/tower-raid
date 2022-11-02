@@ -16,6 +16,8 @@ MonoBehaviour:
   typeOfItem: Crystal
   icon: {fileID: 21300000, guid: 5852570af4ff3394cbb6ea452b95de24, type: 3}
   price: 100
-  description: AirCrystal
+  description: Air Crystal
   boughtItem: {fileID: 3938519380350625542, guid: 1d23f06f0d8f4434b848d609997dc243,
     type: 3}
+  isPassive: 0
+  passivItemKey: 
