@@ -7,6 +7,7 @@ public class HexBought : MonoBehaviour
     [HideInInspector] public int hexIndex;
     private void Start()
     {
-        hexIndex = Random.Range(0, 16);
+        //hexIndex = Random.Range(0, 16);
+        hexIndex = 0;
     }
 }
