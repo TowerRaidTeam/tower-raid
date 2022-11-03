@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     private int curretnPathIndex;
 
     [SerializeField] Slider healthBar;
-    
+    [SerializeField] ParticleSystem poofParticles;
 
 
     public static List<Enemy> enemyList = new List<Enemy>();
@@ -109,6 +109,7 @@ public class Enemy : MonoBehaviour
 
         if (enemyHp <= 0)
         {
+            Instantiate(poofParticles, transform.position, Quaternion.identity);
             gameManager.AddCash(10 + gameManager.harvest);
             gameManager.UpdateCash();
             Destroy(gameObject);

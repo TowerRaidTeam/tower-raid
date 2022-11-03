@@ -164,6 +164,8 @@ MonoBehaviour:
     type: 2}
   pathVectorList: []
   healthBar: {fileID: 2854723098446723883}
+  poofParticles: {fileID: 2285474355520544236, guid: 1bd019cdbd9b63948af9d951de999722,
+    type: 3}
 --- !u!65 &5888919163979111641
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -608,7 +610,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7662790436864350105}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0.654}
+  m_LocalPosition: {x: 0, y: 0, z: 0.591}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
