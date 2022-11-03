@@ -17,7 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: c012ad47ffcd4ce41b0f04ee61686d04, type: 3}
   price: 125
   description: Tower Range Upgrade
-  boughtItem: {fileID: 6692222140751621592, guid: 07ae7e8b8dc78f14d84e008e92539dd5,
+  boughtItem: {fileID: 6692222140751621592, guid: e90f7442e15530a4ea6b0237ff33be77,
     type: 3}
   isPassive: 0
   passivItemKey: 

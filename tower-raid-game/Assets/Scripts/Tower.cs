@@ -26,6 +26,8 @@ public class Tower : MonoBehaviour
     float dmgUpgrade = 0;
     float rangeUpgrade = 0;
 
+    string crystalType;
+    HexTypeRecogniser hexTypeRecogniser;
     enum CrystalsEnum
     {
         FireCrystal = 0,
@@ -46,6 +48,7 @@ public class Tower : MonoBehaviour
     private void Start()
     {
         gm = FindObjectOfType<GameManager>();
+        hexTypeRecogniser = GetComponent<HexTypeRecogniser>();
         Debug.Log(projectileShootFromPosition);
         //SpawnParticles();
         //particles.Stop();
@@ -182,6 +185,12 @@ public class Tower : MonoBehaviour
                 gm.RefreshShopSlots(int.Parse(DragDrop.crystalInHand.transform.name));
                 gm.spawnedCrystals.Remove(DragDrop.crystalInHand);
                 gm.UpdateShopInventory();
+                crystalType = DragDrop.crystalInHand.tag;
+                if (crystalType == hexTypeRecogniser.hexType)
+                {
+                    dmgUpgrade += 10;
+                    Debug.Log("DMG WAS UPGRADED BECAUSE OF THE HEX");
+                }
                 Destroy(DragDrop.crystalInHand); //Destory the crystal sprite after spawning the crystal object
                 
                 projectileShootFromPosition = crystalSpawnArea.transform.position;

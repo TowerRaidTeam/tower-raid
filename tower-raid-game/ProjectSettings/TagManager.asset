@@ -25,6 +25,7 @@ TagManager:
   - DmgUpgrade
   - AttackSpeedUpgrade
   - TowerItem
+  - RangeUpgrade
   layers:
   - Default
   - TransparentFX

@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 3406079372964016974}
   - component: {fileID: 6867016066187854399}
   - component: {fileID: 4236611838502378672}
+  - component: {fileID: 2459967685078791567}
   m_Layer: 0
   m_Name: FireTower
   m_TagString: Tower
@@ -165,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38243649c5845b94ea297879655e1fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
   crystalPrefabs:
   - {fileID: 337489806124124625, guid: fece06e3cd0adc34d9ec5fd22c5b1c20, type: 3}
   - {fileID: 337489806124124625, guid: ecaa621d8ba44174c9542ffa0e3cb9c2, type: 3}
@@ -176,6 +178,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3db661f8aec6b9242a1665fa366a4e11, type: 2}
   - {fileID: 11400000, guid: 497abdf780f51294594fba2cd618dab9, type: 2}
   hasCrystal: 0
+  allUpgradesTags: []
 --- !u!114 &-3491449654497025423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +230,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ca8689d416895e4992217321074ba2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2459967685078791567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9033188170770885058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a5767475bdf6e4189ee7dc39b4b287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &9033307463707869646
