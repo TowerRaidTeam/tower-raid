@@ -11,6 +11,7 @@ public class RotateCastleHealthBar : MonoBehaviour
 
     private void Start()
     {
+        cam = Camera.main;
         originaRotation = Camera.main.transform.rotation;
        // transform.rotation = originaRotation;
        

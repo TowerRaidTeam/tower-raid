@@ -69,14 +69,22 @@ public class ItemManager : MonoBehaviour
         {
             switch (item)
             {
-                case "PiggyBank":
+                case "PiggyBank": //Interest on all money when you start the wave
                     gm.piggyBankInterest += 0.05f;
                     Debug.Log("ADDED PIGGY BANK EFFECT");
                     sm.passivItemKeys.Remove(item);
                     break;
-                case "Discount":
+                case "Discount": //Discount on all items
                     gm.discountNew += 0.05f;
                     Debug.Log(gm.discountNew);
+                    UpdatePrice();
+                    sm.RefreshPrices();
+                    UpdatePrice();
+                    sm.passivItemKeys.Remove(item);
+                    break;
+                case "Harvest": //More money per kill
+                    gm.harvest += 5;
+                    Debug.Log(gm.harvest);
                     UpdatePrice();
                     sm.RefreshPrices();
                     UpdatePrice();

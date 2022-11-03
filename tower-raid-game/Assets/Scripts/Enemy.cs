@@ -2,6 +2,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Linq;
 
 public class Enemy : MonoBehaviour
@@ -15,6 +16,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private List<Vector3> pathVectorList = new List<Vector3>();
     private GameObject[] movePoints;
     private int curretnPathIndex;
+
+    [SerializeField] Slider healthBar;
     
 
 
@@ -29,7 +32,9 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         enemyHp = enemyScriptableObject.enemyHp;
-        
+        healthBar.maxValue = enemyHp;
+        healthBar.value = enemyHp;
+
         enemySpeed = enemyScriptableObject.enemySpeed;
         //worldGeneration = FindObjectOfType<WorldGeneration>();
         //sortingArray = FindObjectOfType<SortingArray>();
@@ -100,10 +105,11 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log(damageAmount);
         enemyHp -= damageAmount;
+        UpdateHealthBar();
 
         if (enemyHp <= 0)
         {
-            gameManager.AddCash(10);
+            gameManager.AddCash(10 + gameManager.harvest);
             gameManager.UpdateCash();
             Destroy(gameObject);
         }
@@ -142,5 +148,10 @@ public class Enemy : MonoBehaviour
     private void StopMoving()
     {
         pathVectorList = null;
+    }
+
+    private void UpdateHealthBar()
+    {
+        healthBar.value = enemyHp;
     }
 }

@@ -48,8 +48,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject openShopButton;
     int shopRefreshIndex = 0;
     public int itemPriceIncress;
+
+
     public float discountNew = 0;
-    
+    public int harvest = 0;
 
     //Passive Item Variables
     public float piggyBankInterest;
