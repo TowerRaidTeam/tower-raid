@@ -24,6 +24,7 @@ public class Tower : MonoBehaviour
     [SerializeField] private string[] allUpgradesTags;
 
     float dmgUpgrade = 0;
+    float rangeUpgrade = 0;
 
     enum CrystalsEnum
     {
@@ -33,6 +34,7 @@ public class Tower : MonoBehaviour
 
     private void Awake()
     {
+       
         //projectileShootFromPosition = transform.Find("Crystal").position;
         lookAtEnemyForParticles = transform.Find("LookAtEnemy").gameObject;
         crystalSpawnArea = transform.Find("CrystalSpawnArea").gameObject;
@@ -56,15 +58,23 @@ public class Tower : MonoBehaviour
         {
             switch (DragDrop.itemInHandUpgrade.tag)
             {
-                case "DmgUpgrade":
+                case "DmgUpgrade": //Upgrade Tower Damage
                     dmgUpgrade += 5;
                     gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
                     gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
                     gm.UpdateShopInventory();
                     Destroy(DragDrop.itemInHandUpgrade);
                     break;
-                case "AttackSpeedUpgrade":
+                case "AttackSpeedUpgrade": //Upgrade Tower Attack Speed
                     shootTimerMax -= shootTimerMax * 0.05f;
+                    gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
+                    gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
+                    gm.UpdateShopInventory();
+                    Destroy(DragDrop.itemInHandUpgrade);
+                    break;
+                case "RangeUpgrade": //Upgrade Tower range
+                    rangeUpgrade += 10f;
+                    Debug.Log(projectileSOs[projectileIndex].projectileRange + rangeUpgrade);
                     gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
                     gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
                     gm.UpdateShopInventory();
@@ -84,7 +94,7 @@ public class Tower : MonoBehaviour
             {
                 shootTimer = shootTimerMax;
 
-                Enemy enemy = GetClosestEnemy();
+                Enemy enemy = GetClosestEnemy(rangeUpgrade);
 
                 if (enemy == null)
                 {
@@ -139,9 +149,9 @@ public class Tower : MonoBehaviour
         }
     }
 
-    private Enemy GetClosestEnemy()
+    private Enemy GetClosestEnemy(float rangeUpgrade)
     {
-        return Enemy.GetClosestEnemy(transform.position, projectileSOs[projectileIndex].projectileRange);
+        return Enemy.GetClosestEnemy(transform.position, projectileSOs[projectileIndex].projectileRange + rangeUpgrade);
     }
 
     private void SpawnParticles()

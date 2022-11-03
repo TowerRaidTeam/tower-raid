@@ -129,6 +129,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ea80e23d5ae9a714593cc5fb35e9e4f2, type: 2}
   - {fileID: 11400000, guid: 22da89a487b29d24b934246b25ff1154, type: 2}
   - {fileID: 11400000, guid: 22da89a487b29d24b934246b25ff1154, type: 2}
+  - {fileID: 11400000, guid: b92df6df4cd297743854440873e86fd8, type: 2}
+  - {fileID: 11400000, guid: b92df6df4cd297743854440873e86fd8, type: 2}
   itemSoldPanel: {fileID: 4369700203879458123}
 --- !u!1 &1496061661971343539
 GameObject:
