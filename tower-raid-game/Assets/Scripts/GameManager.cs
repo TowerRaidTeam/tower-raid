@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour
     //Passive Item Variables
     public float piggyBankInterest;
     //List<GameObject> itemsToDisplayInShop;
+    
+    
 
     private void Start()
     {

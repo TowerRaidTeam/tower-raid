@@ -26,6 +26,10 @@ TagManager:
   - AttackSpeedUpgrade
   - TowerItem
   - RangeUpgrade
+  - Wind
+  - Fire
+  - Water
+  - Earth
   layers:
   - Default
   - TransparentFX
@@ -43,7 +47,7 @@ TagManager:
   - Build
   - Floor
   - RoadConnect
-  - 
+  - Tower
   - 
   - 
   - 

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6857590837147631739}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: CrystalSpawnArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 923670186861449109}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: LookAtEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 6867016066187854399}
   - component: {fileID: 4236611838502378672}
   - component: {fileID: 2459967685078791567}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: FireTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a5767475bdf6e4189ee7dc39b4b287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hexType: 
 --- !u!1 &9033307463707869646
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +256,7 @@ GameObject:
   - component: {fileID: 9028202078957063742}
   - component: {fileID: 9017047434014196356}
   - component: {fileID: 9011292869086847560}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: FireCrystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
