@@ -24,7 +24,7 @@ public class Tower : MonoBehaviour
     [SerializeField] private string[] allUpgradesTags;
 
     float dmgUpgrade = 0;
-    float rangeUpgrade = 0;
+    [SerializeField] float rangeUpgrade = 0;
 
     string crystalType;
     HexTypeRecogniser hexTypeRecogniser;
@@ -33,7 +33,7 @@ public class Tower : MonoBehaviour
         FireCrystal = 0,
         WaterCrystal = 1
     }
-
+    
     private void Awake()
     {
        
@@ -154,6 +154,7 @@ public class Tower : MonoBehaviour
 
     private Enemy GetClosestEnemy(float rangeUpgrade)
     {
+        rangeCheck = rangeUpgrade;
         return Enemy.GetClosestEnemy(transform.position, projectileSOs[projectileIndex].projectileRange + rangeUpgrade);
     }
 

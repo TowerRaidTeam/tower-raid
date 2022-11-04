@@ -10,20 +10,24 @@ public class HexTypeRecogniser : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Wind":
-                Debug.Log(other.gameObject.tag);
+                Debug.Log(other.gameObject.tag + "PLACED AIR");
                 hexType = "AirCrystal";
+                this.enabled = false;
                 break;
             case "Earth":
-                Debug.Log(other.gameObject.tag);
+                Debug.Log(other.gameObject.tag + "PLACED EARTH");
                 hexType = "EarthCrystal";
+                this.enabled = false;
                 break;
             case "Fire":
-                Debug.Log(other.gameObject.tag);
+                Debug.Log(other.gameObject.tag + "PLACED FIRE");
                 hexType = "FireCrystal";
+                this.enabled = false;
                 break;
             case "Water":
-                Debug.Log(other.gameObject.tag);
+                Debug.Log(other.gameObject.tag + "PLACED WATER");
                 hexType = "WaterCrystal";
+                this.enabled = false;
                 break;
             default:
                 Debug.Log("Not touching other hex types");
