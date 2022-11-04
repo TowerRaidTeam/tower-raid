@@ -720,7 +720,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69983620}
-  m_LocalRotation: {x: -0.17152108, y: 0.82687116, z: -0.40600407, w: -0.34932125}
+  m_LocalRotation: {x: -0.1715211, y: 0.82687116, z: -0.40600407, w: -0.34932125}
   m_LocalPosition: {x: 7.0696397, y: 12.94, z: 10.661106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3929,7 +3929,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471371717}
-  m_LocalRotation: {x: -0.17152108, y: 0.82687116, z: -0.40600407, w: -0.34932125}
+  m_LocalRotation: {x: -0.1715211, y: 0.82687116, z: -0.40600407, w: -0.34932125}
   m_LocalPosition: {x: 7.0696397, y: 12.94, z: 10.661106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10261,7 +10261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1202699737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11345,7 +11345,7 @@ MonoBehaviour:
   winScreen: {fileID: 1762220528}
   cashText: {fileID: 1653595222}
   gameSpeedSlider: {fileID: 1877766771}
-  cash: 4190
+  cash: 1000
   spawnEnemysButtons: {fileID: 2137818046}
   waveText: {fileID: 1679765066}
   healtBarImage: {fileID: 1706863576}
