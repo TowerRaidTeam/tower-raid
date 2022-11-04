@@ -56,7 +56,8 @@ public class GameManager : MonoBehaviour
     //Passive Item Variables
     public float piggyBankInterest;
     //List<GameObject> itemsToDisplayInShop;
-    
+    [SerializeField] TMP_Text numberOfEnemyesText;
+    public int deadEnemys;
     
 
     private void Start()
@@ -71,7 +72,9 @@ public class GameManager : MonoBehaviour
         sortingArray = FindObjectOfType<SortingArray>();
         shopManager = GetComponent<ShopManager>();
         Debug.Log(discountNew);
-        
+        UpdateEnemyCounter();
+
+
     }
 
     public static bool  GetTurretHitInfo()
@@ -155,7 +158,7 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(0.25f);
         }
-        if(waveIndex == 5) {
+        if(waveIndex == 30) {
             winScreen.SetActive(true);
             
         }
@@ -334,5 +337,10 @@ public class GameManager : MonoBehaviour
         gameObject.SetActive(isActive);
         shopManager.CheckIfYouHaveEnaughrSpaceAndTurnOnPanel();
 
+    }
+
+    public void UpdateEnemyCounter()
+    {
+        numberOfEnemyesText.text = deadEnemys + "/" + numberOfEnemiesToSpawn;
     }
 }

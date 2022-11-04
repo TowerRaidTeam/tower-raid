@@ -80,7 +80,7 @@ public class Tower : MonoBehaviour
                     Destroy(DragDrop.itemInHandUpgrade);
                     break;
                 case "RangeUpgrade": //Upgrade Tower range
-                    GetTurretYouAreHitting().GetComponent<Tower>().rangeUpgrade += 10f;
+                    GetTurretYouAreHitting().GetComponent<Tower>().rangeUpgrade += 1f;
                     //rangeUpgrade += 10f;
                     Debug.Log(projectileSOs[projectileIndex].projectileRange + rangeUpgrade);
                     gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));

@@ -32,8 +32,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         enemyHp = enemyScriptableObject.enemyHp;
-        healthBar.maxValue = enemyHp;
-        healthBar.value = enemyHp;
+        
 
         enemySpeed = enemyScriptableObject.enemySpeed;
         //worldGeneration = FindObjectOfType<WorldGeneration>();
@@ -41,6 +40,8 @@ public class Enemy : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
 
         enemyHp = gameManager.EnemyHpIncrees(enemyHp);
+        healthBar.maxValue = enemyHp;
+        healthBar.value = enemyHp;
         Debug.Log(enemyHp);
         //movePoints = GameObject.FindGameObjectsWithTag("Point");
         ////Debug.Log(movePoints);
@@ -110,6 +111,8 @@ public class Enemy : MonoBehaviour
         if (enemyHp <= 0)
         {
             Instantiate(poofParticles, transform.position, Quaternion.identity);
+            gameManager.deadEnemys++;
+            gameManager.UpdateEnemyCounter();
             gameManager.AddCash(10 + gameManager.harvest);
             gameManager.UpdateCash();
             Destroy(gameObject);
