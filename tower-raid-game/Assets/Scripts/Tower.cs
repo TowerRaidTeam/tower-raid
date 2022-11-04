@@ -12,7 +12,7 @@ public class Tower : MonoBehaviour
 
     private Vector3 projectileShootFromPosition; //Projectile spawn area
     
-    private float shootTimerMax;
+    [SerializeField] private float shootTimerMax;
     private float shootTimer;
 
     private GameObject lookAtEnemyForParticles;
@@ -23,11 +23,13 @@ public class Tower : MonoBehaviour
     [SerializeField] private bool hasCrystal = false;
     [SerializeField] private string[] allUpgradesTags;
 
-    float dmgUpgrade = 0;
+    [SerializeField] float dmgUpgrade = 0;
     [SerializeField] float rangeUpgrade = 0;
 
     string crystalType;
     HexTypeRecogniser hexTypeRecogniser;
+
+    [SerializeField] GameObject hexParticles;
     enum CrystalsEnum
     {
         FireCrystal = 0,
@@ -62,21 +64,24 @@ public class Tower : MonoBehaviour
             switch (DragDrop.itemInHandUpgrade.tag)
             {
                 case "DmgUpgrade": //Upgrade Tower Damage
-                    dmgUpgrade += 5;
+                    GetTurretYouAreHitting().GetComponent<Tower>().dmgUpgrade += 5;
+                    //dmgUpgrade += 5;
                     gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
                     gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
                     gm.UpdateShopInventory();
                     Destroy(DragDrop.itemInHandUpgrade);
                     break;
                 case "AttackSpeedUpgrade": //Upgrade Tower Attack Speed
-                    shootTimerMax -= shootTimerMax * 0.05f;
+                    GetTurretYouAreHitting().GetComponent<Tower>().shootTimerMax -= shootTimerMax * 0.05f;
+                    //shootTimerMax -= shootTimerMax * 0.05f;
                     gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
                     gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
                     gm.UpdateShopInventory();
                     Destroy(DragDrop.itemInHandUpgrade);
                     break;
                 case "RangeUpgrade": //Upgrade Tower range
-                    rangeUpgrade += 10f;
+                    GetTurretYouAreHitting().GetComponent<Tower>().rangeUpgrade += 10f;
+                    //rangeUpgrade += 10f;
                     Debug.Log(projectileSOs[projectileIndex].projectileRange + rangeUpgrade);
                     gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
                     gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
@@ -154,7 +159,7 @@ public class Tower : MonoBehaviour
 
     private Enemy GetClosestEnemy(float rangeUpgrade)
     {
-        rangeCheck = rangeUpgrade;
+        
         return Enemy.GetClosestEnemy(transform.position, projectileSOs[projectileIndex].projectileRange + rangeUpgrade);
     }
 
@@ -190,6 +195,10 @@ public class Tower : MonoBehaviour
                 if (crystalType == hexTypeRecogniser.hexType)
                 {
                     dmgUpgrade += 10;
+                    hexParticles.SetActive(true);
+                    ParticleSystem ps = hexParticles.GetComponent<ParticleSystem>();
+                    var main = ps.main;
+                    main.useUnscaledTime = true;
                     Debug.Log("DMG WAS UPGRADED BECAUSE OF THE HEX");
                 }
                 Destroy(DragDrop.crystalInHand); //Destory the crystal sprite after spawning the crystal object
@@ -209,5 +218,25 @@ public class Tower : MonoBehaviour
         
     }
 
-    
+    public GameObject GetTurretYouAreHitting()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 200f))
+        {
+            if (hit.transform.gameObject.tag == "Tower")
+            {
+                return hit.transform.gameObject;
+            }
+            else
+            {
+                return hit.transform.gameObject;
+            }
+        }
+        else
+        {
+            return hit.transform.gameObject;
+        }
+    }
+
 }
