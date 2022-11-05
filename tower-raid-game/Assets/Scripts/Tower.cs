@@ -20,7 +20,7 @@ public class Tower : MonoBehaviour
     private ParticleSystem particles;
     
 
-    [SerializeField] private bool hasCrystal = false;
+    [SerializeField] bool hasCrystal = false;
     [SerializeField] private string[] allUpgradesTags;
 
     [SerializeField] float dmgUpgrade = 0;
@@ -159,7 +159,6 @@ public class Tower : MonoBehaviour
 
     private Enemy GetClosestEnemy(float rangeUpgrade)
     {
-        
         return Enemy.GetClosestEnemy(transform.position, projectileSOs[projectileIndex].projectileRange + rangeUpgrade);
     }
 

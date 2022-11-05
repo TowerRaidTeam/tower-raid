@@ -8359,8 +8359,12 @@ MonoBehaviour:
   projectileSOs:
   - {fileID: 11400000, guid: 37c6a4dd99b43204b8c2911556439a19, type: 2}
   - {fileID: 11400000, guid: 6669f050716a47d45989919555de0383, type: 2}
+  shootTimerMax: 0
   hasCrystal: 0
   allUpgradesTags: []
+  dmgUpgrade: 0
+  rangeUpgrade: 0
+  hexParticles: {fileID: 0}
 --- !u!64 &4894088054116749978
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8477,8 +8481,12 @@ MonoBehaviour:
   projectileSOs:
   - {fileID: 11400000, guid: 37c6a4dd99b43204b8c2911556439a19, type: 2}
   - {fileID: 11400000, guid: 6669f050716a47d45989919555de0383, type: 2}
+  shootTimerMax: 0
   hasCrystal: 0
   allUpgradesTags: []
+  dmgUpgrade: 0
+  rangeUpgrade: 0
+  hexParticles: {fileID: 0}
 --- !u!4 &5008978494000426965
 Transform:
   m_ObjectHideFlags: 0
@@ -9708,6 +9716,18 @@ MonoBehaviour:
       - m_Target: {fileID: 308799495}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: StartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 308799497}
+        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
+        m_MethodName: ResetEnemyList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12425,8 +12445,12 @@ MonoBehaviour:
   projectileSOs:
   - {fileID: 11400000, guid: 37c6a4dd99b43204b8c2911556439a19, type: 2}
   - {fileID: 11400000, guid: 6669f050716a47d45989919555de0383, type: 2}
+  shootTimerMax: 0
   hasCrystal: 0
   allUpgradesTags: []
+  dmgUpgrade: 0
+  rangeUpgrade: 0
+  hexParticles: {fileID: 0}
 --- !u!64 &9157633848263067901
 MeshCollider:
   m_ObjectHideFlags: 0

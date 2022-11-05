@@ -86,4 +86,9 @@ public class Buttons : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void ResetEnemyList()
+    {
+        Enemy.enemyList = new List<Enemy>();
+    }
 }

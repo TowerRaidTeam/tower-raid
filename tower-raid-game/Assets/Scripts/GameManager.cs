@@ -147,6 +147,8 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         numberOfEnemiesToSpawn += 5;
+        deadEnemys = 0;
+        UpdateEnemyCounter();
         spawnEnemies = false;
         spawnEnemysButtons.interactable = true;
         StartCoroutine(ShowShopAfterAllMinions());
@@ -162,8 +164,28 @@ public class GameManager : MonoBehaviour
             winScreen.SetActive(true);
             
         }
-        shopManager.OpenShopAndItems();
-        OpenAndCloseShop(openShopButton, true);
+        if (BuildingController.isBought)
+        {
+            Debug.Log(BuildingController.isBought + "seeing if it is true while opening shop");
+            StartCoroutine(DontOpenShopWhileBuilding());
+        }
+        else
+        {
+            shopRefreshIndex = 0;
+            UpdateShopInventory();
+            shopManager.OpenShopAndItems();
+            OpenAndCloseShop(openShopButton, true);
+        }
+        
+    }
+
+    IEnumerator DontOpenShopWhileBuilding()
+    {
+        while (BuildingController.isBought)
+        {
+            yield return new WaitForSeconds(0.25f);
+        }
+        StartCoroutine(ShowShopAfterAllMinions());
     }
 
     public void TakeDmgCastle(float dmg)
@@ -293,7 +315,7 @@ public class GameManager : MonoBehaviour
 
     public float EnemyHpIncrees(float startHp)
     {
-        return startHp * (waveIndex * 0.5f) * (FindObjectsOfType<Tower>().Length * 0.5f);
+        return startHp * (waveIndex * 0.5f) * (FindObjectsOfType<Tower>().Length * 0.25f);
     }
 
     public void ShowShop()

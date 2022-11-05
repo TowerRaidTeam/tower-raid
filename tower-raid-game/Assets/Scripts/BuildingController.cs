@@ -6,7 +6,7 @@ public class BuildingController : MonoBehaviour
 {
     //[SerializeField] private Camera cam;
     bool canBuild = false;
-    bool isBought = false;
+    public static bool isBought = false;
 
     [SerializeField] private GameObject building;
     [SerializeField] private LayerMask layerMask;
@@ -30,12 +30,12 @@ public class BuildingController : MonoBehaviour
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
-                Debug.Log("HERE BABY");
+                
                 //Checks if the tile zou are tring to build on is buildable
                 //??Add chechker to see if there is building all ready placed there
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
                 {
-                    Debug.Log("HERE BABY 2");
+                    
                     if (hit.transform.tag == "buildable")
                     {
                         canBuild = true;
@@ -130,6 +130,7 @@ public class BuildingController : MonoBehaviour
     void ChangeIsBought()
     {
         isBought = true;
+        Debug.Log(isBought + "This is it, the bought check");
     }
 
     private Vector3 GetMousePosition()

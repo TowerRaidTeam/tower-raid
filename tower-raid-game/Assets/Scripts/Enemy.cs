@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         enemyList.Add(this);
-        //Debug.Log(enemyList);
+        Debug.Log(enemyList);
     }
 
     private void Start()
@@ -113,6 +113,7 @@ public class Enemy : MonoBehaviour
             Instantiate(poofParticles, transform.position, Quaternion.identity);
             gameManager.deadEnemys++;
             gameManager.UpdateEnemyCounter();
+
             gameManager.AddCash(10 + gameManager.harvest);
             gameManager.UpdateCash();
             Destroy(gameObject);
