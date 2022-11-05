@@ -30,6 +30,8 @@ public class Tower : MonoBehaviour
     HexTypeRecogniser hexTypeRecogniser;
 
     [SerializeField] GameObject hexParticles;
+
+    public GameObject BuildCrystalButton;
     enum CrystalsEnum
     {
         FireCrystal = 0,
