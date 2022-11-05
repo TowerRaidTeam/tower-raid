@@ -59,7 +59,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &7256568208269201485
 MonoBehaviour:
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
+  m_IgnoreReversedGraphics: 0
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
@@ -118,7 +118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1993950341996616455
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5231,7 +5231,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6117137971228027319}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4789360851973544724}
+        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+        m_MethodName: DebugButtonTest
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9033188170770885058
 GameObject:
   m_ObjectHideFlags: 0
@@ -5355,7 +5367,7 @@ MonoBehaviour:
   dmgUpgrade: 0
   rangeUpgrade: 0
   hexParticles: {fileID: 3204404676648967951}
-  BuildCrystalButton: {fileID: 1097361334410047201}
+  buildCrystalButton: {fileID: 1097361334410047201}
 --- !u!114 &-3491449654497025423
 MonoBehaviour:
   m_ObjectHideFlags: 0

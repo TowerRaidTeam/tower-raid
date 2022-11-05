@@ -70,6 +70,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
             gm.RefreshShopSlots(int.Parse(gameObject.transform.name));
             Destroy(this.gameObject);
         }
+        //else
+        //{
+        //    gm.TurnOnAllUpgradeButtons();
+        //}
     }
         
     

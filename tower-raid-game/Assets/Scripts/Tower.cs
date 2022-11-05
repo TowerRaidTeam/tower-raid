@@ -20,7 +20,7 @@ public class Tower : MonoBehaviour
     private ParticleSystem particles;
     
 
-    [SerializeField] bool hasCrystal = false;
+    public bool hasCrystal = false;
     [SerializeField] private string[] allUpgradesTags;
 
     [SerializeField] float dmgUpgrade = 0;
@@ -31,7 +31,7 @@ public class Tower : MonoBehaviour
 
     [SerializeField] GameObject hexParticles;
 
-    public GameObject BuildCrystalButton;
+    public GameObject buildCrystalButton;
     enum CrystalsEnum
     {
         FireCrystal = 0,
@@ -240,4 +240,13 @@ public class Tower : MonoBehaviour
         }
     }
 
+    public void TurnOnUpgradeButton(bool isOn)
+    {
+        buildCrystalButton.SetActive(true);
+    }
+
+    public void DebugButtonTest()
+    {
+        Debug.Log("Button Working");
+    }
 }

@@ -365,4 +365,16 @@ public class GameManager : MonoBehaviour
     {
         numberOfEnemyesText.text = deadEnemys + "/" + numberOfEnemiesToSpawn;
     }
+
+    public void TurnOnAllUpgradeButtons()
+    {
+        Tower[] towers = FindObjectsOfType<Tower>();
+        foreach (Tower item in towers)
+        {
+            if (!item.hasCrystal)
+            {
+                item.TurnOnUpgradeButton(true);
+            }
+        }
+    }
 }
