@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text numberOfEnemyesText;
     public int deadEnemys;
     [SerializeField] GameObject mainCanvas;
+
+    Buttons buttonsScript;
     private void Start()
     {
         Cursor.SetCursor(cursourTexture, Vector2.zero, CursorMode.Auto);
@@ -71,9 +73,23 @@ public class GameManager : MonoBehaviour
         sortingArray = FindObjectOfType<SortingArray>();
         shopManager = GetComponent<ShopManager>();
         Debug.Log(discountNew);
-        UpdateEnemyCounter();
+        UpdateEnemyCounter(false);
 
+        buttonsScript = FindObjectOfType<Buttons>();
 
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            buttonsScript.PauseButton();
+        }
+
+        if (Input.GetMouseButton(1))
+        {
+            CanclePlacingUpgrade();
+        }
     }
 
     public static bool  GetTurretHitInfo()
@@ -147,7 +163,7 @@ public class GameManager : MonoBehaviour
         }
         numberOfEnemiesToSpawn += 5;
         deadEnemys = 0;
-        UpdateEnemyCounter();
+        UpdateEnemyCounter(false);
         spawnEnemies = false;
         spawnEnemysButtons.interactable = true;
         StartCoroutine(ShowShopAfterAllMinions());
@@ -360,9 +376,18 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void UpdateEnemyCounter()
+    public void UpdateEnemyCounter(bool addKills)
     {
-        numberOfEnemyesText.text = deadEnemys + "/" + numberOfEnemiesToSpawn;
+        if (addKills)
+        {
+            deadEnemys++;
+            numberOfEnemyesText.text = deadEnemys + "/" + numberOfEnemiesToSpawn;
+        }
+        else
+        {
+            numberOfEnemyesText.text = deadEnemys + "/" + numberOfEnemiesToSpawn;
+        }
+        
     }
 
     public void TurnOnAllUpgradeButtons(bool turnOn)
@@ -407,5 +432,11 @@ public class GameManager : MonoBehaviour
         mainCanvas.GetComponent<CanvasGroup>().interactable = isOn;
         mainCanvas.GetComponent<CanvasGroup>().blocksRaycasts = isOn;
 
+    }
+
+    public void CanclePlacingUpgrade()
+    {
+        TurnOnAllUpgradeButtons(false);
+        TurnOnMainCanvas(true);
     }
 }

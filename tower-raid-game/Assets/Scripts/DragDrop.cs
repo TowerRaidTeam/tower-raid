@@ -40,18 +40,18 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
     public void OnDrag(PointerEventData eventData)
     {
         //Debug.Log("OnDrag");
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        //rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("OnEndDrag");
-        rectTransform.position = startPosition;
-        canvasGroup.alpha = 1f;
-        canvasGroup.blocksRaycasts = true;
+        //Debug.Log("OnEndDrag");
+        //rectTransform.position = startPosition;
+        //canvasGroup.alpha = 1f;
+        //canvasGroup.blocksRaycasts = true;
 
-        crystalInHand = null;
-        itemInHandUpgrade = null;
+        //crystalInHand = null;
+        //itemInHandUpgrade = null;
     }
 
     public void OnPointerDown(PointerEventData eventData)

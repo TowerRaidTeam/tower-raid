@@ -111,11 +111,11 @@ public class Enemy : MonoBehaviour
         if (enemyHp <= 0)
         {
             Instantiate(poofParticles, transform.position, Quaternion.identity);
-            gameManager.deadEnemys++;
-            gameManager.UpdateEnemyCounter();
+            
 
             gameManager.AddCash(10 + gameManager.harvest);
             gameManager.UpdateCash();
+            gameManager.UpdateEnemyCounter(true);
             Destroy(gameObject);
         }
     }

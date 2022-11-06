@@ -288,4 +288,9 @@ public class Tower : MonoBehaviour
             }
         }
     }
+
+    public void CancleUpgrade()
+    {
+        gm.CanclePlacingUpgrade();
+    }
 }

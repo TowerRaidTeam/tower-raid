@@ -97,10 +97,12 @@ public class ShopManager : MonoBehaviour
         foreach (var item in inventoryItem)
         {
             item.GetComponent<Image>().sprite = emptyCell;
+            item.SetActive(false);
         }
 
         for (int i = 0; i < items.Length; i++)
         {
+            inventoryItem[i].SetActive(true);
             inventoryItem[i].GetComponent<Image>().sprite = items[i].GetComponent<Image>().sprite;
         }
     }
