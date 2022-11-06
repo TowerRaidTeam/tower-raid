@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Transform passivItemHolder;
     [SerializeField] GameObject passivItemPrefab;
     [SerializeField] GameObject openShopButton;
+    [SerializeField] TMP_Text refreshText;
     int shopRefreshIndex = 0;
     public int itemPriceIncress;
 
@@ -187,6 +188,7 @@ public class GameManager : MonoBehaviour
         else
         {
             shopRefreshIndex = 0;
+            UpdateRefreshText();
             UpdateShopInventory();
             shopManager.OpenShopAndItems();
             OpenAndCloseShop(openShopButton, true);
@@ -354,14 +356,18 @@ public class GameManager : MonoBehaviour
 
     public void RefreshShop()
     {
-        shopRefreshIndex++;
+        
+        
         if (cash >= 50 * shopRefreshIndex / 2)
         {
             cash -= 50 * shopRefreshIndex / 2;
             
             UpdateCash();
             shopManager.RefreshShop();
+            shopRefreshIndex++;
+            UpdateRefreshText();
         }
+        
     }
 
     public void ItemFollowHand(Transform transform)
@@ -438,5 +444,10 @@ public class GameManager : MonoBehaviour
     {
         TurnOnAllUpgradeButtons(false);
         TurnOnMainCanvas(true);
+    }
+
+    void UpdateRefreshText()
+    {
+        refreshText.text = "Refresh" + " - " + (50 * shopRefreshIndex / 2).ToString();
     }
 }
