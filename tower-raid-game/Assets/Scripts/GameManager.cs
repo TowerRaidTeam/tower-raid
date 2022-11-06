@@ -365,14 +365,27 @@ public class GameManager : MonoBehaviour
         numberOfEnemyesText.text = deadEnemys + "/" + numberOfEnemiesToSpawn;
     }
 
-    public void TurnOnAllUpgradeButtons()
+    public void TurnOnAllUpgradeButtons(bool turnOn)
+    {
+        Tower[] towers = FindObjectsOfType<Tower>();
+        foreach (Tower item in towers)
+        {
+            item.TurnOnUpgradeButton(turnOn);
+            //if (!item.hasCrystal)
+            //{
+                
+            //}
+        }
+    }
+
+    public void TurnOnAllUpgradeButtonsOnTowerWithoutCrystals(bool turnOn)
     {
         Tower[] towers = FindObjectsOfType<Tower>();
         foreach (Tower item in towers)
         {
             if (!item.hasCrystal)
             {
-                item.TurnOnUpgradeButton(true);
+                item.TurnOnUpgradeButton(turnOn);
             }
         }
     }

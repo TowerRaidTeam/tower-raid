@@ -61,40 +61,40 @@ public class Tower : MonoBehaviour
 
     private void Update()
     {
-        if (DragDrop.itemInHandUpgrade != null && GameManager.GetTurretHitInfo() && hasCrystal == true)
-        {
-            switch (DragDrop.itemInHandUpgrade.tag)
-            {
-                case "DmgUpgrade": //Upgrade Tower Damage
-                    GetTurretYouAreHitting().GetComponent<Tower>().dmgUpgrade += 5;
-                    //dmgUpgrade += 5;
-                    gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
-                    gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
-                    gm.UpdateShopInventory();
-                    Destroy(DragDrop.itemInHandUpgrade);
-                    break;
-                case "AttackSpeedUpgrade": //Upgrade Tower Attack Speed
-                    GetTurretYouAreHitting().GetComponent<Tower>().shootTimerMax -= shootTimerMax * 0.05f;
-                    //shootTimerMax -= shootTimerMax * 0.05f;
-                    gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
-                    gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
-                    gm.UpdateShopInventory();
-                    Destroy(DragDrop.itemInHandUpgrade);
-                    break;
-                case "RangeUpgrade": //Upgrade Tower range
-                    GetTurretYouAreHitting().GetComponent<Tower>().rangeUpgrade += 1f;
-                    //rangeUpgrade += 10f;
-                    Debug.Log(projectileSOs[projectileIndex].projectileRange + rangeUpgrade);
-                    gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
-                    gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
-                    gm.UpdateShopInventory();
-                    Destroy(DragDrop.itemInHandUpgrade);
-                    break;
-                default:
-                    Debug.Log("NOTHING TO UPGRADE");
-                    break;
-            }
-        }
+        //if (DragDrop.itemInHandUpgrade != null && GameManager.GetTurretHitInfo() && hasCrystal == true)
+        //{
+        //    switch (DragDrop.itemInHandUpgrade.tag)
+        //    {
+        //        case "DmgUpgrade": //Upgrade Tower Damage
+        //            GetTurretYouAreHitting().GetComponent<Tower>().dmgUpgrade += 5;
+        //            //dmgUpgrade += 5;
+        //            gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
+        //            gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
+        //            gm.UpdateShopInventory();
+        //            Destroy(DragDrop.itemInHandUpgrade);
+        //            break;
+        //        case "AttackSpeedUpgrade": //Upgrade Tower Attack Speed
+        //            GetTurretYouAreHitting().GetComponent<Tower>().shootTimerMax -= shootTimerMax * 0.05f;
+        //            //shootTimerMax -= shootTimerMax * 0.05f;
+        //            gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
+        //            gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
+        //            gm.UpdateShopInventory();
+        //            Destroy(DragDrop.itemInHandUpgrade);
+        //            break;
+        //        case "RangeUpgrade": //Upgrade Tower range
+        //            GetTurretYouAreHitting().GetComponent<Tower>().rangeUpgrade += 1f;
+        //            //rangeUpgrade += 10f;
+        //            Debug.Log(projectileSOs[projectileIndex].projectileRange + rangeUpgrade);
+        //            gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
+        //            gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
+        //            gm.UpdateShopInventory();
+        //            Destroy(DragDrop.itemInHandUpgrade);
+        //            break;
+        //        default:
+        //            Debug.Log("NOTHING TO UPGRADE");
+        //            break;
+        //    }
+        //}
         //??Change this ti IEnumerator later
         if (hasCrystal)
         {
@@ -126,37 +126,37 @@ public class Tower : MonoBehaviour
         }
 
         //This checks if there is a crystai in your hand and if you are pointing at a tower, and if you are it spawns a crystal and start shooting
-        if (!hasCrystal)
-        {
-            //DragDrop.crystalInHand != null && 
-            if (DragDrop.crystalInHand != null && GameManager.GetTurretHitInfo())
-            {
-                #region garbage
-                //Instantiate(crystalPrefabs[1], crystalSpawnArea.transform.position, Quaternion.identity);
-                //Destroy(DragDrop.crystalInHand);
-                //projectileShootFromPosition = crystalSpawnArea.transform.position;
-                //hasCrystal = true;
+        //if (!hasCrystal)
+        //{
+        //    //DragDrop.crystalInHand != null && 
+        //    if (DragDrop.crystalInHand != null && GameManager.GetTurretHitInfo())
+        //    {
+        //        #region garbage
+        //        //Instantiate(crystalPrefabs[1], crystalSpawnArea.transform.position, Quaternion.identity);
+        //        //Destroy(DragDrop.crystalInHand);
+        //        //projectileShootFromPosition = crystalSpawnArea.transform.position;
+        //        //hasCrystal = true;
 
-                //foreach (GameObject crystal in crystalPrefabs)
-                //{
-                //    if (DragDrop.crystalInHand.tag == crystal.tag)
-                //    {
-                //        Instantiate(crystal, crystalSpawnArea.transform.position, Quaternion.identity);
-                //        Destroy(DragDrop.crystalInHand);
-                //        projectileShootFromPosition = crystalSpawnArea.transform.position;
-                //        hasCrystal = true;
-                //        break;
-                //    }
-                //}
-                #endregion
-                GameObject thisObject = GameManager.GetTurretHitGameObject();
-                thisObject.GetComponent<Tower>().SpawnCrystal();
-            }
-            else
-            {
-                return;
-            }
-        }
+        //        //foreach (GameObject crystal in crystalPrefabs)
+        //        //{
+        //        //    if (DragDrop.crystalInHand.tag == crystal.tag)
+        //        //    {
+        //        //        Instantiate(crystal, crystalSpawnArea.transform.position, Quaternion.identity);
+        //        //        Destroy(DragDrop.crystalInHand);
+        //        //        projectileShootFromPosition = crystalSpawnArea.transform.position;
+        //        //        hasCrystal = true;
+        //        //        break;
+        //        //    }
+        //        //}
+        //        #endregion
+        //        GameObject thisObject = GameManager.GetTurretHitGameObject();
+        //        thisObject.GetComponent<Tower>().SpawnCrystal();
+        //    }
+        //    else
+        //    {
+        //        return;
+        //    }
+        //}
     }
 
     private Enemy GetClosestEnemy(float rangeUpgrade)
@@ -202,6 +202,8 @@ public class Tower : MonoBehaviour
                     main.useUnscaledTime = true;
                     Debug.Log("DMG WAS UPGRADED BECAUSE OF THE HEX");
                 }
+                gm.TurnOnAllUpgradeButtons(false);
+                gm.TurnOnMainCanvas(true);
                 Destroy(DragDrop.crystalInHand); //Destory the crystal sprite after spawning the crystal object
                 
                 projectileShootFromPosition = crystalSpawnArea.transform.position;
@@ -209,14 +211,7 @@ public class Tower : MonoBehaviour
                 
                 break;
             }
-           
-            
         }
-
-        
-
-
-        
     }
 
     public GameObject GetTurretYouAreHitting()
@@ -242,11 +237,55 @@ public class Tower : MonoBehaviour
 
     public void TurnOnUpgradeButton(bool isOn)
     {
-        buildCrystalButton.SetActive(true);
+        buildCrystalButton.SetActive(isOn);
     }
 
     public void DebugButtonTest()
     {
         Debug.Log("Button Working");
+    }
+
+    public void AddUpgradeToTowerWithButton()
+    {
+        if (DragDrop.itemInHandUpgrade != null && hasCrystal == true)
+        {
+            switch (DragDrop.itemInHandUpgrade.tag)
+            {
+                case "DmgUpgrade": //Upgrade Tower Damage
+                    //GetTurretYouAreHitting().GetComponent<Tower>().dmgUpgrade += 5;
+                    dmgUpgrade += 5;
+                    gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
+                    gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
+                    gm.UpdateShopInventory();
+                    gm.TurnOnAllUpgradeButtons(false);
+                    gm.TurnOnMainCanvas(true);
+                    Destroy(DragDrop.itemInHandUpgrade);
+                    break;
+                case "AttackSpeedUpgrade": //Upgrade Tower Attack Speed
+                    //GetTurretYouAreHitting().GetComponent<Tower>().shootTimerMax -= shootTimerMax * 0.05f;
+                    shootTimerMax -= shootTimerMax * 0.05f;
+                    gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
+                    gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
+                    gm.UpdateShopInventory();
+                    gm.TurnOnAllUpgradeButtons(false);
+                    gm.TurnOnMainCanvas(true);
+                    Destroy(DragDrop.itemInHandUpgrade);
+                    break;
+                case "RangeUpgrade": //Upgrade Tower range
+                    //GetTurretYouAreHitting().GetComponent<Tower>().rangeUpgrade += 1f;
+                    rangeUpgrade += 1f;
+                    Debug.Log(projectileSOs[projectileIndex].projectileRange + rangeUpgrade);
+                    gm.RefreshShopSlots(int.Parse(DragDrop.itemInHandUpgrade.transform.name));
+                    gm.spawnedCrystals.Remove(DragDrop.itemInHandUpgrade);
+                    gm.UpdateShopInventory();
+                    gm.TurnOnAllUpgradeButtons(false);
+                    gm.TurnOnMainCanvas(true);
+                    Destroy(DragDrop.itemInHandUpgrade);
+                    break;
+                default:
+                    Debug.Log("NOTHING TO UPGRADE");
+                    break;
+            }
+        }
     }
 }

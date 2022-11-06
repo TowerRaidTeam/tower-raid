@@ -28,13 +28,13 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        startPosition = rectTransform.position;
-        //Debug.Log("OnBeginDrag");
-        canvasGroup.alpha = 0.6f;
-        canvasGroup.blocksRaycasts = false;
+        //startPosition = rectTransform.position;
+        ////Debug.Log("OnBeginDrag");
+        //canvasGroup.alpha = 0.6f;
+        //canvasGroup.blocksRaycasts = false;
 
-        crystalInHand = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
-        itemInHandUpgrade = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
+        //crystalInHand = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
+        //itemInHandUpgrade = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -70,12 +70,55 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
             gm.RefreshShopSlots(int.Parse(gameObject.transform.name));
             Destroy(this.gameObject);
         }
+        else if (gameObject.tag == "FireCrystal")
+        {
+            gm.TurnOnAllUpgradeButtonsOnTowerWithoutCrystals(true);
+            gm.TurnOnMainCanvas(false);
+            //crystalInHand = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
+            //itemInHandUpgrade = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
+            itemInHandUpgrade = eventData.pointerCurrentRaycast.gameObject;
+            crystalInHand = eventData.pointerCurrentRaycast.gameObject;
+            Debug.Log(itemInHandUpgrade + " " + crystalInHand);
+        }
+        else if (gameObject.tag == "AirCrystal")
+        {
+            gm.TurnOnAllUpgradeButtonsOnTowerWithoutCrystals(true);
+            gm.TurnOnMainCanvas(false);
+            //crystalInHand = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
+            //itemInHandUpgrade = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
+            itemInHandUpgrade = eventData.pointerCurrentRaycast.gameObject;
+            crystalInHand = eventData.pointerCurrentRaycast.gameObject;
+            Debug.Log(itemInHandUpgrade + " " + crystalInHand);
+        }
+        else if (gameObject.tag == "EarthCrystal")
+        {
+            gm.TurnOnAllUpgradeButtonsOnTowerWithoutCrystals(true);
+            gm.TurnOnMainCanvas(false);
+            //crystalInHand = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
+            //itemInHandUpgrade = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
+            itemInHandUpgrade = eventData.pointerCurrentRaycast.gameObject;
+            crystalInHand = eventData.pointerCurrentRaycast.gameObject;
+            Debug.Log(itemInHandUpgrade + " " + crystalInHand);
+        }
+        else if (gameObject.tag == "WaterCrystal")
+        {
+            gm.TurnOnAllUpgradeButtonsOnTowerWithoutCrystals(true);
+            gm.TurnOnMainCanvas(false);
+            //crystalInHand = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
+            //itemInHandUpgrade = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
+            itemInHandUpgrade = eventData.pointerCurrentRaycast.gameObject;
+            crystalInHand = eventData.pointerCurrentRaycast.gameObject;
+            Debug.Log(itemInHandUpgrade + " " + crystalInHand);
+        }
         else
         {
-            gm.TurnOnAllUpgradeButtons();
+            gm.TurnOnAllUpgradeButtons(true);
             gm.TurnOnMainCanvas(false);
-            crystalInHand = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
-            itemInHandUpgrade = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
+            //crystalInHand = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
+            //itemInHandUpgrade = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
+            itemInHandUpgrade = eventData.pointerCurrentRaycast.gameObject;
+            crystalInHand = eventData.pointerCurrentRaycast.gameObject;
+            Debug.Log(itemInHandUpgrade + " " + crystalInHand);
         }
     }
         
