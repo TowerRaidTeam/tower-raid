@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Piggy Bank
   typeOfItem: Passive
-  icon: {fileID: 21300000, guid: 88a3efd142a70364eb0219ded72e16cd, type: 3}
+  icon: {fileID: 21300000, guid: b84bc0d5ac874de45b3926b208b16f26, type: 3}
   price: 250
   description: Gives you interest on your money every wave
   boughtItem: {fileID: 6692222140751621592, guid: d0b82aa599da5d84abe0880316948095,
