@@ -58,8 +58,7 @@ public class GameManager : MonoBehaviour
     //List<GameObject> itemsToDisplayInShop;
     [SerializeField] TMP_Text numberOfEnemyesText;
     public int deadEnemys;
-    
-
+    [SerializeField] GameObject mainCanvas;
     private void Start()
     {
         Cursor.SetCursor(cursourTexture, Vector2.zero, CursorMode.Auto);
@@ -376,5 +375,12 @@ public class GameManager : MonoBehaviour
                 item.TurnOnUpgradeButton(true);
             }
         }
+    }
+
+    public void TurnOnMainCanvas(bool isOn)
+    {
+        mainCanvas.GetComponent<CanvasGroup>().interactable = isOn;
+        mainCanvas.GetComponent<CanvasGroup>().blocksRaycasts = isOn;
+
     }
 }
