@@ -390,6 +390,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void TurnOnAllUpgradeButtonsOnTowerWithCrystals(bool turnOn)
+    {
+        Tower[] towers = FindObjectsOfType<Tower>();
+        foreach (Tower item in towers)
+        {
+            if (item.hasCrystal)
+            {
+                item.TurnOnUpgradeButton(turnOn);
+            }
+        }
+    }
+
     public void TurnOnMainCanvas(bool isOn)
     {
         mainCanvas.GetComponent<CanvasGroup>().interactable = isOn;

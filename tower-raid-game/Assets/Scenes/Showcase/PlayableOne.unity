@@ -720,7 +720,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69983620}
-  m_LocalRotation: {x: -0.1715211, y: 0.82687116, z: -0.40600407, w: -0.34932125}
+  m_LocalRotation: {x: -0.1715211, y: 0.8268712, z: -0.40600404, w: -0.34932125}
   m_LocalPosition: {x: 7.0696397, y: 12.94, z: 10.661106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4033,7 +4033,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471371717}
-  m_LocalRotation: {x: -0.1715211, y: 0.82687116, z: -0.40600407, w: -0.34932125}
+  m_LocalRotation: {x: -0.1715211, y: 0.8268712, z: -0.40600404, w: -0.34932125}
   m_LocalPosition: {x: 7.0696397, y: 12.94, z: 10.661106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11489,6 +11489,7 @@ MonoBehaviour:
   piggyBankInterest: 0
   numberOfEnemyesText: {fileID: 1202699737}
   deadEnemys: 0
+  mainCanvas: {fileID: 4414705335635186962}
 --- !u!114 &1276737921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19847,6 +19848,7 @@ GameObject:
   - component: {fileID: 4414705335635186961}
   - component: {fileID: 4414705335635186960}
   - component: {fileID: 4414705335635186963}
+  - component: {fileID: 4414705335635186967}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Canvas
@@ -19899,6 +19901,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &4414705335635186967
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4414705335635186962}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!225 &4414705335818254018
 CanvasGroup:
   m_ObjectHideFlags: 0

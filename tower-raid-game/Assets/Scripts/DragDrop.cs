@@ -112,7 +112,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler, 
         }
         else
         {
-            gm.TurnOnAllUpgradeButtons(true);
+            gm.TurnOnAllUpgradeButtonsOnTowerWithCrystals(true);
             gm.TurnOnMainCanvas(false);
             //crystalInHand = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
             //itemInHandUpgrade = eventData.pointerDrag.GetComponent<RectTransform>().gameObject;
