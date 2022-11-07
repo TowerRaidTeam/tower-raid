@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3839974908071742881}
   - component: {fileID: 2285474355520544236}
   - component: {fileID: 4516495787169094458}
+  - component: {fileID: 6780528538712138487}
   m_Layer: 0
   m_Name: PoofParticles
   m_TagString: Untagged
@@ -4870,3 +4871,15 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &6780528538712138487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3074634224623420302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b356ee79217a84b840ebe1629a5429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
