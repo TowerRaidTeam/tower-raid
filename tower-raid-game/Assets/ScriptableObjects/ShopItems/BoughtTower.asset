@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Tower
   typeOfItem: Tower
-  icon: {fileID: 21300000, guid: 2f764d24e50a2b745954d210bdf4bc9b, type: 3}
+  icon: {fileID: 21300000, guid: 9c65ad05b2b9b8f4ab8be780319cf0ad, type: 3}
   price: 100
   description: A Basic Tower
   boughtItem: {fileID: 6692222140751621592, guid: 93365b7d125fe334fb63f212d4085bb3,

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Random Hex
   typeOfItem: Hex
-  icon: {fileID: 21300000, guid: 1c6ed933ce0099b41a2c87a6a5c58ad5, type: 3}
+  icon: {fileID: 21300000, guid: d477adb7aed1cd642bf189b73a7abac4, type: 3}
   price: 150
   description: Random Hex
   boughtItem: {fileID: 6692222140751621592, guid: 9b3621733f72902459437f2af800f303,
