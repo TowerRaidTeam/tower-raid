@@ -75,7 +75,7 @@ public class ItemManager : MonoBehaviour
                     sm.passivItemKeys.Remove(item);
                     break;
                 case "Discount": //Discount on all items
-                    gm.discountNew += 0.05f;
+                    gm.discountNew += 0.1f;
                     Debug.Log(gm.discountNew);
                     UpdatePrice();
                     sm.RefreshPrices();

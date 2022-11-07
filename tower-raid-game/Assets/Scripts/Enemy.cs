@@ -113,7 +113,7 @@ public class Enemy : MonoBehaviour
             Instantiate(poofParticles, transform.position, Quaternion.identity);
             
 
-            gameManager.AddCash(10 + gameManager.harvest);
+            gameManager.AddCash(15 + gameManager.harvest);
             gameManager.UpdateCash();
             gameManager.UpdateEnemyCounter(true);
             Destroy(gameObject);

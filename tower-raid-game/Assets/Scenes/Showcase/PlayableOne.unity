@@ -720,7 +720,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69983620}
-  m_LocalRotation: {x: -0.17152108, y: 0.82687116, z: -0.4060041, w: -0.34932125}
+  m_LocalRotation: {x: -0.17152108, y: 0.82687116, z: -0.40600407, w: -0.34932125}
   m_LocalPosition: {x: 7.0696397, y: 12.94, z: 10.661106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1578,7 +1578,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -695, y: -351.1}
+  m_AnchoredPosition: {x: -695, y: -349}
   m_SizeDelta: {x: -1.1259, y: -1.1259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &176507911
@@ -4277,7 +4277,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471371717}
-  m_LocalRotation: {x: -0.17152108, y: 0.82687116, z: -0.4060041, w: -0.34932125}
+  m_LocalRotation: {x: -0.17152108, y: 0.82687116, z: -0.40600407, w: -0.34932125}
   m_LocalPosition: {x: 7.0696397, y: 12.94, z: 10.661106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10855,7 +10855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1202699737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12015,7 +12015,7 @@ MonoBehaviour:
   winScreen: {fileID: 1762220528}
   cashText: {fileID: 1653595222}
   gameSpeedSlider: {fileID: 1877766771}
-  cash: 1628
+  cash: 500
   spawnEnemysButtons: {fileID: 2137818046}
   waveText: {fileID: 1679765066}
   healtBarImage: {fileID: 1706863576}
@@ -15090,7 +15090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1624160848
 RectTransform:
   m_ObjectHideFlags: 0

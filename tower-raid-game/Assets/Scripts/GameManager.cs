@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     public static bool spawnEnemies = false;
 
     public int waveIndex = 0;
-    int numberOfEnemiesToSpawn = 20;
+    int numberOfEnemiesToSpawn = 10;
 
     [Header("FOR SHOP")]
     public static int crystalIndexDeleated = 69; //69 broj koji sigurno nije
@@ -62,6 +62,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject mainCanvas;
 
     Buttons buttonsScript;
+
+    
     private void Start()
     {
         Cursor.SetCursor(cursourTexture, Vector2.zero, CursorMode.Auto);
@@ -138,7 +140,7 @@ public class GameManager : MonoBehaviour
     public void StartSpawningEnemys()
     {
         itemPriceIncress = (waveIndex * 25);
-
+        //nextWaveButton.GetComponent<CanvasGroup>().interactable = false;
         WorldGeneration.path = sortingArray.GenerateNewPath().ToArray();
         enemySpawnPosition = WorldGeneration.path[WorldGeneration.path.Length - 1] + Vector3.up;
         UpdateWaveCounter(1);
@@ -162,6 +164,7 @@ public class GameManager : MonoBehaviour
             Instantiate(enemyPrefabs[UnityEngine.Random.Range(0, enemyPrefabs.Length)], enemySpawnPosition, Quaternion.identity);
             yield return new WaitForSeconds(1);
         }
+        
         numberOfEnemiesToSpawn += 5;
         deadEnemys = 0;
         UpdateEnemyCounter(false);
