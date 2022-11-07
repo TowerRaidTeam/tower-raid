@@ -139,7 +139,7 @@ public class GameManager : MonoBehaviour
 
     public void StartSpawningEnemys()
     {
-        itemPriceIncress = (waveIndex * 25);
+        itemPriceIncress = (waveIndex * 20);
         //nextWaveButton.GetComponent<CanvasGroup>().interactable = false;
         WorldGeneration.path = sortingArray.GenerateNewPath().ToArray();
         enemySpawnPosition = WorldGeneration.path[WorldGeneration.path.Length - 1] + Vector3.up;
