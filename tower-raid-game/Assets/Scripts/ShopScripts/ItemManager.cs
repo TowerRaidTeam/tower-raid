@@ -18,16 +18,27 @@ public class ItemManager : MonoBehaviour
     GameManager gm;
     ShopManager sm;
     [SerializeField] GameObject itemSoldPanel;
-    
-    
 
-    private void Start()
+    private void Awake()
     {
         sm = FindObjectOfType<ShopManager>();
         gm = FindObjectOfType<GameManager>();
+    }
+
+    private void Start()
+    {
+        
         if (items != null)
         {
             itemTOUse = items[Random.Range(0, items.Length)];
+            if (gm.discountNew >= 0.5f && itemTOUse.passivItemKey == "Discount")
+            {
+                Start();
+            }
+            if (gm.piggyBankInterest >= 0.5f && itemTOUse.passivItemKey == "PiggyBank")
+            {
+                Start();
+            }
             itemName.text = itemTOUse.itemName;
             price.text = (itemTOUse.price + gm.itemPriceIncress - (int)((itemTOUse.price + gm.itemPriceIncress) * gm.discountNew)).ToString() + "$";
             description.text = itemTOUse.description;
@@ -75,6 +86,11 @@ public class ItemManager : MonoBehaviour
                     sm.passivItemKeys.Remove(item);
                     break;
                 case "Discount": //Discount on all items
+                    if (gm.discountNew >= 0.5)
+                    {
+                        Debug.Log("Max Discount Reached");
+                        break;
+                    }
                     gm.discountNew += 0.1f;
                     Debug.Log(gm.discountNew);
                     UpdatePrice();
