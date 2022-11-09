@@ -37,6 +37,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject[] elementalCrystals;
     [SerializeField] GameObject[] itemSlots;
     [HideInInspector] public List<GameObject> spawnedCrystals = new List<GameObject>();
+    public TMP_Text harvestCounterText;
+    public TMP_Text discountCounterText;
+    public TMP_Text piggyCounterText;
 
     [Header("SHOP")]
     [SerializeField] ShopItem[] notInUse;

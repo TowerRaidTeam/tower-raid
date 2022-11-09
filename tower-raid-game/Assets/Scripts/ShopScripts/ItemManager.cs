@@ -19,6 +19,10 @@ public class ItemManager : MonoBehaviour
     ShopManager sm;
     [SerializeField] GameObject itemSoldPanel;
 
+    int harvestCounter;
+    int discountCounter;
+    int piggyCounter;
+
     private void Awake()
     {
         sm = FindObjectOfType<ShopManager>();
@@ -81,11 +85,15 @@ public class ItemManager : MonoBehaviour
             switch (item)
             {
                 case "PiggyBank": //Interest on all money when you start the wave
+                    piggyCounter++;
+                    gm.piggyCounterText.text = piggyCounter.ToString();
                     gm.piggyBankInterest += 0.05f;
                     Debug.Log("ADDED PIGGY BANK EFFECT");
                     sm.passivItemKeys.Remove(item);
                     break;
                 case "Discount": //Discount on all items
+                    discountCounter++;
+                    gm.discountCounterText.text = discountCounter.ToString();
                     if (gm.discountNew >= 0.5)
                     {
                         Debug.Log("Max Discount Reached");
@@ -99,6 +107,8 @@ public class ItemManager : MonoBehaviour
                     sm.passivItemKeys.Remove(item);
                     break;
                 case "Harvest": //More money per kill
+                    harvestCounter++;
+                    gm.harvestCounterText.text = harvestCounter.ToString();
                     gm.harvest += 5;
                     Debug.Log(gm.harvest);
                     UpdatePrice();
