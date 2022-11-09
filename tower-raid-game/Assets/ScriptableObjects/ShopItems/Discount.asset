@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Discount
   typeOfItem: Passive
-  icon: {fileID: 21300000, guid: 4e8b21e1f043d064d9e280d2956ba3dd, type: 3}
+  icon: {fileID: 21300000, guid: 6062faee215d79944acdce47e5bdfce2, type: 3}
   price: 250
   description: '10% Discount '
   boughtItem: {fileID: 6692222140751621592, guid: d0b82aa599da5d84abe0880316948095,

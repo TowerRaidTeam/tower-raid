@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Range Upgrade
   typeOfItem: Upgrade
-  icon: {fileID: 21300000, guid: 7aa78c24044819c48a4f3d414074216d, type: 3}
+  icon: {fileID: 21300000, guid: fb8dd5d3287e4ff43a4281ff1c09d5af, type: 3}
   price: 125
   description: Tower Range Upgrade
   boughtItem: {fileID: 6692222140751621592, guid: e90f7442e15530a4ea6b0237ff33be77,
