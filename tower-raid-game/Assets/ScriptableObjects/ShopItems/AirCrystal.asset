@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: AirCrystal
   typeOfItem: Crystal
-  icon: {fileID: 21300000, guid: bfb24b4f00ec08a46af5142a6488caf9, type: 3}
+  icon: {fileID: 21300000, guid: d1d3a96adb090364a8417c8482c40403, type: 3}
   price: 100
   description: Air Crystal
   boughtItem: {fileID: 3938519380350625542, guid: 1d23f06f0d8f4434b848d609997dc243,

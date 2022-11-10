@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Fire Crystal
   typeOfItem: Crystal
-  icon: {fileID: 21300000, guid: 56065a2b66ea381478589e1782953fb9, type: 3}
+  icon: {fileID: 21300000, guid: 8cd5c4232e8cc424b87512707622db17, type: 3}
   price: 100
   description: Fire Crystal
   boughtItem: {fileID: 852569067453026780, guid: 6e6d20866d4944e458a27e5f24cd1b36,

@@ -21,6 +21,8 @@ public class WorldGeneration : MonoBehaviour
 
 
     public static Vector3[] path;
+
+    [SerializeField] AudioSource hexBuildSound;
     private void Start()
     {
         sortingArray = FindObjectOfType<SortingArray>();
@@ -221,6 +223,8 @@ public class WorldGeneration : MonoBehaviour
                                 GameManager.isExtendable = false;
                                 //path = sortingArray.GenerateNewPath().ToArray();
                                 //sortingArray.SpawnPreview();
+                                hexBuildSound.volume = PlayerPrefs.GetFloat("volume");
+                                hexBuildSound.Play();
                                 chunsIsSpawnd = false;
                             }
                         }
