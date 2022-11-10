@@ -110,14 +110,23 @@ public class Enemy : MonoBehaviour
 
         if (enemyHp <= 0)
         {
+            gameObject.GetComponent<Collider>().enabled = false;
             Instantiate(poofParticles, transform.position, Quaternion.identity);
             
 
             gameManager.AddCash(15 + gameManager.harvest);
             gameManager.UpdateCash();
-            gameManager.UpdateEnemyCounter(true);
+            
+            
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        
+        gameManager.UpdateEnemyCounter(true);
+        Debug.Log(gameManager.deadEnemys);
     }
 
     private void HandleMovment()

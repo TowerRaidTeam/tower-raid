@@ -66,7 +66,10 @@ public class GameManager : MonoBehaviour
 
     Buttons buttonsScript;
 
-    
+    public int harvestCounter;
+    public int discountCounter;
+    public int piggyCounter;
+
     private void Start()
     {
         Cursor.SetCursor(cursourTexture, Vector2.zero, CursorMode.Auto);
@@ -168,12 +171,13 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
         
-        numberOfEnemiesToSpawn += 5;
-        deadEnemys = 0;
-        UpdateEnemyCounter(false);
+        
         spawnEnemies = false;
         spawnEnemysButtons.interactable = true;
         StartCoroutine(ShowShopAfterAllMinions());
+        numberOfEnemiesToSpawn += 5;
+        deadEnemys = 0;
+        UpdateEnemyCounter(false);
     }
 
     IEnumerator ShowShopAfterAllMinions()
