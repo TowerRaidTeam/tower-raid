@@ -10,15 +10,15 @@ public class TutorialScript : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerPrefs.GetString("tutorial") == "done")
-        {
-            Destroy(this);
-        }
-        else
-        {
-            tutorialPanel.SetActive(true);
-            tutorialImages[index].SetActive(true);
-        }
+        //if (PlayerPrefs.GetString("tutorial") == "done")
+        //{
+        //    Destroy(this);
+        //}
+        //else
+        //{
+        //    tutorialPanel.SetActive(true);
+        //    tutorialImages[index].SetActive(true);
+        //}
     }
 
    public void NextImage()

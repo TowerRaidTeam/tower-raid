@@ -240,6 +240,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdatedGameSpeedSlider()
     {
+        PlayerPrefs.SetFloat("speed", gameSpeedSlider.value);
         Time.timeScale = gameSpeedSlider.value;
     }
 

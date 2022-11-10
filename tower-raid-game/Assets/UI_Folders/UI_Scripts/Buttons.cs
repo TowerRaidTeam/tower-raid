@@ -46,9 +46,9 @@ public class Buttons : MonoBehaviour
 
     public void ResumeButton()
     {
-        pauseImage.SetActive(false);
-        pauseackgroundImage.SetActive(false);
-        Time.timeScale = 1;
+        //pauseImage.SetActive(false);
+        //pauseackgroundImage.SetActive(false);
+        Time.timeScale = PlayerPrefs.GetFloat("speed");
         // + resume the timer, unfreeze enemies/towers/vfx
     }
 
@@ -90,5 +90,10 @@ public class Buttons : MonoBehaviour
     public void ResetEnemyList()
     {
         Enemy.enemyList = new List<Enemy>();
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
     }
 }
