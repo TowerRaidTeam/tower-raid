@@ -32,6 +32,9 @@ public class Tower : MonoBehaviour
     [SerializeField] GameObject hexParticles;
 
     public GameObject buildCrystalButton;
+
+    
+
     enum CrystalsEnum
     {
         FireCrystal = 0,
@@ -57,6 +60,7 @@ public class Tower : MonoBehaviour
         //SpawnParticles();
         //particles.Stop();
         projectileShootFromPosition = crystalSpawnArea.transform.position;
+        //spawnTower.volume = PlayerPrefs.GetFloat("volume");
     }
 
     private void Update()

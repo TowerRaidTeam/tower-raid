@@ -23,6 +23,8 @@ public class Enemy : MonoBehaviour
 
     public static List<Enemy> enemyList = new List<Enemy>();
 
+    [SerializeField] GameObject enemyDeathSound;
+
     private void Awake()
     {
         enemyList.Add(this);
@@ -32,6 +34,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         enemyHp = enemyScriptableObject.enemyHp;
+        
         
 
         enemySpeed = enemyScriptableObject.enemySpeed;
@@ -110,9 +113,11 @@ public class Enemy : MonoBehaviour
 
         if (enemyHp <= 0)
         {
+            
             gameObject.GetComponent<Collider>().enabled = false;
             Instantiate(poofParticles, transform.position, Quaternion.identity);
-            
+            GameObject poof = Instantiate(enemyDeathSound, transform.position, Quaternion.identity);
+            poof.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("volume");
 
             gameManager.AddCash(15 + gameManager.harvest);
             gameManager.UpdateCash();

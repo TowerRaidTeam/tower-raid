@@ -15,6 +15,13 @@ public class Buttons : MonoBehaviour
     public GameObject loseScreenImage;
     public GameObject winScreenImage;
 
+    [SerializeField] AudioSource buttonClick;
+
+    public void ButtonsSoundPlay()
+    {
+        buttonClick.volume = PlayerPrefs.GetFloat("volume");
+        buttonClick.Play();
+    }
     public void PlayButton()
     {
         mainmenuImage.SetActive(false);

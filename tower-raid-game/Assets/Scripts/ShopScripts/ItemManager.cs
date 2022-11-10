@@ -19,7 +19,7 @@ public class ItemManager : MonoBehaviour
     ShopManager sm;
     [SerializeField] GameObject itemSoldPanel;
 
-    
+    [SerializeField] AudioSource buySound;
 
     private void Awake()
     {
@@ -29,7 +29,7 @@ public class ItemManager : MonoBehaviour
 
     private void Start()
     {
-        
+        buySound.volume = PlayerPrefs.GetFloat("volume");
         if (items != null)
         {
             itemTOUse = items[Random.Range(0, items.Length)];
@@ -55,6 +55,7 @@ public class ItemManager : MonoBehaviour
         {
             if (itemTOUse.isPassive == true)
             {
+                buySound.Play();
                 gm.cash -= itemTOUse.price + gm.itemPriceIncress - (int)((itemTOUse.price + gm.itemPriceIncress) * gm.discountNew);
                 gm.UpdateCash();
                 sm.passivItemKeys.Add(itemTOUse.passivItemKey);
@@ -65,6 +66,7 @@ public class ItemManager : MonoBehaviour
             }
             else
             {
+                buySound.Play();
                 gm.cash -= itemTOUse.price + gm.itemPriceIncress - (int)((itemTOUse.price + gm.itemPriceIncress) * gm.discountNew);
                 gm.UpdateCash();
                 Debug.Log("BOUGHT NEW ITEM");
