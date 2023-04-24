@@ -3,7 +3,28 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Road
+  - SpawnPosition
+  - buildHex
+  - buildable
+  - RoadConnect
+  - foliage
+  - test
+  - FireCrystal
+  - Tower
+  - WaterCrystal
+  - Canvas
+  - Point
+  - Castle
+  - Enemy
+  - rotationCheckers
+  - EarthCrystal
+  - AirCrystal
+  - HexItem
+  - DmgUpgrade
+  - AttackSpeedUpgrade
+  - TowerItem
   layers:
   - Default
   - TransparentFX
@@ -18,9 +39,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Build
+  - Floor
+  - RoadConnect
   - 
   - 
   - 
